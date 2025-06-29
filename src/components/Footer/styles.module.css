@@ -2,7 +2,6 @@
 
 .footer {
     min-height: 25vh;
-    background-color: var(--text-color-bright);
    
     border-top: var(--border-opposite);
     display: flex;

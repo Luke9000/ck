@@ -6,7 +6,7 @@ import { ExternalLink, Mail, MapPinnedIcon, Phone } from "lucide-react";
 const index = () => {
   return (
     <footer className={styles.footer}>
-      <h1 className={clsx("alt", styles.pad)}>КОНТАКТЫ</h1>
+      {/* <h1 className={clsx("alt", styles.pad)}>КОНТАКТЫ</h1> */}
       <div className={styles.footerUpper}>
         <div className={styles.datablock}>
           <h4>КАФЕДРА</h4>

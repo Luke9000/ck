@@ -21,35 +21,35 @@ const RedCircle = (props: React.SVGProps<SVGSVGElement>) => {
         fill="#FF1010"
       />
       <circle
-        className="origin-center animate-fade-in-scale-2"
+        className="origin-center animate-fade-in-scale delay-0"
         opacity="0.2"
         cx="50%"
         cy="50%"
         r="677"
         stroke="#FF1010"
         fill="transparent"
-        strokeWidth="52"
+        strokeWidth="35"
       />
       <circle
        
-        className="origin-center animate-fade-in-scale"
+        className="origin-center animate-fade-in-scale delay-1000"
         opacity="1"
         cx="50%"
         cy="50%"
         r="677"
         stroke="#FF1010"
          fill="transparent"
-        strokeWidth="22"
+        strokeWidth="35"
       />
       <circle
-        className="origin-center animate-fade-in-scale-3"
+        className="origin-center animate-fade-in-scale delay-2000"
         opacity="0.1"
         cx="50%"
         cy="50%"
         r="677"
         stroke="#FF1010"
         fill="transparent"
-        strokeWidth="33"
+        strokeWidth="35"
       />
     </svg>
   );
