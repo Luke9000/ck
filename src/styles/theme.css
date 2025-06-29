@@ -1,0 +1,61 @@
+@theme {
+  --color-primary: blue;
+  --color-bg: white;
+  --color-contrast-lower: #CCCCCC;
+  --color-contrast-low: #868686;
+  --color-contrast-medium: #4F4F4F;
+  --color-contrast-high: #353535;
+  --color-contrast-higher: black;
+
+
+  --animate-fade-in-scale: fade-in-scale infinite 5s ease-in-out;
+  --animate-fade-in-scale-2: fade-in-scale-2 infinite 8s ease-in-out;
+  --animate-fade-in-scale-3: fade-in-scale-3 infinite 11s ease-in-out;
+
+
+  @keyframes fade-in-scale {
+    0% {
+      opacity: 0;
+      r: 22;
+    }
+    30% {
+      opacity: 0.3;
+      r: 42;
+    }
+    100% {
+      opacity: 0;
+      r: 200;
+    }
+  }
+
+  @keyframes fade-in-scale-2 {
+    0% {
+      opacity: 0;
+      r: 22;
+    }
+    50% {
+      opacity: 0.3;
+      r: 42;
+    }
+    100% {
+      opacity: 0;
+      r: 300;
+    }
+  }
+
+  @keyframes fade-in-scale-3 {
+    0% {
+      opacity: 0;
+      r: 22;
+    }
+    70% {
+      opacity: 0.3;
+      r: 42;
+    }
+    100% {
+      opacity: 0;
+      r: 400;
+    }
+  }
+
+}
