@@ -2,13 +2,13 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header/index";
 import { Toaster } from "@/components/ui/sonner";
 import "@/styles/global.css";
+import { ReactLenis } from 'lenis/react';
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { ReactLenis} from 'lenis/react'
 
 // 100: Thin.
 // 200: Extra Light (or Ultra Light).
-// 300: Light.
+// 300: Light.g
 // 400: Regular.
 // 500: Medium.
 // 600: Semi Bold (or Demi Bold).
@@ -19,17 +19,17 @@ import { ReactLenis} from 'lenis/react'
 const involve = localFont({
   src: [
     {
-      path: "../../public/fonts/Involve-Regular.otf",
+      path: "../fonts/Involve-Regular.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/fonts/Involve-Medium.otf",
+      path: "../fonts/Involve-Medium.otf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../../public/fonts/Involve-Semibold.otf",
+      path: "../fonts/Involve-Semibold.otf",
       weight: "600",
       style: "normal",
     },
@@ -40,8 +40,8 @@ const involve = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Кафедра Цифровых и аддитивных технологий",
-  description: "Добро пожаловать на сайт ЦАТ Спбгуптд",
+  title: "Цифровая Кафедра СПБГУПТД",
+  description: "Добро пожаловать на сайт ЦК",
   openGraph: {
     title: "Кафедра Цифровых и аддитивных технологий",
     description: "Добро пожаловать на официальный сайт кафедры ЦАТ СПбГУПТД.",
