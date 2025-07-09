@@ -18,17 +18,17 @@ import localFont from "next/font/local";
 const involve = localFont({
   src: [
     {
-      path: "/fonts/Involve-Regular.otf",
+      path: "Involve-Regular.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "/fonts/Involve-Medium.otf",
+      path: "Involve-Medium.otf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "/fonts/Involve-Semibold.otf",
+      path: "Involve-Semibold.otf",
       weight: "600",
       style: "normal",
     },
