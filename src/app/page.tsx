@@ -1,27 +1,31 @@
 import RedCircle from "@/components/icons/RedCircle";
-import Image from "next/image";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import { SlideIn } from "@/components/SlideIn";
+import Image from "next/image";
+import Tabs from "@/components/Tabs";
+import { AnimatedTimeline } from "@/components/animata/AnimatedTimeline";
+import { EVENTS } from "public/data/events";
 
 export default function Home() {
   return (
     <div>
-      <section className="min-h-[85vh]  flex flex-col justify-between ">
+      <section className="min-h-[85vh]  flex flex-col justify-between relative -mt-[13vh]">
         <RedCircle></RedCircle>
+
         <div className="h-[15vh]"></div>
         <SlideIn direction="left">
           <div className="flex flex-col justify-between ">
-            <div className="flex flex-col gap-5 ">
+            <div className="flex flex-col gap-5 w-4/5">
               <h1 className="text-3xl md:text-6xl font-semibold">
                 Проект <br />
                 «Цифровые кафедры»
               </h1>
               <p className="text-sm text-[color:var(--color-contrast-high)]">
-                программа стратегического лидерства «Приоритет 2030»
-                <br className="hidden md:block" /> федерального проекта
-                «Развитие кадрового потенциала ИТ-отрасли»,
-                <br className="hidden md:block" /> в рамках национальной
-                программы «Цифровая экономика Российской Федерации»
+                Цифровая кафедра ПРОМТЕХДИЗАЙН — всероссийский проект, который
+                предоставляет уникальную возможность студентам вместе с дипломом
+                о высшем образовании получить дополнительную квалификацию и
+                освоить компетенции в IT-сфере бесплатно и без отрыва от
+                основной образовательной программы.
               </p>
             </div>
           </div>
@@ -53,7 +57,10 @@ export default function Home() {
           </div>
         </SlideIn>
 
-        <SlideIn direction="right" className="flex flex-wrap justify-end gap-2 xl:w-2/3 h-fit">
+        <SlideIn
+          direction="right"
+          className="flex flex-wrap justify-end gap-2 xl:w-2/3 h-fit"
+        >
           {/* Блок 1 */}
           <div className="w-full xl:w-[70%] bg-contrast-higher text-contrast-lowest font-semibold p-4 h-fit rounded-2xl px-6">
             <div className="text-xl">
@@ -102,6 +109,66 @@ export default function Home() {
           </p>
         </SlideIn>
       </section>
+
+      <SlideIn direction="right">
+        <section className=" mt-20 xl:-mt-[10vh] h-fit">
+          <Tabs />
+        </section>
+      </SlideIn>
+      <SlideIn direction="left">
+        <section className="h-fit flex flex-col xl:flex-row mt-20 md:mt-40 gap-6 md:gap-2 xl:w-6/8 flex-wrap">
+          {/* Блок 1 */}
+          <div className=" w-full xl:w-[55%] bg-accent-higher text-contrast-lowest font-semibold p-4 h-fit rounded-2xl px-10 py-8">
+            <div className="text-4xl">
+              <NumberTicker className="text-contrast-lowest" value={2100} />
+              <span>{" +"}</span>
+            </div>
+            <div className="text-md">
+              <p>обучающихся</p>
+            </div>
+          </div>
+
+          <div className="hidden xl:block xl:w-2/5 bg-transparent p-4 h-fit rounded-2xl px-6 py-8"></div>
+
+          {/* Блок 2 */}
+          <div className="w-full xl:w-[35%] bg-contrast-high-2 text-contrast-lowest font-semibold p-4 h-fit rounded-2xl px-10 py-8">
+            <div className="text-4xl">
+              <NumberTicker className="text-contrast-lowest" value={40} />
+              <span>{" +"}</span>
+            </div>
+            <div className="text-md">
+              <p>кураторов-наставников</p>
+            </div>
+          </div>
+          {/* Блок 3 */}
+          <div className="w-full xl:flex-1 bg-contrast-high-2 text-contrast-lowest font-semibold p-4 h-fit rounded-2xl px-10 py-8">
+            <div className="text-4xl">
+              <NumberTicker className="text-contrast-lowest" value={20} />
+              <span>{" +"}</span>
+            </div>
+            <div className="text-md">
+              <p>преподавателей из IT-отрасли, реального сектора экономики</p>
+            </div>
+          </div>
+          {/* Блок 4 */}
+          <div className="basis-full w-full xl:w-[calc(85%+0.5rem)] bg-contrast-lower text-contrast-higher font-semibold p-4 h-fit rounded-2xl px-10 py-8">
+            <div className="text-4xl ">
+              <NumberTicker className="text-contrast-higher" value={10} />
+              <span>{" +"}</span>
+            </div>
+            <div className="text-md">
+              <span>
+                профильных компаний, привлеченных для прохождения практики
+              </span>
+            </div>
+          </div>
+        </section>
+      </SlideIn>
+      <SlideIn direction="left">
+        <h1 className='pt-12 text-3xl ml-auto font-semibold'>Обучение на Цифровой кафедре</h1>
+        <h6 className="text-contrast-low">дорожная карта</h6>
+        <AnimatedTimeline events={EVENTS}></AnimatedTimeline>
+      </SlideIn>
     </div>
   );
 }

@@ -1,130 +1,55 @@
-import clsx from "clsx";
-import styles from "./styles.module.css";
 
-import { ExternalLink, Mail, MapPinnedIcon, Phone } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import logo_prioretet from "../../../public/svg/2030_logo.svg";
+import logo_sutd from "../../../public/svg/sutd_logo.svg";
+
+const infoList = [
+  {
+    label: "Адрес",
+    href: "https://maps.apple.com/?q=Вознесенский пр., д. 46",
+    text: "Вознесенский пр., д. 46",
+  },
+  {
+    label: "Почта",
+    href: "mailto:iskd@sutd.ru",
+    text: "iskd@sutd.ru",
+  },
+  {
+    label: "Университет",
+    href: "https://sutd.ru",
+    text: "sutd.ru",
+  },
+  {
+    label: "Абитуриентам",
+    href: "https://prouniver.ru",
+    text: "prouniver.ru",
+  },
+  {
+    label: "ЛК",
+    href: "https://portal.sutd.ru",
+    text: "portal.sutd.ru",
+  },
+];
 
 const index = () => {
   return (
-    <footer className={styles.footer}>
-      {/* <h1 className={clsx("alt", styles.pad)}>КОНТАКТЫ</h1> */}
-      <div className={styles.footerUpper}>
-        <div className={styles.datablock}>
-          <h4>КАФЕДРА</h4>
-
-          <div className={styles.borderBlock}>
-            <a
-              href="https://maps.apple.com/?q=Вознесенский пр., д. 46"
-              className={clsx(styles.phoneBlock, "left", styles.extraMargin)}
-            >
-              <div className={styles.inline}>
-                <p className="alt2">Вознесенский пр., д. 46, каб. 452-463</p>
-                <MapPinnedIcon></MapPinnedIcon>
-              </div>
-              <small className="alt">Адрес</small>
-            </a>
-
-            <a
-              href="tel:8125704064"
-              className={clsx(styles.phoneBlock, "left", styles.extraMargin)}
-            >
-              <div className={styles.inline}>
-                <p className="alt2">570-40-64</p>
-                <Phone></Phone>
-              </div>
-              <small className="alt">Телефон</small>
-            </a>
-
-            <a
-              href="mailto:iskd@sutd.ru"
-              className={clsx(styles.phoneBlock, "left", styles.extraMargin)}
-            >
-              <div className={styles.inline}>
-                <p className="alt2">iskd@sutd.ru</p>
-                <Mail></Mail>
-              </div>
-              <small className="alt">Адрес электронной почты</small>
-            </a>
+    <footer className="flex flex-col md:flex-row  w-full  justify-between py-6 gap-6 px-8 ">
+      <div className="flex flex-col gap-4 ">
+        {infoList.map(({ label, href, text }) => (
+          <div key={label} className="grid md:grid-cols-[220px_1fr]">
+            <span className="text-md font-semibold text-contrast-high">
+              {label}
+            </span>
+            <Link className="xxs:break-normal" href={href}>{text}</Link>
           </div>
-        </div>
-
-        <div className={styles.datablock}>
-          <h4>ДИРЕКТОРАТ ИИТА</h4>
-
-          <div className={styles.borderBlock}>
-            <a
-              href="https://maps.apple.com/?q=ул. Большая Морская, д. 18"
-              className={clsx(styles.phoneBlock, "left", styles.extraMargin)}
-            >
-              <div className={styles.inline}>
-                <p className="alt2">ул. Большая Морская, д. 18, каб. 425</p>
-                <MapPinnedIcon></MapPinnedIcon>
-              </div>
-              <small className="alt">Адрес</small>
-            </a>
-
-            <a
-              href="tel:8123151277"
-              className={clsx(styles.phoneBlock, "left", styles.extraMargin)}
-            >
-              <div className={styles.inline}>
-                <p className="alt2">315-12-77</p>
-                <Phone></Phone>
-              </div>
-              <small className="alt">Телефон</small>
-            </a>
-
-            <a
-              href="mailto:iita.dekanat@mail.ru"
-              className={clsx(styles.phoneBlock, "left", styles.extraMargin)}
-            >
-              <div className={styles.inline}>
-                <p className="alt2">iita.dekanat@mail.ru</p>
-                <Mail></Mail>
-              </div>
-              <small className="alt">Адрес электронной почты</small>
-            </a>
-          </div>
-        </div>
+        ))}
       </div>
 
-      <hr></hr>
-
-      <div className={styles.urlWrapper}>
-        <a href="https://sutd.ru" className={clsx(styles.phoneBlock, "left")}>
-          <div className={styles.phoneBlock}>
-            <div className={styles.inline}>
-              <p className="alt2">sutd.ru</p>
-              <ExternalLink></ExternalLink>
-            </div>
-            <small className="alt">Главный сайт университета</small>
-          </div>
-        </a>
-        <a
-          href="https://prouniver.ru"
-          className={clsx(styles.phoneBlock, "left")}
-        >
-          <div className={styles.phoneBlock}>
-            <div className={styles.inline}>
-              <p className="alt2">prouniver.ru</p>
-              <ExternalLink></ExternalLink>
-            </div>
-            <small className="alt">Сайт приемной комиссии</small>
-          </div>
-        </a>
-        <a
-          href="https://portal.sutd.ru"
-          className={clsx(styles.phoneBlock, "left")}
-        >
-          <div className={styles.phoneBlock}>
-            <div className={styles.inline}>
-              <p className="alt2">portal.sutd.ru</p>
-              <ExternalLink></ExternalLink>
-            </div>
-            <small className="alt">Сайт личного кабинета</small>
-          </div>
-        </a>
+      <div className="flex flex-wrap flex-col gap-8  md:w-1/3 w-full justify-between md:items-end">
+        <Image className="w-fit" src={logo_sutd} alt="logo_sutd"></Image>
+        <Image className="" src={logo_prioretet} alt="logo_prioritet"></Image>
       </div>
-
     </footer>
   );
 };

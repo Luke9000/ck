@@ -1,5 +1,5 @@
 import { createClient } from "@/utils/supabase/server";
-import type { Work } from '../../../types';
+import type { Work } from '@/types';
 import Ui from "./Ui";
 
 

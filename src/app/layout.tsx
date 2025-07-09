@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/sonner";
 import "@/styles/global.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { ReactLenis} from 'lenis/react'
 
 // 100: Thin.
 // 200: Extra Light (or Ultra Light).
@@ -72,9 +73,11 @@ export default function RootLayout({
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         ></meta>
       </head>
-      <body className={`${involve.className}`}>
+      <body className={`${involve.className} `}>
+        <ReactLenis root/>
         <Header></Header>
-        <main className="min-h-screen px-8 w-full relative break-all xxs:break-normal">{children}</main>
+        <main className="px-8 min-h-screen  w-full relative break-all xxs:break-normal">{children}</main>
+        <hr className="mt-12"></hr>
         <Footer></Footer>
         <Toaster />
       </body>

@@ -2,7 +2,7 @@
 import { AddButton } from "./AddButton";
 import { ADD_ROW } from "./responses";
 import { toast } from "sonner";
-import type { Work } from "../../../types";
+import { Work } from "./types";
 
 import {
   ColumnDef,

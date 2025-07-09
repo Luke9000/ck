@@ -7,7 +7,7 @@ const RedCircle = (props: React.SVGProps<SVGSVGElement>) => {
       fill="current"
       stroke="current"
       xmlns="http://www.w3.org/2000/svg"
-      className="-right-1/2 origin-center absolute -top-[calc(50vh-13vh)] md:top-0 -z-30 flex justify-center h-[100vh] w-full overflow-visible"
+      className="translate-x-[calc(50%+2rem)] origin-center absolute -top-[calc(50vh-13vh)] md:top-0 -z-30 flex justify-center h-[100vh] w-full overflow-visible"
       {...props}
     >
       <path

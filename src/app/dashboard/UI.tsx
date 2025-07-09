@@ -4,7 +4,7 @@ import { DataTable } from "./data-table"
 import { createClient } from "@/utils/supabase/server";
 
 
-import {Work} from '../../../types'
+import { Work } from "./types";
 
 export default async function Instruments() {
   const supabase = await createClient();

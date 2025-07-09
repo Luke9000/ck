@@ -4,7 +4,7 @@ import { deleteWork } from "./actions";
 import { ColumnDef } from "@tanstack/react-table";
 import { MoreVertical } from "lucide-react";
 import { DELETE_ROW } from "./responses";
-import { Work } from "../../../types";
+import { Work } from "./types";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,

@@ -1,6 +1,6 @@
 const Logo = (props: React.SVGProps<SVGSVGElement>) => {
   return (
-    <div className="flex align-middle justify-center h-full w-[6rem] lg:w-[5rem] md:w-[5rem]">
+    <div className="flex align-middle justify-center h-full w-[7rem] lg:w-[6rem] md:w-[6rem]">
       <svg
         width="100%"
         height="100%"

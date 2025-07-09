@@ -1,15 +1,11 @@
-import {
-	HamburgerMenuIcon
-} from "@radix-ui/react-icons";
 import { DropdownMenu } from "radix-ui";
-import * as React from "react";
 import styles from "./styles.module.css";
 
 import clsx from "clsx";
+import { Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import links from "../links";
-import { Menu } from "lucide-react";
 
 type Props = {
   className:string;

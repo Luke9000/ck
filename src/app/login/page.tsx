@@ -5,17 +5,17 @@ import { Form, Toast } from "radix-ui";
 import styles from "./styles.module.css";
 import toastStyles from "./toast.module.css";
 import { login } from "./actions";
-import { useSearchParams } from "next/navigation";
+// import { useSearchParams } from "next/navigation";
 
 const FormDemo = () => {
   const [open, setOpen] = React.useState(false);
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
 
-  React.useEffect(() => {
-    if (searchParams.get("error") === "true") {
-      setOpen(true);
-    }
-  }, [searchParams]);
+  // React.useEffect(() => {
+  //   if (searchParams.get("error") === "true") {
+  //     setOpen(true);
+  //   }
+  // }, [searchParams]);
 
   return (
     <Toast.Provider swipeDirection="right">

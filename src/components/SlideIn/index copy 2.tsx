@@ -1,3 +1,4 @@
+// SlideIn.tsx
 'use client'
 
 import { motion, Variants, useAnimation } from 'motion/react'
@@ -9,6 +10,8 @@ type SlideInProps = {
   duration?: number
   children: React.ReactNode
   className?: string
+  /** колбэк, вызывается каждый раз, когда элемент входит в вьюпорт */
+  onEnter?: () => void
 }
 
 export function SlideIn({
@@ -16,7 +19,8 @@ export function SlideIn({
   delay = 0,
   duration = 0.5,
   children,
-  className = ''
+  className = '',
+  onEnter,
 }: SlideInProps) {
   const controls = useAnimation()
   const ref = useRef<HTMLDivElement>(null)
@@ -25,13 +29,13 @@ export function SlideIn({
     hidden: {
       opacity: 0,
       x: direction === 'left' ? -50 : 50,
-      transition: { duration: duration / 2 }
+      transition: { duration: duration / 2 },
     },
     visible: {
       opacity: 1,
       x: 0,
-      transition: { delay, duration, ease: [0.25, 0.46, 0.45, 0.94] }
-    }
+      transition: { delay, duration, ease: [0.25, 0.46, 0.45, 0.94] },
+    },
   }
 
   return (
@@ -40,11 +44,13 @@ export function SlideIn({
       initial="hidden"
       animate={controls}
       variants={variants}
-      // слушаем появление/исчезновение в viewport
       whileInView="visible"
-      onViewportEnter={() => controls.start('visible')}
-      onViewportLeave={() => controls.start('hidden')}
       viewport={{ once: false, amount: 0.1 }}
+      onViewportEnter={() => {
+        controls.start('visible')
+        onEnter?.()
+      }}
+      onViewportLeave={() => controls.start('hidden')}
       className={className}
     >
       {children}
