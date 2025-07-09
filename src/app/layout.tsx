@@ -5,7 +5,6 @@ import "@/styles/global.css";
 import { ReactLenis } from 'lenis/react';
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-
 // 100: Thin.
 // 200: Extra Light (or Ultra Light).
 // 300: Light.g
@@ -19,17 +18,17 @@ import localFont from "next/font/local";
 const involve = localFont({
   src: [
     {
-      path: "../fonts/Involve-Regular.otf",
+      path: "/fonts/Involve-Regular.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../fonts/Involve-Medium.otf",
+      path: "/fonts/Involve-Medium.otf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../fonts/Involve-Semibold.otf",
+      path: "/fonts/Involve-Semibold.otf",
       weight: "600",
       style: "normal",
     },
