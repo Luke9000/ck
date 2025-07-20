@@ -10,22 +10,36 @@ export default function Home() {
   return (
     <div>
       <section className="min-h-[85vh]  flex flex-col justify-between relative -mt-[13vh]">
-        <RedCircle></RedCircle>
+        <RedCircle className="fill-contrast-lower2 stroke-contrast-lower2 translate-x-[calc(50%+2rem)] origin-center absolute -top-[calc(50vh-13vh)] md:top-0 -z-30 flex justify-center h-[100vh] w-full overflow-visible"></RedCircle>
 
         <div className="h-[15vh]"></div>
         <SlideIn direction="left">
           <div className="flex flex-col justify-between ">
-            <div className="flex flex-col gap-5 w-4/5">
-              <h1 className="text-3xl md:text-6xl font-semibold">
-                Проект <br />
-                «Цифровые кафедры»
+            <div className="flex flex-col gap-4  lg:gap-5 w-full lg:w-4/5">
+              <div className="flex gap-2 sm:gap-4 flex-wrap">
+                <span className="text-3xl md:text-6xl font-semibold">
+                  Цифровая
+                </span>
+
+                <span className="text-3xl md:text-6xl font-semibold relative inline-block">
+                  кафедра
+                  <RedCircle className="fill-accent-higher stroke-accent-higher hidden  w-4 absolute -top-5 -right-5 xxs:block -z-30  overflow-visible"></RedCircle>
+                </span>
+              </div>
+
+              <h1 className="text-xl md:text-6xl font-semibold">
+                ПРОМТЕХДИЗАЙН
               </h1>
-              <p className="text-sm text-[color:var(--color-contrast-high)]">
-                Цифровая кафедра ПРОМТЕХДИЗАЙН — всероссийский проект, который
-                предоставляет уникальную возможность студентам вместе с дипломом
-                о высшем образовании получить дополнительную квалификацию и
-                освоить компетенции в IT-сфере бесплатно и без отрыва от
-                основной образовательной программы.
+
+              <p className="hidden lg:block text-sm text-[color:var(--color-contrast-high)] md:w-3/5">
+                программа стратегического лидерства «Приоритет 2030»
+                федерального проекта «Развитие кадрового потенциала ИТ-отрасли»,
+                в&nbsp;рамках национальной программы «Цифровая&nbsp;экономика&nbsp;Российской&nbsp;Федерации»
+              </p>
+              <p className="lg:hidden text-sm text-[color:var(--color-contrast-high)] md:w-3/5">
+                программа стратегического лидерства «Приоритет 2030»
+                федерального проекта «Развитие кадрового потенциала ИТ-отрасли»,
+                в&nbsp;рамках национальной программы «Цифровая&nbsp;экономика Российской&nbsp;Федерации»
               </p>
             </div>
           </div>
@@ -165,7 +179,9 @@ export default function Home() {
         </section>
       </SlideIn>
       <SlideIn direction="left">
-        <h1 className='pt-12 text-3xl ml-auto font-semibold'>Обучение на Цифровой кафедре</h1>
+        <h1 className="pt-12 text-3xl ml-auto font-semibold">
+          Обучение на Цифровой кафедре
+        </h1>
         <h6 className="text-contrast-low">дорожная карта</h6>
         <AnimatedTimeline events={EVENTS}></AnimatedTimeline>
       </SlideIn>

@@ -75,7 +75,7 @@ export default function RootLayout({
       <body className={`${involve.className} `}>
         <ReactLenis root/>
         <Header></Header>
-        <main className="px-8 min-h-screen  w-full relative break-all xxs:break-normal">{children}</main>
+        <main className="px-4 md:px-8 min-h-screen  w-full relative break-all xxs:break-normal">{children}</main>
         <hr className="mt-12"></hr>
         <Footer></Footer>
         <Toaster />
