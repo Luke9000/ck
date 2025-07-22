@@ -148,7 +148,7 @@ export default function Home() {
               width={331}
               height={331}
               alt="Soshnikov A.V."
-              src="/images/soshnikov.png"
+              src="/images/misc/soshnikov.png"
             ></Image>
             <div className="border-l-3 border-accent-higher pl-4">
               <h2 className="text-xl font-semibold">
