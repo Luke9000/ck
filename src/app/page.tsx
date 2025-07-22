@@ -61,14 +61,14 @@ export default function Home() {
               бесплатно и без отрыва от основной образовательной&nbsp;программы
             </p>
           </div>
-          <RedCircle className="fill-accent-higher w-60 absolute overflow-hidden -right-30 hidden lg:block"></RedCircle>
+          <RedCircle className="fill-contrast-high w-60 absolute overflow-hidden -right-30 hidden lg:block"></RedCircle>
         </section>
       </SlideIn>
 
       <SlideIn direction="right">
-        <section className="mt-20 min-h-[40vh] flex flex-col 2xl:flex-row items-center justify-center 2xl:justify-between 2xl:gap-0 gap-5">
-          <div className="flex flex-col w- 1/6 gap-2 items-center">
-            <div className="w-full md:w-48 h-34 bg-contrast-medium text-contrast-lowest font-semibold p-4 rounded-xl px-6 flex items-center justify-center ">
+        <section className="mt-20 min-h-[40vh] flex flex-col 2xl:flex-row items-center justify-center 2xl:justify-between 2xl:gap-1 gap-5">
+          <div className="flex flex-col gap-2 items-center w-2/3 2xl:w-full">
+            <div className="w-full  h-34 bg-contrast-medium text-contrast-lowest font-semibold p-4 rounded-xl px-6 flex items-center justify-center ">
               <NumberTicker
                 className="text-contrast-lowest text-4xl"
                 value={9}
@@ -77,8 +77,8 @@ export default function Home() {
             <p className="font-medium">месяцев обучения</p>
           </div>
 
-          <div className="flex flex-col w- 1/6 gap-2 items-center">
-            <div className="w-full md:w-48 h-34 bg-contrast-high text-contrast-lowest font-semibold p-4 rounded-xl px-6 flex items-center justify-center ">
+          <div className="flex flex-col gap-2 items-center w-2/3 2xl:w-full">
+            <div className="w-full  h-34 bg-contrast-high text-contrast-lowest font-semibold p-4 rounded-xl px-6 flex items-center justify-center ">
               <NumberTicker
                 className="text-contrast-lowest text-4xl"
                 value={5}
@@ -87,8 +87,8 @@ export default function Home() {
             <p className="font-medium">IT-компетенций</p>
           </div>
 
-          <div className="flex flex-col w- 1/6 gap-2 items-center">
-            <div className="w-full md:w-48 h-34 bg-contrast-high-2 text-contrast-lowest font-semibold p-4 rounded-xl px-6 flex items-center justify-center ">
+          <div className="flex flex-col gap-2 items-center w-2/3 2xl:w-full">
+            <div className="w-full  h-34 bg-contrast-high-2 text-contrast-lowest font-semibold p-4 rounded-xl px-6 flex items-center justify-center ">
               <NumberTicker
                 className="text-contrast-lowest text-4xl"
                 value={3}
@@ -97,7 +97,7 @@ export default function Home() {
             <p className="font-medium">формата обучения</p>
           </div>
 
-          <div className="flex flex-col w- 1/6 gap-2 items-center">
+          <div className="flex flex-col gap-2 items-center w-6/7 lg:w-full">
             <div className="w-full 2xl:w-66 h-44 bg-accent-higher text-contrast-lowest font-semibold p-4 rounded-xl px-6 flex items-center justify-center ">
               <NumberTicker
                 className="text-contrast-lowest text-6xl"
