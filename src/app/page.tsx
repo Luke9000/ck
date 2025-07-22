@@ -4,13 +4,13 @@ import { SlideIn } from "@/components/SlideIn";
 import Image from "next/image";
 import Tabs from "@/components/Tabs";
 import { AnimatedTimeline } from "@/components/animata/AnimatedTimeline";
-import { EVENTS } from "public/data/events";
+import { ROADMAP } from "public/data/events";
 
 export default function Home() {
   return (
     <div>
       <section className="min-h-[85vh]  flex flex-col justify-between relative -mt-[13vh]">
-        <RedCircle className="fill-contrast-lower2 stroke-contrast-lower2 translate-x-[calc(50%+2rem)] origin-center absolute -top-[calc(50vh-13vh)] md:top-0 -z-30 flex justify-center h-[100vh] w-full overflow-visible"></RedCircle>
+        <RedCircle className="fill-contrast-lower2 stroke-contrast-lower2 translate-x-[calc(50%+2rem)] origin-center absolute -top-[calc(50vh-13vh)] md:-top-35 -z-30 flex justify-center h-[100vh] w-full overflow-visible"></RedCircle>
 
         <div className="h-[15vh]"></div>
         <SlideIn direction="left">
@@ -34,17 +34,110 @@ export default function Home() {
               <p className="hidden lg:block text-sm text-[color:var(--color-contrast-high)] md:w-3/5">
                 программа стратегического лидерства «Приоритет 2030»
                 федерального проекта «Развитие кадрового потенциала ИТ-отрасли»,
-                в&nbsp;рамках национальной программы «Цифровая&nbsp;экономика&nbsp;Российской&nbsp;Федерации»
+                в&nbsp;рамках национальной программы
+                «Цифровая&nbsp;экономика&nbsp;Российской&nbsp;Федерации»
               </p>
               <p className="lg:hidden text-sm text-[color:var(--color-contrast-high)] md:w-3/5">
                 программа стратегического лидерства «Приоритет 2030»
                 федерального проекта «Развитие кадрового потенциала ИТ-отрасли»,
-                в&nbsp;рамках национальной программы «Цифровая&nbsp;экономика Российской&nbsp;Федерации»
+                в&nbsp;рамках национальной программы «Цифровая&nbsp;экономика
+                Российской&nbsp;Федерации»
               </p>
             </div>
           </div>
         </SlideIn>
       </section>
+
+      <SlideIn direction="left">
+        <section className="rounded-2xl mt-20 h-fit bg-contrast-lower2 min-h-[60vh] p-0 lg:p-8 flex flex-row items-center relative overflow-hidden">
+          <div className="border-accent-higher lg:border-l-2 lg:w-2/3 h-fit p-4 lg:p-4">
+            <h2 className="text-2xl font-semibold">
+              Цифровая кафедра ПРОМТЕХДИЗАЙН
+            </h2>
+            <p className="text-sm lg:text-base">
+              всероссийский проект, который предоставляет уникальную возможность
+              студентам вместе с дипломом о высшем образовании получить
+              дополнительную квалификацию и освоить компетенции в IT-сфере
+              бесплатно и без отрыва от основной образовательной&nbsp;программы
+            </p>
+          </div>
+          <RedCircle className="fill-accent-higher w-60 absolute overflow-hidden -right-30 hidden lg:block"></RedCircle>
+        </section>
+      </SlideIn>
+
+      <SlideIn direction="right">
+        <section className="mt-20 min-h-[40vh] flex flex-col 2xl:flex-row items-center justify-center 2xl:justify-between 2xl:gap-0 gap-5">
+          <div className="flex flex-col w- 1/6 gap-2 items-center">
+            <div className="w-full md:w-48 h-34 bg-contrast-medium text-contrast-lowest font-semibold p-4 rounded-xl px-6 flex items-center justify-center ">
+              <NumberTicker
+                className="text-contrast-lowest text-4xl"
+                value={9}
+              />
+            </div>
+            <p className="font-medium">месяцев обучения</p>
+          </div>
+
+          <div className="flex flex-col w- 1/6 gap-2 items-center">
+            <div className="w-full md:w-48 h-34 bg-contrast-high text-contrast-lowest font-semibold p-4 rounded-xl px-6 flex items-center justify-center ">
+              <NumberTicker
+                className="text-contrast-lowest text-4xl"
+                value={5}
+              />
+            </div>
+            <p className="font-medium">IT-компетенций</p>
+          </div>
+
+          <div className="flex flex-col w- 1/6 gap-2 items-center">
+            <div className="w-full md:w-48 h-34 bg-contrast-high-2 text-contrast-lowest font-semibold p-4 rounded-xl px-6 flex items-center justify-center ">
+              <NumberTicker
+                className="text-contrast-lowest text-4xl"
+                value={3}
+              />
+            </div>
+            <p className="font-medium">формата обучения</p>
+          </div>
+
+          <div className="flex flex-col w- 1/6 gap-2 items-center">
+            <div className="w-full 2xl:w-66 h-44 bg-accent-higher text-contrast-lowest font-semibold p-4 rounded-xl px-6 flex items-center justify-center ">
+              <NumberTicker
+                className="text-contrast-lowest text-6xl"
+                value={2}
+              />
+            </div>
+            <p className="font-medium">диплома по окончании ВУЗа</p>
+          </div>
+        </section>
+      </SlideIn>
+
+      <SlideIn direction="left">
+        <section className="mt-20 min-h-[40vh] flex flex-col items-center justify-center gap-15">
+          <h1 className="font-semibold text-4xl">
+            Кто может стать участником?
+          </h1>
+          <div className="flex flex-col xl:flex-row justify-between gap-6 w-full">
+                 <div className="relative overflow-hidden bg-contrast-lower2 h-fit xxs:h-30 rounded-xl w-full gap-2   justify-center flex flex-col ">
+              <h2 className="text-l px-4 sm:text-center font-semibold">БАКАЛАВР 2 КУРС*</h2>
+              <p className="text-xs sm:text-center font-medium py-4 px-4 xxs:pl-4 xxs:pr-12 sm:px-20">
+                НЕ IT-СПЕЦИАЛЬНОСТЬ ОЧНАЯ&nbsp;И&nbsp;ОЧНО-ЗАОЧНАЯ ФОРМЫ
+                ОБУЧЕНИЯ
+              </p>
+              <RedCircle className="fill-accent-higher w-24 absolute overflow-hidden md:-left-12 -right-12 hidden xxs:block "></RedCircle>
+            </div>
+            <div className="relative overflow-hidden bg-contrast-lower2 h-fit xxs:h-30 rounded-xl w-full gap-2   justify-center flex flex-col ">
+              <h2 className="text-l px-4 sm:text-center font-semibold">СПЕЦИАЛИСТ 2 КУРС*</h2>
+              <p className="text-xs sm:text-center font-medium py-4 px-4 xxs:pl-4 xxs:pr-12 sm:px-20">
+                НЕ IT-СПЕЦИАЛЬНОСТЬ ОЧНАЯ&nbsp;И&nbsp;ОЧНО-ЗАОЧНАЯ ФОРМЫ
+                ОБУЧЕНИЯ
+              </p>
+              <RedCircle className="fill-contrast-high-2 w-24 absolute overflow-hidden md:-left-12 -right-12 hidden xxs:block "></RedCircle>
+            </div>
+          </div>
+        </section>
+        <p className="xl:text-right  xl:pl-[70%] text-contrast-low text-xs/4 mt-2">
+          *Студент прошел вступительный онлайн-курс и ранее не учился на
+          цифровой кафедре
+        </p>
+      </SlideIn>
 
       <section className="min-h-[100vh] flex flex-col lg:flex-row mt-20 md:mt-40 gap-6 md:gap-6">
         <SlideIn>
@@ -183,7 +276,7 @@ export default function Home() {
           Обучение на Цифровой кафедре
         </h1>
         <h6 className="text-contrast-low">дорожная карта</h6>
-        <AnimatedTimeline events={EVENTS}></AnimatedTimeline>
+        <AnimatedTimeline events={ROADMAP}></AnimatedTimeline>
       </SlideIn>
     </div>
   );

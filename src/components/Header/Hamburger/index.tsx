@@ -25,7 +25,7 @@ const DropdownMenuDemo = ({className}:Props) => {
         <DropdownMenu.Portal>
           <DropdownMenu.Content className={styles.Content} sideOffset={5}>
             {links.map((link) => {
-              const LinkIcon = link.icon;
+              // const LinkIcon = link.icon;
               return (
                 <DropdownMenu.Item key={link.name} className={styles.Item}>
                   <Link
@@ -35,7 +35,7 @@ const DropdownMenuDemo = ({className}:Props) => {
                       [styles.activeLink]: path === link.href,
                     })}
                   >
-                    <LinkIcon />
+                    {/* <LinkIcon /> */}
                     <span className={styles.navMenu__text}>{link.name}</span>{" "}
                   </Link>
                 </DropdownMenu.Item>

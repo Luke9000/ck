@@ -1,16 +1,15 @@
-import {
-  BookCopy,
-  CalendarDays,
-  GraduationCap,
-  IdCard,
-  LucideIcon,
-} from "lucide-react";
-import { ComponentType, SVGProps } from "react";
+// import {
+//   BookCopy,
+//   IdCard,
+//   LucideIcon
+// } from "lucide-react";
+
+// import { ComponentType, SVGProps } from "react";
 
 type NavLink = {
   name: string;
   href: string;
-  icon: LucideIcon | ComponentType<SVGProps<SVGSVGElement>>;
+  // icon: LucideIcon | ComponentType<SVGProps<SVGSVGElement>>;
 };
 
 // const links: NavLink[] = [
@@ -40,12 +39,12 @@ const links: NavLink[] = [
   {
     name: "НАПРАВЛЕНИЯ",
     href: "/courses",
-    icon: IdCard,
+
   },
   {
     name: "РАБОТЫ СТУДЕНТОВ",
     href: "/works",
-    icon: BookCopy,
+  
   },
 ];
 

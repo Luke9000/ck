@@ -3,14 +3,12 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import links from "./links";
-import styles from "./styles.module.css";
 import Logo from "../icons/Logo";
-import Hamburger from "./Hamburger";
 import Account from "./Account";
+import Hamburger from "./Hamburger";
+import links from "./links";
 
 import Headroom from "react-headroom";
-import { Magnetic } from "@/components/motion-primitives/magnetic";
 
 const Index = () => {
   const path = usePathname();
@@ -33,7 +31,6 @@ const Index = () => {
 
         <nav className="hidden gap-8 lg:flex flex-row justify-end items-center no-underline w-full ">
           {links.map((link) => {
-            const LinkIcon = link.icon;
             return (
               <Link
                 key={link.name}
