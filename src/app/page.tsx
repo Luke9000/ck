@@ -1,11 +1,10 @@
+import { AnimatedTimeline } from "@/components/animata/AnimatedTimeline";
 import RedCircle from "@/components/icons/RedCircle";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import { SlideIn } from "@/components/SlideIn";
-import Image from "next/image";
 import Tabs from "@/components/Tabs";
-import { AnimatedTimeline } from "@/components/animata/AnimatedTimeline";
+import Image from "next/image";
 import { ROADMAP } from "public/data/events";
-import AnimatedTimeline_old from "@/components/animata/AnimatedTimeline2";
 
 export default function Home() {
   return (

@@ -11,7 +11,7 @@ export interface TimelineEvent {
   description?: string
   date?: string
   [key: string]: unknown // Allow additional custom fields
-  exam:string
+  exam?:string
 }
 
 interface TimelineItemProps {

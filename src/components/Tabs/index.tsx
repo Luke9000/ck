@@ -39,18 +39,18 @@ export default function TabsTransitionPanel() {
           }}
         >
           {PROGRAMS.map((item, index) => (
-            <div className="flex flex-col lg:flex-row lg:items-center justify-between mt-8 flex-wrap gap-4">
-              <div key={index} className="w-full lg:w-45/100">
+            <div
+              key={index}
+              className="flex flex-col lg:flex-row lg:items-center justify-between mt-8 flex-wrap gap-4"
+            >
+              <div className="w-full lg:w-45/100">
                 <h3 className="text-contrast-higher font-semibold text-lg  pb-4">
                   {item.title}
                 </h3>
                 {item.skills.map((line, i) => (
-                  <div>
+                  <div key={i}>
                     <RedCircle className="fill-accent-higher w-2 inline-block"></RedCircle>
-                    <span
-                      key={i}
-                      className="ml-2 mb-2 font-normal text-contrast-higher text-sm"
-                    >
+                    <span className="ml-2 mb-2 font-normal text-contrast-higher text-sm">
                       {line}
                     </span>
                   </div>
@@ -62,10 +62,18 @@ export default function TabsTransitionPanel() {
                 </h4>
                 <div className="flex mt-4 gap-2 flex-wrap">
                   {item.institutes.map((line, i) => (
-                   <span className="bg-contrast-lower2 px-3 py-2 rounded-4xl  text-xs">{line}</span>
+                    <span
+                      key={i}
+                      className="bg-contrast-lower2 px-3 py-2 rounded-4xl  text-xs"
+                    >
+                      {line}
+                    </span>
                   ))}
                 </div>
-                <Link className="mt-4 block underline text-xs text-contrast-low" href={"/"}>
+                <Link
+                  className="mt-4 block underline text-xs text-contrast-low"
+                  href={"/"}
+                >
                   Подробнее про направления основной образовательной программы
                 </Link>
               </div>
