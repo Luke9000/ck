@@ -11,6 +11,7 @@ export interface TimelineEvent {
   description?: string
   date?: string
   [key: string]: unknown // Allow additional custom fields
+  exam:string
 }
 
 interface TimelineItemProps {
@@ -43,63 +44,111 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   onRegisterRef,
 }) => {
   const ref = useRef<HTMLDivElement>(null)
+  const isEven = index % 2 === 0
 
   useEffect(() => {
-    onRegisterRef(index, ref)
+    if (ref.current) {
+      onRegisterRef(index, ref)
+    }
   }, [index, onRegisterRef])
 
   return (
-    <div className="flex last:mb-0  ">
-      <div className="relative mr-4 flex flex-col items-center">
-        {/* Line container with proper z-index */}
+    <div
+      ref={ref}
+      className={cn("flex last:mb-0", !isLast && "mb-16",)}
+    >
+      {/* Мобильная версия */}
+      <div className="md:hidden relative mr-4 flex flex-col items-center min-h-22">
         <div
-          className={`absolute ${isLast ? "hidden" : "block"} bottom-0 top-0 w-0.5 overflow-hidden -z-10`}
+          className={`absolute ${isLast ? " hidden" : "block"} bottom-0 top-0 w-0.5 -z-10`}
           style={{ backgroundColor: styles.lineColor }}
         >
           <motion.div
             className="w-full origin-top"
             animate={{ scaleY: isActive ? 1 : 0 }}
-            transition={{
-              duration: 0.4,
-              ease: "easeInOut",
-            }}
-            style={{
-              height: "100%",
-              backgroundColor: styles.activeLineColor,
-            }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            style={{ height: "100%", backgroundColor: styles.activeLineColor }}
           />
         </div>
-
-        {/* Dot with higher z-index to appear above the line */}
         <motion.div
-          ref={ref}
           className="relative z-0 rounded-full border-4 bg-background"
-          style={{
-            width: styles.dotSize,
-            height: styles.dotSize,
-          }}
+          style={{ width: styles.dotSize, height: styles.dotSize }}
           animate={{
             borderColor: isActive ? styles.activeDotColor : styles.dotColor,
             backgroundColor: isActive ? styles.activeDotColor : "background",
           }}
-          transition={{
-            duration: 0.3,
-            ease: "easeOut",
-          }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
         />
       </div>
 
-      <div className={cn("flex-grow leading-5", !isLast && "mb-3")}>
+      <div className={cn("md:hidden flex-grow leading-5 ")}>
+        <h3 className="text-base font-semibold" style={{ color: styles.titleColor }}>
+          {event.title}
+        </h3>
+        <p className="text-sm">{event.description}</p>
+        <p className="text-xs/6 font-semibold">{event.exam}</p>
+      </div>
 
-            <h3 className="text-lg font-medium" style={{ color: styles.titleColor }}>
-              {event.title}
-            </h3>
-            <p style={{ color: styles.descriptionColor }}>{event.description}</p>
+      {/* Десктопная версия */}
+      <div className="hidden md:flex w-full items-center min-h-16">
+        {/* Левая сторона */}
+        <div className="flex-1 pr-8 ">
+          {isEven && (
+            <div className="text-right max-w-64 ml-auto">
+              <h3 className="text-base font-semibold" style={{ color: styles.titleColor }}>
+                {event.title}
+              </h3>
+              <p className="text-sm">{event.description}</p>
+              <p className="text-xs/6 font-semibold">{event.exam}</p>
+            </div>
+          )}
+        </div>
 
+        {/* Центральная линия и точка */}
+        <div className="relative flex flex-col items-center min-h-full">
+          <div
+            className={`absolute ${isLast ? "hidden " : "block"} top-0 w-0.5 -z-10`}
+            style={{
+              backgroundColor: styles.lineColor,
+              height: isLast ? "0" : "100%",
+            }}
+          >
+            <motion.div
+              className="w-full origin-top"
+              animate={{ scaleY: isActive ? 1 : 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              style={{ height: "100%", backgroundColor: styles.activeLineColor }}
+            />
+          </div>
+          
+          <motion.div
+            className="relative z-10 rounded-full border-4 bg-background"
+            style={{ width: styles.dotSize, height: styles.dotSize }}
+            animate={{
+              borderColor: isActive ? styles.activeDotColor : styles.dotColor,
+              backgroundColor: isActive ? styles.activeDotColor : "background",
+            }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          />
+        </div>
+
+        {/* Правая сторона */}
+        <div className="flex-1 pl-8 ">
+          {!isEven && (
+            <div className="text-left max-w-64">
+              <h3 className="text-base font-semibold" style={{ color: styles.titleColor }}>
+                {event.title}
+              </h3>
+              <p className="text-sm">{event.description}</p>
+              <p className="text-xs/6 font-semibold">{event.exam}</p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   )
 }
+
 
 interface AnimatedTimelineProps {
   events: TimelineEvent[]

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Tabs from "@/components/Tabs";
 import { AnimatedTimeline } from "@/components/animata/AnimatedTimeline";
 import { ROADMAP } from "public/data/events";
+import AnimatedTimeline_old from "@/components/animata/AnimatedTimeline2";
 
 export default function Home() {
   return (
@@ -139,6 +140,20 @@ export default function Home() {
         </p>
       </SlideIn>
 
+      <SlideIn direction="right">
+        <section className=" mt-20 h-fit">
+          <Tabs />
+        </section>
+      </SlideIn>
+
+       <SlideIn direction="left">
+        <h1 className="pt-12 text-3xl ml-auto font-semibold lg:text-center mb-4">
+        Дорожная карта проекта
+        </h1>
+        <AnimatedTimeline events={ROADMAP}></AnimatedTimeline>
+       
+      </SlideIn>
+
       <section className="min-h-[100vh] flex flex-col lg:flex-row mt-20 md:mt-40 gap-6 md:gap-6">
         <SlideIn>
           <div className="flex flex-col gap-8 w-[1/3]">
@@ -217,11 +232,7 @@ export default function Home() {
         </SlideIn>
       </section>
 
-      <SlideIn direction="right">
-        <section className=" mt-20 xl:-mt-[10vh] h-fit">
-          <Tabs />
-        </section>
-      </SlideIn>
+      
       <SlideIn direction="left">
         <section className="h-fit flex flex-col xl:flex-row mt-20 md:mt-40 gap-6 md:gap-2 xl:w-6/8 flex-wrap">
           {/* Блок 1 */}
@@ -271,13 +282,7 @@ export default function Home() {
           </div>
         </section>
       </SlideIn>
-      <SlideIn direction="left">
-        <h1 className="pt-12 text-3xl ml-auto font-semibold">
-          Обучение на Цифровой кафедре
-        </h1>
-        <h6 className="text-contrast-low">дорожная карта</h6>
-        <AnimatedTimeline events={ROADMAP}></AnimatedTimeline>
-      </SlideIn>
+     
     </div>
   );
 }

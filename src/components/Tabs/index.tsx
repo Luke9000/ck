@@ -1,51 +1,74 @@
-'use client';
-import React, { useState } from 'react';
-import { TransitionPanel } from '@/components/motion-primitives/transition-panel';
-import {ITEMS} from '../../../public/data/institutes'
+"use client";
+import React, { useState } from "react";
+import { TransitionPanel } from "@/components/motion-primitives/transition-panel";
+import { PROGRAMS } from "../../../public/data/institutes";
+import RedCircle from "../icons/RedCircle";
+import Link from "next/link";
 
 export default function TabsTransitionPanel() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className='flex flex-col'>
-        <h1 className='py-2 text-xl ml-auto'>Направления подготовки</h1>
-      <div className='mb-4 flex space-x-2 flex-wrap gap-2 border-t border-zinc-200 dark:border-zinc-700 py-6'>
-        {ITEMS.map((item, index) => (
+    <div className="flex flex-col">
+      <h1 className="py-2 text-4xl lg:text-center font-semibold">
+        Направления подготовки
+      </h1>
+      <div className="mb-4 flex space-x-2 flex-wrap gap-1 gap-y-3  pt-6 pb-2 justify-center">
+        {PROGRAMS.map((item, index) => (
           <button
             key={index}
             onClick={() => setActiveIndex(index)}
-            className={`rounded-md px-3 py-1  font-medium transition duration-300 ease-in-out  ${
+            className={`rounded-md px-3 py-3  font-normal transition duration-300 ease-in-out  ${
               activeIndex === index
-                ? 'bg-accent-higher text-contrast-lowest dark:bg-zinc-800 dark:text-zinc-100 text-sm'
-                : 'bg-zinc-100 text-zinc-600 dark:bg-zinc-700 dark:text-zinc-400 text-sm'
+                ? "bg-accent-higher text-contrast-lowest dark:bg-zinc-800 dark:text-zinc-100 text-sm"
+                : "bg-zinc-100 text-contrast-higher dark:bg-zinc-700 dark:text-zinc-400 text-sm"
             }`}
           >
             {item.title}
           </button>
         ))}
       </div>
-      <div className='overflow-hidden border-t border-zinc-200 dark:border-zinc-700'>
+      <div className="overflow-hidden border-t border-zinc-200 dark:border-zinc-700">
         <TransitionPanel
           activeIndex={activeIndex}
-          transition={{ duration: 0.2, ease: 'easeInOut' }}
+          transition={{ duration: 0.2, ease: "easeInOut" }}
           variants={{
-            enter: { opacity: 0, y: -50, filter: 'blur(4px)' },
-            center: { opacity: 1, y: 0, filter: 'blur(0px)' },
-            exit: { opacity: 0, y: 50, filter: 'blur(4px)' },
+            enter: { opacity: 0, y: -50, filter: "blur(4px)" },
+            center: { opacity: 1, y: 0, filter: "blur(0px)" },
+            exit: { opacity: 0, y: 50, filter: "blur(4px)" },
           }}
         >
-          {ITEMS.map((item, index) => (
-            <div key={index} className='py-2'>
-                <p className='text-zinc-600 dark:text-zinc-400 text-xs pb-4'>{item.subtitle}</p>
-              {item.content.map((line, i) => (
-                <h3
-                  key={i}
-                  className="mb-2 font-semibold text-zinc-800 dark:text-zinc-100"
-                >
-                  {line}
+          {PROGRAMS.map((item, index) => (
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between mt-8 flex-wrap gap-4">
+              <div key={index} className="w-full lg:w-45/100">
+                <h3 className="text-contrast-higher font-semibold text-lg  pb-4">
+                  {item.title}
                 </h3>
-              ))}
-              
+                {item.skills.map((line, i) => (
+                  <div>
+                    <RedCircle className="fill-accent-higher w-2 inline-block"></RedCircle>
+                    <span
+                      key={i}
+                      className="ml-2 mb-2 font-normal text-contrast-higher text-sm"
+                    >
+                      {line}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <div className="w-full lg:w-45/100 mt-4 lg:mt-0 ">
+                <h4 className="font-semibold text-sm">
+                  Институты, учавствующие в данном направлении
+                </h4>
+                <div className="flex mt-4 gap-2 flex-wrap">
+                  {item.institutes.map((line, i) => (
+                   <span className="bg-contrast-lower2 px-3 py-2 rounded-4xl  text-xs">{line}</span>
+                  ))}
+                </div>
+                <Link className="mt-4 block underline text-xs text-contrast-low" href={"/"}>
+                  Подробнее про направления основной образовательной программы
+                </Link>
+              </div>
             </div>
           ))}
         </TransitionPanel>
@@ -53,4 +76,3 @@ export default function TabsTransitionPanel() {
     </div>
   );
 }
-
