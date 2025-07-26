@@ -26,7 +26,7 @@ const Index = () => {
             }
           )}
         >
-          <Logo></Logo>
+          <Logo className="w-[7rem] lg:w-[6rem] md:w-[6rem]"></Logo>
         </Link>
 
         <nav className="hidden gap-8 lg:flex flex-row justify-end items-center no-underline w-full ">

@@ -58,7 +58,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
       className={cn("flex last:mb-0", !isLast && "mb-16",)}
     >
       {/* Мобильная версия */}
-      <div className="md:hidden relative mr-4 flex flex-col items-center min-h-22">
+      <div className={cn("md:hidden relative mr-4 flex flex-col items-center min-h-22")}>
         <div
           className={`absolute ${isLast ? " hidden" : "block"} bottom-0 top-0 w-0.5 -z-10`}
           style={{ backgroundColor: styles.lineColor }}
@@ -81,7 +81,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
         />
       </div>
 
-      <div className={cn("md:hidden flex-grow leading-5 ")}>
+      <div className={cn("md:hidden w-fit leading-5 ",isLast && "border-accent-higher border p-4 rounded-xl")}>
         <h3 className="text-base font-semibold" style={{ color: styles.titleColor }}>
           {event.title}
         </h3>
@@ -94,7 +94,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
         {/* Левая сторона */}
         <div className="flex-1 pr-8 ">
           {isEven && (
-            <div className="text-right max-w-64 ml-auto">
+            <div className={cn("text-right max-w-64 ml-auto",isLast && "border-accent-higher border p-4 rounded-xl")}>
               <h3 className="text-base font-semibold" style={{ color: styles.titleColor }}>
                 {event.title}
               </h3>
@@ -135,7 +135,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
         {/* Правая сторона */}
         <div className="flex-1 pl-8 ">
           {!isEven && (
-            <div className="text-left max-w-64">
+            <div className={cn("text-left max-w-64",isLast && "border-accent-higher border-3 p-4 rounded-xl")}>
               <h3 className="text-base font-semibold" style={{ color: styles.titleColor }}>
                 {event.title}
               </h3>

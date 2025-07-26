@@ -1,55 +1,46 @@
-
 import Image from "next/image";
-import Link from "next/link";
-import logo_prioretet from "../../../public/svg/2030_logo.svg";
-import logo_sutd from "../../../public/svg/sutd_logo.svg";
+import min_obr from "public/images/logos/min_obr.png";
+import socio_centr from "public/images/logos/socio_centr.png";
+import logo_prioretet from "public/svg/2030_logo.svg";
+import logo_sutd from "public/svg/sutd_logo.svg";
+import Logo from "../icons/Logo";
 
-const infoList = [
-  {
-    label: "Адрес",
-    href: "https://maps.apple.com/?q=Вознесенский пр., д. 46",
-    text: "Вознесенский пр., д. 46",
-  },
-  {
-    label: "Почта",
-    href: "mailto:iskd@sutd.ru",
-    text: "iskd@sutd.ru",
-  },
-  {
-    label: "Университет",
-    href: "https://sutd.ru",
-    text: "sutd.ru",
-  },
-  {
-    label: "Абитуриентам",
-    href: "https://prouniver.ru",
-    text: "prouniver.ru",
-  },
-  {
-    label: "ЛК",
-    href: "https://portal.sutd.ru",
-    text: "portal.sutd.ru",
-  },
-];
+
 
 const index = () => {
   return (
-    <footer className="flex flex-col md:flex-row  w-full  justify-between py-6 gap-6 px-8 ">
-      <div className="flex flex-col gap-4 ">
-        {infoList.map(({ label, href, text }) => (
-          <div key={label} className="grid md:grid-cols-[220px_1fr]">
-            <span className="text-md font-semibold text-contrast-high">
-              {label}
-            </span>
-            <Link className="xxs:break-normal" href={href}>{text}</Link>
-          </div>
-        ))}
+    <footer className="flex flex-col xl:flex-row  w-full  justify-between pt-12 pb-8 gap-8 xl:gap-12  ">
+      <div className="xl:py-0 py-8 flex flex-col text-xs gap-3 w-full xl:w-72  xl:bg-transparent bg-contrast-high px-8 text-contrast-lowest xl:text-black">
+        <Logo className="w-30 fill-contrast-lowest xl:fill-black"></Logo>
+        <p className="  ">
+          190068, Санкт-Петербург, Вознесенский проспект, 44-46, кафедра ЦАТ
+        </p>
+        <p>dc-info@sutd.ru</p>
       </div>
+      <div className=" px-8 flex items-center  flex-col xl:flex-row gap-8 xl:gap-2 w-full justify-between">
+        <Image
+          className="object-contain w-36"
+          alt="logo_prioretet"
+          src={logo_prioretet}
+        ></Image>
+        <Image
+          className="object-contain w-36"
+          alt="min_obr"
+          src={min_obr}
+        ></Image>
+        <Image
+          className="object-contain w-32 xl:w-24"
+          alt="socio_center"
+          src={socio_centr}
+        ></Image>
 
-      <div className="flex flex-wrap flex-col gap-8  md:w-1/3 w-full justify-between md:items-end">
-        <Image className="w-fit" src={logo_sutd} alt="logo_sutd"></Image>
-        <Image className="" src={logo_prioretet} alt="logo_prioritet"></Image>
+        <Image
+          className="object-contain w-20 xl:w-12"
+          alt="logo_sutd"
+          src={logo_sutd}
+        ></Image>
       </div>
+  
     </footer>
   );
 };

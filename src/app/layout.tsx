@@ -1,10 +1,13 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header/index";
+import LenisController from "@/components/LenisController";
 import { Toaster } from "@/components/ui/sonner";
 import "@/styles/global.css";
-import { ReactLenis } from 'lenis/react';
 import type { Metadata } from "next";
+
 import localFont from "next/font/local";
+
+
 // 100: Thin.
 // 200: Extra Light (or Ultra Light).
 // 300: Light.g
@@ -14,6 +17,7 @@ import localFont from "next/font/local";
 // 700: Bold.
 // 800: Extra Bold (or Ultra Bold).
 // 900: Black (or Heavy)
+
 
 const involve = localFont({
   src: [
@@ -73,12 +77,16 @@ export default function RootLayout({
         ></meta>
       </head>
       <body className={`${involve.className} `}>
-        <ReactLenis root/>
-        <Header></Header>
-        <main className="px-4 md:px-8 min-h-screen  w-full relative break-all xxs:break-normal">{children}</main>
-        <hr className="mt-12"></hr>
-        <Footer></Footer>
-        <Toaster />
+        <LenisController />
+          
+          <Header></Header>
+          <main className="px-4 md:px-8 min-h-screen  w-full relative break-all xxs:break-normal">
+            {children}
+          </main>
+          {/* <hr className="mt-12"></hr> */}
+          <Footer></Footer>
+          <Toaster />
+       
       </body>
     </html>
   );

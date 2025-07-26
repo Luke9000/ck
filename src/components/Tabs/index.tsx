@@ -64,7 +64,7 @@ export default function TabsTransitionPanel() {
                   {item.institutes.map((line, i) => (
                     <span
                       key={i}
-                      className="bg-contrast-lower2 px-3 py-2 rounded-4xl  text-xs"
+                      className="bg-contrast-lower2 px-3 py-2 rounded-4xl text-xs"
                     >
                       {line}
                     </span>
@@ -74,7 +74,7 @@ export default function TabsTransitionPanel() {
                   className="mt-4 block underline text-xs text-contrast-low"
                   href={"/"}
                 >
-                  Подробнее про направления основной образовательной программы
+                  Подробнее про направление
                 </Link>
               </div>
             </div>
