@@ -1,24 +1,22 @@
+import Accordion from "@/components/Accordion";
 import { AnimatedTimeline } from "@/components/animata/AnimatedTimeline";
 import RedCircle from "@/components/icons/RedCircle";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import { SlideIn } from "@/components/SlideIn";
 import Tabs from "@/components/Tabs";
-import Accordion from "@/components/Accordion";
 import { InfiniteSlider } from "components/motion-primitives/infinite-slider";
 import Image from "next/image";
 import { ROADMAP } from "public/data/events";
 
+import FAQ from "public/data/FAQ";
 import brandy from "public/images/partners/brandy.png";
 import btk from "public/images/partners/btk.png";
 import galaktika from "public/images/partners/galaktika.svg";
 import ilim from "public/images/partners/ilim.svg";
 import mts from "public/images/partners/mts.png";
-import nacionalnie_proekty_rossii from "public/images/partners/nacionalnie_proekty_rossii.png";
 import planetarii_1 from "public/images/partners/planetarii_1.png";
-import prioritet_2030 from "public/images/partners/prioritet_2030.svg";
 import rostelekom from "public/images/partners/rostelekom.png";
 import tgk_1 from "public/images/partners/tgk_1.png";
-import FAQ from "public/data/FAQ";
 
 const partners = [
   {
@@ -44,16 +42,8 @@ const partners = [
     src: galaktika,
   },
   {
-    alt: "nacionalnie_proekty_rossii",
-    src: nacionalnie_proekty_rossii,
-  },
-  {
     alt: "planetarii_1",
     src: planetarii_1,
-  },
-  {
-    alt: "prioritet_2030",
-    src: prioritet_2030,
   },
   {
     alt: "rostelekom",
@@ -135,7 +125,7 @@ export default function Home() {
                 value={9}
               />
             </div>
-            <p className="font-medium">месяцев обучения</p>
+            <p className="font-medium text-center">месяцев обучения</p>
           </div>
 
           <div className="flex flex-col gap-2 items-center w-2/3 2xl:w-full">
@@ -145,7 +135,7 @@ export default function Home() {
                 value={5}
               />
             </div>
-            <p className="font-medium">IT-компетенций</p>
+            <p className="font-medium text-center">IT-компетенций</p>
           </div>
 
           <div className="flex flex-col gap-2 items-center w-2/3 2xl:w-full">
@@ -155,7 +145,7 @@ export default function Home() {
                 value={3}
               />
             </div>
-            <p className="font-medium">формата обучения</p>
+            <p className="font-medium text-center">формата обучения</p>
           </div>
 
           <div className="flex flex-col gap-2 items-center w-6/7 lg:w-full">
@@ -165,7 +155,7 @@ export default function Home() {
                 value={2}
               />
             </div>
-            <p className="font-medium">диплома по окончании ВУЗа</p>
+            <p className="font-medium text-center">диплома по окончании ВУЗа</p>
           </div>
         </section>
       </SlideIn>
@@ -177,45 +167,45 @@ export default function Home() {
           </h1>
           <h2 className="font-semibold text-base md:w-1/2 md:text-center">
             Для зачисления на Цифровую кафедру ПРОМТЕХДИЗАЙН необходимо
-            соответствовать следующим критериям
+
           </h2>
           <div className="flex flex-col xl:flex-row justify-between gap-2 w-full">
             <div className="relative overflow-hidden bg-contrast-lower2  rounded-xl p-4  w-full justify-between   flex flex-col gap-8">
               <div className="flex sm:flex-row justify-between">
-                <h2 className="text-l px-4  font-semibold w-9/10  sm:w-7/10">
+                <h2 className="text-l  font-semibold w-9/10  sm:w-7/10">
                   Обучение на 2 курсе бакалавриата или специалитета
                 </h2>
                 <div className="flex justify-center items-center w-6 h-6 sm:w-8 sm:h-8 rounded-full font-semibold text-contrast-lowest bg-accent-higher text-center">
                   <p className="">1</p>
                 </div>
               </div>
-              <p className="text-xs font-medium px-4  sm:w-9/10">
+              <p className="text-xs font-medium   sm:w-9/10">
                 Не пройдено обучение на Цифровой кафедре ранее
               </p>
             </div>
             <div className="relative overflow-hidden bg-contrast-lower2  rounded-xl p-4  w-full justify-between   flex flex-col gap-8">
               <div className="flex sm:flex-row justify-between">
-                <h2 className="text-l px-4  font-semibold w-9/10  sm:w-7/10">
+                <h2 className="text-l   font-semibold w-9/10  sm:w-7/10">
                   Специальность не относится к IT-сфере
                 </h2>
                 <div className="flex justify-center items-center w-6 h-6 sm:w-8 sm:h-8 rounded-full font-semibold text-contrast-lowest bg-accent-higher text-center">
                   <p className="">2</p>
                 </div>
               </div>
-              <p className="text-xs font-medium px-4  sm:w-9/10">
+              <p className="text-xs font-medium   sm:w-9/10">
                 Подробный список специальностей доступен в разделе «Направления»
               </p>
             </div>
             <div className="relative overflow-hidden bg-contrast-lower2  rounded-xl p-4  w-full justify-between   flex flex-col gap-8">
               <div className="flex sm:flex-row justify-between">
-                <h2 className="text-l px-4  font-semibold w-9/10  sm:w-7/10">
+                <h2 className="text-l   font-semibold w-9/10  sm:w-7/10">
                   Прохождение вводного курса
                 </h2>
                 <div className="flex justify-center items-center w-6 h-6 sm:w-8 sm:h-8 rounded-full font-semibold text-contrast-lowest bg-accent-higher text-center">
                   <p className="">3</p>
                 </div>
               </div>
-              <p className="text-xs font-medium px-4  sm:w-9/10">
+              <p className="text-xs font-medium   sm:w-9/10">
                 Пройдено тестирование по окончании вводного курса
               </p>
             </div>
@@ -260,8 +250,8 @@ export default function Home() {
         </section>
       </SlideIn>
 
-      <SlideIn direction="left">
-        <section className="h-fit flex flex-col xl:flex-row mt-8 gap-6 md:gap-2 xl:w-6/8 flex-wrap">
+      <SlideIn className="w-full flex justify-center align-center" direction="left">
+        <section className="h-fit flex flex-col xl:flex-row mt-8 gap-6 md:gap-2 xl:w-6/8 flex-wrap justify-center">
           {/* Блок 1 */}
           <div className="w-full xl:w-[70%] bg-contrast-lower2 text-contrast-higher font-semibold p-4 h-fit rounded-2xl px-6 flex flex-row items-center gap-4">
             <div className="text-xl flex flex-row items-center">
@@ -276,7 +266,7 @@ export default function Home() {
             </div>
           </div>
           {/* Блок 2 */}
-          <div className="w-full xl:w-[45%] bg-contrast-lower2 text-contrast-higher font-semibold p-4 h-fit rounded-2xl px-6">
+          <div className="h-100% w-full xl:w-[45%] bg-contrast-lower2 text-contrast-higher font-semibold p-4  rounded-2xl px-6">
             <div className="text-xl">
               {/* <span>{">"}</span> */}
               <NumberTicker className="text-contrast-higher" value={231936} />
@@ -287,7 +277,7 @@ export default function Home() {
             </div>
           </div>
           {/* Блок 3 */}
-          <div className="w-full xl:w-[40%] bg-contrast-lower2 text-contrast-higher font-semibold p-4 h-fit rounded-2xl px-6">
+          <div className="w-full xl:w-[40%] bg-contrast-lower2 text-contrast-higher font-semibold p-4 h-100% rounded-2xl px-6">
             <div className="text-xl">
               {/* <span>{">"}</span> */}
               <NumberTicker className="text-contrast-higher" value={935570} />
@@ -310,7 +300,7 @@ export default function Home() {
               <span>компаний-партнёров «Цифровых кафедр» в 2024 году</span>
             </div>
           </div>
-          <p className="text-xs font-regular text-contrast-low">
+          <p className="text-xs font-regular text-contrast-lower">
             *Данные ФГАНУ «Социоцентр» МИНОБРНАУКИ России за 2024-2025 учебный
             год
           </p>
@@ -422,11 +412,11 @@ export default function Home() {
           </div>
           <div className="flex flex-row justify-between">
             <div>
-              <p className="font-semibold">1413</p>
+              <p className="font-semibold">2142</p>
               <p className="text-xs">зачислено</p>
             </div>
             <div className="text-right">
-              <p className="font-semibold">1178</p>
+              <p className="font-semibold">1919</p>
               <p className="text-xs">закончили</p>
             </div>
           </div>
@@ -478,11 +468,11 @@ export default function Home() {
           </div>
           <div className="flex flex-row justify-between">
             <div>
-              <p className="font-semibold">2142</p>
+              <p className="font-semibold">1413</p>
               <p className="text-xs">зачислено</p>
             </div>
             <div className="text-right">
-              <p className="font-semibold">1919</p>
+              <p className="font-semibold">1178</p>
               <p className="text-xs">закончили</p>
             </div>
           </div>
@@ -507,7 +497,7 @@ export default function Home() {
         </InfiniteSlider>
       </SlideIn>
 
-      <h1 className="mt-20 mb-10 text-3xl  font-semibold lg:text-center ">
+      <h1 className="mt-10 mb-10 text-3xl  font-semibold lg:text-center ">
         Вопрос-Ответ
       </h1>
       <Accordion data={FAQ}></Accordion>

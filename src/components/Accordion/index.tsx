@@ -35,7 +35,7 @@ export default function AccordionVariant({ data }: AccordionVariantProps) {
                 <Plus className=" h-5 w-5 text-zinc-950 transition-transform duration-200 group-data-expanded:rotate-45 group-data-expanded:text-contrast-lowest dark:text-zinc-50" />
               </div>
             </AccordionTrigger>
-            <AccordionContent className="origin-leftrounded-xl rounded-xl">
+            <AccordionContent className="origin-leftrounded-xl rounded-xl whitespace-pre-line">
               <p className="pl-6 pr-2 pt-3 pb-3 text-contrast-higher text-sm">
                 {answer}
               </p>

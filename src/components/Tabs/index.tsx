@@ -74,7 +74,7 @@ export default function TabsTransitionPanel() {
                   className="mt-4 block underline text-xs text-contrast-low"
                   href={"/"}
                 >
-                  Подробнее про направление
+                  Подробнее про направление {item.title}
                 </Link>
               </div>
             </div>

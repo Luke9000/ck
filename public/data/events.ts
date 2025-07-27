@@ -31,7 +31,7 @@ export const ROADMAP = [
   {
     id: "6",
     title: "Май",
-    description: "Практический модуль",
+    description: "практический модуль",
   },
   {
     id: "7",
