@@ -39,7 +39,7 @@ const index = () => {
           ></Image>
         </div>
       </div>
-      <p className="text-xs text-contrast-lower pb-8 px-8 pt-8 xl:pt-4 text-center xl:text-start">ФГБОУ ВО Санкт-Петербургский государственный университет промышленных технологий и дизайна</p>
+      <p className="text-xs text-contrast-lower pb-8 px-8 pt-8 xl:pt-4 text-center">ФГБОУ ВО Санкт-Петербургский государственный университет промышленных технологий и дизайна</p>
     </footer>
   );
 };

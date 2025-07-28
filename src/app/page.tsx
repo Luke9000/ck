@@ -225,7 +225,7 @@ export default function Home() {
 
       <SlideIn direction="left">
         <h1 className="pt-12 text-3xl ml-auto font-semibold lg:text-center mb-4">
-          Дорожная карта проекта
+          Дорожная карта
         </h1>
         <AnimatedTimeline events={ROADMAP}></AnimatedTimeline>
       </SlideIn>
@@ -344,7 +344,7 @@ export default function Home() {
               <NumberTicker className="text-contrast-lowest" value={2100} />
               <span>{"+"}</span>
             </div>
-            <div className="text-md font-medium">
+            <div className="text-sm font-medium">
               <p>обучающихся на ЦК ПРОМТЕХДИЗАЙН</p>
             </div>
           </div>
@@ -362,7 +362,7 @@ export default function Home() {
             </div>
           </div>
           {/* Блок 3 */}
-          <div className="w-full xl:flex-1 bg-contrast-high-2 text-contrast-lowest font-semibold p-4 h-fit rounded-2xl px-6 py-6 flex flex-row items-center gap-4 2xl:flex-nowrap xl:flex-wrap sm:flex-nowrap flex-wrap ">
+          <div className="h-full w-full xl:flex-1 bg-contrast-high-2 text-contrast-lowest font-semibold p-4 rounded-2xl px-6 py-6 flex flex-row items-center gap-4 2xl:flex-nowrap xl:flex-wrap sm:flex-nowrap flex-wrap ">
             <div className="text-3xl flex flex-row">
               <NumberTicker className="text-contrast-lowest" value={20} />
               <span>{"+"}</span>
@@ -377,7 +377,7 @@ export default function Home() {
               <NumberTicker className="text-contrast-higher" value={10} />
               <span>{"+"}</span>
             </div>
-            <div className="text-md font-medium">
+            <div className="text-sm font-medium">
               <span>
                 профильных компаний, привлеченных для прохождения практики
               </span>

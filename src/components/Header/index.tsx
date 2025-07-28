@@ -9,6 +9,7 @@ import Hamburger from "./Hamburger";
 import links from "./links";
 
 import Headroom from "react-headroom";
+import { cn } from "@/lib/utils";
 
 const Index = () => {
   const path = usePathname();
@@ -38,13 +39,13 @@ const Index = () => {
                 className={clsx(
                   "flex gap-5 justify-center items-center stroke-contrast-medium text-contrast-medium",
                   {
-                    ["text-[color:var(--color-contrast-higher)] stroke-[color:var(--color-contrast-higher)] fill-[var(--color-contrast-higher)]"]:
+                    ["text-contrast-higher)] stroke-[color:var(--color-contrast-higher)] fill-[var(--color-contrast-higher)]"]:
                       path === link.href,
                   }
                 )}
               >
                 {/* <LinkIcon className={link.name !== "" ? "stroke-1" : ""} /> */}
-                <span className="text-sm font-medium">{link.name}</span>
+                <span className={cn("text-sm font-medium",  path === link.href && "text-accent-higher")}>{link.name}</span>
               </Link>
             );
           })}
