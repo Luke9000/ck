@@ -38,12 +38,11 @@ export default function AccordionVariant({ data }: AccordionVariantProps) {
             </AccordionTrigger>
             <AccordionContent className="origin-leftrounded-xl rounded-xl whitespace-pre-line">
               {Array.isArray(content) ? (
-                <div className="flex flex-col gap-2  ">
+                <div className="flex flex-col gap-2  py-2">
                   {content.map((text, i) => (
-                    <div key={i} className="ml-4 flex items-center gap-1">
-                      {/* Точка / иконка */}
-                      {/* <span className="mt-1 w-2 h-2 bg-current rounded-full inline-block" /> */}
-                      <RedCircle className="fill-accent-higher w-2 inline-block max-w-2 min-w-2"></RedCircle>
+                    <div key={i} className="ml-4 flex items-center gap-2">
+                     
+                      <RedCircle className="fill-accent-higher w-3 inline-block max-w-3 min-w-3"></RedCircle>
                       <p className="text-contrast-higher text-sm">{text}</p>
                     </div>
                   ))}

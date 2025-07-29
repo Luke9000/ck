@@ -4,12 +4,13 @@ import { TransitionPanel } from "@/components/motion-primitives/transition-panel
 import { useState } from "react";
 import { PROGRAMS } from "../../../public/data/institutes";
 import Accordion from "@/components/Accordion";
+import { SlideIn } from "@/components/SlideIn";
 
 export default function TabsTransitionPanel() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col ">
       {/* <h1 className="py-2 text-4xl lg:text-center font-semibold">
         Направления подготовки
       </h1> */}
@@ -42,69 +43,63 @@ export default function TabsTransitionPanel() {
           {PROGRAMS.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col  lg:items-center justify-between mt-8 flex-wrap gap-4"
+              className="flex flex-col  lg:items-center justify-between mt-8 flex-wrap w-full gap-2 xl:gap-0"
             >
-              <h3 className="text-contrast-higher font-semibold text-lg  pb-4">
+              <h3 className="text-contrast-higher font-semibold text-lg  ">
                 {item.title}
               </h3>
-              {/* <div className="w-full lg:w-45/100">
-                <h3 className="text-contrast-higher font-semibold text-lg  pb-4">
-                  {item.title}
-                </h3>
-                {item.skills.map((line, i) => (
-                  <div key={i}>
-                    <RedCircle className="fill-accent-higher w-2 inline-block"></RedCircle>
-                    <span className="ml-2 mb-2 font-normal text-contrast-higher text-sm">
-                      {line}
-                    </span>
+              <p className="xl:text-center xl:w-2/3 mt-2">{item.description}</p>
+
+              <SlideIn className="w-full lg:mt-0 mt-5" direction="right">
+                <section className="w-full  min-h-[40vh] flex flex-col 2xl:flex-row items-center justify-center 2xl:justify-between 2xl:gap-2 gap-5">
+                  <div className="text-center w-full flex-col h-fit lg:h-26 bg-contrast-high-2 text-contrast-lowest  py-8 rounded-xl px-6 flex items-center justify-between ">
+                    <p className="text-contrast-lowest text-xs">
+                      форма обучения
+                    </p>
+                    <p className="text-center font-semibold">СМЕШАННАЯ</p>
                   </div>
-                ))}
-              </div>
-              <div className="w-full lg:w-45/100 mt-4 lg:mt-0 ">
-                <h4 className="font-semibold text-sm">
-                  Институты, учавствующие в данном направлении
-                </h4>
-                <div className="flex mt-4 gap-2 flex-wrap">
-                  {item.institutes.map((line, i) => (
-                    <span
-                      key={i}
-                      className="bg-contrast-lower2 px-3 py-2 rounded-4xl text-xs"
-                    >
-                      {line}
+
+                  <div className="text-center w-full flex-col h-fit lg:h-26 bg-accent-low text-contrast-lowest  py-8 rounded-xl px-6 flex items-center justify-between ">
+                    <p className="text-contrast-lowest text-xs">
+                      итоговая работа
+                    </p>
+                    <p className="text-center font-semibold">{item.thesis}</p>
+                  </div>
+
+                  <div className="text-center w-full flex-col h-fit lg:h-26 bg-contrast-high-2 text-contrast-lowest  py-8 rounded-xl px-6 flex items-center justify-center ">
+                    <p className="text-center font-semibold">4 УЧЕБЫХ МОДУЛЯ</p>
+                  </div>
+                  <div className="text-center w-full flex-col h-fit lg:h-26 bg-contrast-high-2 text-contrast-lowest  py-8 rounded-xl px-6 flex items-center justify-center ">
+                    <p className="text-center font-semibold">
+                      КВАЛИФИКАЦИЯ ПРОГРАММИСТ
+                    </p>
+                  </div>
+                </section>
+              </SlideIn>
+
+              <h3 className="pb-6 text-lg lg:text-center font-semibold">
+                Доступно для направлений
+              </h3>
+              <SlideIn className="w-full" direction="right">
+                <div className="flex flex-wrap flex-col w-full text-sm bg-contrast-lower2 rounded-xl p-4">
+                  {item.fields?.map((item, i) => (
+                    <span key={i} className="py-1">
+                      <b>{item.code} </b>
+                      {item.name}
                     </span>
                   ))}
                 </div>
-                <Link
-                  className="mt-4 block underline text-xs text-contrast-low"
-                  href={"/"}
-                >
-                  Подробнее про направление {item.title}
-                </Link>
-              </div> */}
-              <h3 className="py-2 text-lg lg:text-center font-semibold">
-                Доступно для направлений
-              </h3>
-              <div className="flex flex-wrap flex-col">
-                {item.fields?.map((item, i) => (
-                  <div key={i}>
-                    <span
-                      key={i}
-                      className="bg-contrast-lower2 px-3 py-2 rounded-4xl text-xs"
-                    >
-                      {item.code}
-                    </span>
-                    <p>{item.name}</p>
-                  </div>
-                ))}
-              </div>
+              </SlideIn>
               <h1 className="mt-10 mb-10 text-3xl  font-semibold lg:text-center ">
                 Видео лекции
               </h1>
               <h1 className="mt-10 mb-10 text-3xl  font-semibold lg:text-center ">
                 Программа курса
               </h1>
-              <Accordion data={item.modules ?? []}></Accordion>
 
+              <SlideIn className="w-full" direction="left">
+                <Accordion data={item.modules ?? []}></Accordion>
+              </SlideIn>
               <h1 className="mt-10 mb-10 text-3xl  font-semibold lg:text-center ">
                 Итоговые работы студентов
               </h1>

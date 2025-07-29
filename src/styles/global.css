@@ -25,6 +25,8 @@
   --color-contrast-high-2: #161616;
   --color-contrast-higher: black;
 
+  
+  --color-accent-low: #E93434;
   --color-accent-higher: #FF1010;
 
   --animate-fade-in-scale: fade-in-scale infinite 6s ease-in-out;

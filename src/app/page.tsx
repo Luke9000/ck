@@ -63,7 +63,7 @@ export default function Home() {
         <RedCircle className="fill-contrast-lower2 stroke-contrast-lower2 translate-x-[calc(40%+2rem)] origin-center absolute -top-[calc(50vh-13vh)] md:-top-60 -z-30 flex justify-center h-[140vh] w-full overflow-visible"></RedCircle>
 
         <div className="h-[15vh]"></div>
-        <SlideIn direction="left">
+        {/* <SlideIn direction="left"> */}
           <div className="flex flex-col justify-between ">
             <div className="flex flex-col gap-4  lg:gap-5 w-full lg:w-4/5">
               <div className="flex gap-2 sm:gap-4 flex-wrap">
@@ -97,7 +97,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </SlideIn>
+        {/* </SlideIn> */}
       </section>
 
       {/* <SlideIn direction="left">
