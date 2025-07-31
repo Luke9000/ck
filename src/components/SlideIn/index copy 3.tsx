@@ -1,13 +1,13 @@
 'use client'
 
-import { motion, Variants, useAnimation, useInView } from 'motion/react'
-import { ReactNode, useRef, useEffect } from 'react'
+import { motion, Variants, useAnimation } from 'motion/react'
+import { useRef } from 'react'
 
-interface SlideInProps {
+type SlideInProps = {
   direction?: 'left' | 'right'
   delay?: number
   duration?: number
-  children: ReactNode
+  children: React.ReactNode
   className?: string
 }
 
@@ -16,28 +16,23 @@ export function SlideIn({
   delay = 0,
   duration = 0.5,
   children,
-  className = '',
+  className = ''
 }: SlideInProps) {
   const controls = useAnimation()
   const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { amount: 0.1 })
 
   const variants: Variants = {
     hidden: {
       opacity: 0,
       x: direction === 'left' ? -50 : 50,
-      transition: { duration: duration / 2 },
+      transition: { duration: duration / 2 }
     },
     visible: {
       opacity: 1,
       x: 0,
-      transition: { delay, duration, ease: [0.25, 0.46, 0.45, 0.94] },
-    },
+      transition: { delay, duration, ease: [0.25, 0.46, 0.45, 0.94] }
+    }
   }
-
-  useEffect(() => {
-    controls.start(inView ? 'visible' : 'hidden')
-  }, [controls, inView])
 
   return (
     <motion.div
@@ -45,6 +40,11 @@ export function SlideIn({
       initial="hidden"
       animate={controls}
       variants={variants}
+      // слушаем появление/исчезновение в viewport
+      whileInView="visible"
+      onViewportEnter={() => controls.start('visible')}
+      onViewportLeave={() => controls.start('hidden')}
+      viewport={{ once: false, amount: 0.1 }}
       className={className}
     >
       {children}

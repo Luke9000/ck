@@ -71,8 +71,14 @@ export default function TabsTransitionPanel() {
                   ))}
                 </div>
                 <Link
+                  scroll={true}
                   className="mt-4 block underline text-xs text-contrast-low"
-                  href={"/"}
+                  href={{
+                    pathname: "/courses",
+                    query: {
+                      id: item.id,
+                    },
+                  }}
                 >
                   Подробнее про направление {item.title}
                 </Link>

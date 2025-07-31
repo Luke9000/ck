@@ -35,7 +35,7 @@ const partners = [
   {
     alt: "mts",
     src: mts,
-    w: 21,
+    w: 32,
   },
   {
     alt: "galaktika",
@@ -166,7 +166,7 @@ export default function Home() {
             Кто может стать участником?
           </h1>
           <h2 className="font-semibold text-base md:w-1/2 md:text-center">
-            Для зачисления на Цифровую кафедру ПРОМТЕХДИЗАЙН необходимо
+            Для зачисления на Цифровую кафедру ПРОМТЕХДИЗАЙН в&nbsp;2025 году необходимо
 
           </h2>
           <div className="flex flex-col xl:flex-row justify-between gap-2 w-full">
@@ -211,10 +211,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* <p className="xl:text-right  xl:pl-[70%] text-contrast-low text-xs/4 mt-2">
-          *Студент прошел вступительный онлайн-курс и ранее не учился на
-          цифровой кафедре
-        </p> */}
       </SlideIn>
 
       <SlideIn direction="right">

@@ -6,6 +6,7 @@ import "@/styles/global.css";
 import type { Metadata } from "next";
 
 import localFont from "next/font/local";
+import { Suspense } from "react";
 
 
 // 100: Thin.
@@ -77,7 +78,9 @@ export default function RootLayout({
         ></meta>
       </head>
       <body className={`${involve.className} `}>
-        <LenisController />
+         <Suspense fallback={null}>
+          <LenisController />
+        </Suspense>
           
           <Header></Header>
           <main className="px-4 md:px-8 min-h-screen  w-full relative break-all xxs:break-normal">
