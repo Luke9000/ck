@@ -3,7 +3,7 @@
 	min-width: 220px;
 	position: relative;
 	z-index: 30;
-	background-color: var(--color-contrast-higher);
+	/* background-color: var(--color-contrast-higher); */
 	border-radius: 6px;
 	padding: 5px;
 	/* box-shadow:

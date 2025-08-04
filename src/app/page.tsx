@@ -5,6 +5,7 @@ import { NumberTicker } from "@/components/magicui/number-ticker";
 import { SlideIn } from "@/components/SlideIn";
 import Tabs from "@/components/Tabs";
 import { InfiniteSlider } from "components/motion-primitives/infinite-slider";
+import Link from "next/link";
 import Image from "next/image";
 import { ROADMAP } from "public/data/events";
 
@@ -64,39 +65,35 @@ export default function Home() {
 
         <div className="h-[15vh]"></div>
         {/* <SlideIn direction="left"> */}
-          <div className="flex flex-col justify-between ">
-            <div className="flex flex-col gap-4  lg:gap-5 w-full lg:w-4/5">
-              <div className="flex gap-2 sm:gap-4 flex-wrap">
-                <span className="text-3xl md:text-6xl font-semibold">
-                  Цифровая
-                </span>
+        <div className="flex flex-col justify-between ">
+          <div className="flex flex-col gap-4  lg:gap-5 w-full lg:w-4/5">
+            <div className="flex gap-2 sm:gap-4 flex-wrap">
+              <span className="text-3xl md:text-6xl font-semibold">
+                Цифровая
+              </span>
 
-                <span className="text-3xl md:text-6xl font-semibold relative inline-block">
-                  кафедра
-                  <RedCircle className="fill-accent-higher hidden  w-4 absolute -top-5 -right-5 xxs:block -z-30  overflow-visible"></RedCircle>
-                </span>
-              </div>
-
-              <h1 className="text-xl md:text-6xl font-semibold">
-                ПРОМТЕХДИЗАЙН
-              </h1>
-
-              <p className="hidden lg:block text-sm text-[color:var(--color-contrast-high)] md:w-3/5">
-                всероссийский проект, который предоставляет возможность
-                студентам вместе с дипломом о высшем образовании получить
-                дополнительную квалификацию и освоить компетенции в IT-сфере
-                бесплатно и без отрыва от основной
-                образовательной&nbsp;программы
-              </p>
-              <p className="lg:hidden text-sm text-[color:var(--color-contrast-high)] md:w-3/5">
-                всероссийский проект, который предоставляет возможность
-                студентам вместе с дипломом о высшем образовании получить
-                дополнительную квалификацию и освоить компетенции в IT-сфере
-                бесплатно и без отрыва от основной
-                образовательной&nbsp;программы
-              </p>
+              <span className="text-3xl md:text-6xl font-semibold relative inline-block">
+                кафедра
+                <RedCircle className="fill-accent-higher hidden  w-4 absolute -top-5 -right-5 xxs:block -z-30  overflow-visible"></RedCircle>
+              </span>
             </div>
+
+            <h1 className="text-xl md:text-6xl font-semibold">ПРОМТЕХДИЗАЙН</h1>
+
+            <p className="hidden lg:block text-sm text-[color:var(--color-contrast-high)] md:w-3/5">
+              всероссийский проект, который предоставляет возможность студентам
+              вместе с дипломом о высшем образовании получить дополнительную
+              квалификацию и освоить компетенции в IT-сфере бесплатно
+              и без отрыва от основной образовательной&nbsp;программы
+            </p>
+            <p className="lg:hidden text-sm text-[color:var(--color-contrast-high)] md:w-3/5">
+              всероссийский проект, который предоставляет возможность студентам
+              вместе с дипломом о высшем образовании получить дополнительную
+              квалификацию и освоить компетенции в IT-сфере бесплатно
+              и без отрыва от основной образовательной&nbsp;программы
+            </p>
           </div>
+        </div>
         {/* </SlideIn> */}
       </section>
 
@@ -166,8 +163,8 @@ export default function Home() {
             Кто может стать участником?
           </h1>
           <h2 className="font-semibold text-base md:w-1/2 md:text-center">
-            Для зачисления на Цифровую кафедру ПРОМТЕХДИЗАЙН в&nbsp;2025 году необходимо
-
+            Для зачисления на Цифровую кафедру ПРОМТЕХДИЗАЙН в&nbsp;2025 году
+            необходимо
           </h2>
           <div className="flex flex-col xl:flex-row justify-between gap-2 w-full">
             <div className="relative overflow-hidden bg-contrast-lower2  rounded-xl p-4  w-full justify-between   flex flex-col gap-8">
@@ -212,7 +209,10 @@ export default function Home() {
           </div>
         </section>
       </SlideIn>
-
+      <Link className="text-contrast-low text-xs" href="mailto:dc-info@sutd.ru">
+        Для студентов других ВУЗов информацию о зачислении на Цифровую кафедру
+        ПРОМТЕХДИЗАЙН можно узнать здесь
+      </Link>
       <SlideIn direction="right">
         <section className=" mt-20 h-fit">
           <Tabs />
@@ -246,7 +246,10 @@ export default function Home() {
         </section>
       </SlideIn>
 
-      <SlideIn className="w-full flex justify-center align-center" direction="left">
+      <SlideIn
+        className="w-full flex justify-center align-center"
+        direction="left"
+      >
         <section className="h-fit flex flex-col xl:flex-row mt-8 gap-6 md:gap-2 xl:w-6/8 flex-wrap justify-center">
           {/* Блок 1 */}
           <div className="w-full xl:w-[70%] bg-contrast-lower2 text-contrast-higher font-semibold p-4 h-fit rounded-2xl px-6 flex flex-row items-center gap-4">
@@ -389,7 +392,10 @@ export default function Home() {
         Динамика обучения
       </h1>
 
-      <SlideIn className="mt-20 md:flex-row flex-col items-center md:items-baseline flex gap-10" direction="left">
+      <SlideIn
+        className="mt-20 md:flex-row flex-col items-center md:items-baseline flex gap-10"
+        direction="left"
+      >
         {/*1 block*/}
         <div className="md:w-1/3 w-full">
           <p>учебный год</p>

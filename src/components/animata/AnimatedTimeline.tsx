@@ -1,38 +1,41 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useRef, useState, useEffect, useCallback } from "react"
-import { motion } from "motion/react"
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
+import type React from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export interface TimelineEvent {
-  id: string
-  title: string
-  description?: string
-  date?: string
-  [key: string]: unknown // Allow additional custom fields
-  exam?:string
+  id: string;
+  title: string;
+  description?: string;
+  date?: string;
+  [key: string]: unknown; // Allow additional custom fields
+  exam?: string;
 }
 
 interface TimelineItemProps {
-  event: TimelineEvent
-  isLast: boolean
-  index: number
-  styles: TimelineStyles
-  customRender?: (event: TimelineEvent) => React.ReactNode
-  isActive: boolean
-  onRegisterRef: (index: number, ref: React.RefObject<HTMLDivElement | null>) => void
+  event: TimelineEvent;
+  isLast: boolean;
+  index: number;
+  styles: TimelineStyles;
+  customRender?: (event: TimelineEvent) => React.ReactNode;
+  isActive: boolean;
+  onRegisterRef: (
+    index: number,
+    ref: React.RefObject<HTMLDivElement | null>
+  ) => void;
 }
 
 interface TimelineStyles {
-  lineColor: string
-  activeLineColor: string
-  dotColor: string
-  activeDotColor: string
-  dotSize: string
-  titleColor: string
-  descriptionColor: string
-  dateColor: string
+  lineColor: string;
+  activeLineColor: string;
+  dotColor: string;
+  activeDotColor: string;
+  dotSize: string;
+  titleColor: string;
+  descriptionColor: string;
+  dateColor: string;
 }
 
 const TimelineItem: React.FC<TimelineItemProps> = ({
@@ -43,24 +46,27 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   isActive,
   onRegisterRef,
 }) => {
-  const ref = useRef<HTMLDivElement>(null)
-  const isEven = index % 2 === 0
+  const ref = useRef<HTMLDivElement>(null);
+  const isEven = index % 2 === 0;
 
   useEffect(() => {
     if (ref.current) {
-      onRegisterRef(index, ref)
+      onRegisterRef(index, ref);
     }
-  }, [index, onRegisterRef])
+  }, [index, onRegisterRef]);
 
   return (
-    <div
-      ref={ref}
-      className={cn("flex last:mb-0", !isLast && "mb-16",)}
-    >
+    <div ref={ref} className={cn("flex last:mb-0", !isLast && "mb-16")}>
       {/* Мобильная версия */}
-      <div className={cn("md:hidden relative mr-4 flex flex-col items-center min-h-22")}>
+      <div
+        className={cn(
+          "md:hidden relative mr-4 flex flex-col items-center min-h-22"
+        )}
+      >
         <div
-          className={`absolute ${isLast ? " hidden" : "block"} bottom-0 top-0 w-0.5 -z-10`}
+          className={`absolute ${
+            isLast ? " hidden" : "block"
+          } bottom-0 top-0 w-0.5 -z-10`}
           style={{ backgroundColor: styles.lineColor }}
         >
           <motion.div
@@ -70,19 +76,28 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
             style={{ height: "100%", backgroundColor: styles.activeLineColor }}
           />
         </div>
-        <motion.div
-          className="relative z-0 rounded-full border-4 bg-background"
+        <motion.div  className="relative z-0 rounded-full border-4 bg-background"
           style={{ width: styles.dotSize, height: styles.dotSize }}
           animate={{
             borderColor: isActive ? styles.activeDotColor : styles.dotColor,
             backgroundColor: isActive ? styles.activeDotColor : "background",
           }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-        />
+          transition={{ duration: 0.3, ease: "easeOut" }}>
+         
+        </motion.div>
+           
       </div>
 
-      <div className={cn("md:hidden w-fit leading-5 ",isLast && "border-accent-higher border p-4 rounded-xl")}>
-        <h3 className="text-base font-semibold" style={{ color: styles.titleColor }}>
+      <div
+        className={cn(
+          "md:hidden w-fit leading-5 ",
+          isLast && "border-accent-higher border p-4 rounded-xl"
+        )}
+      >
+        <h3
+          className="text-base font-semibold"
+          style={{ color: styles.titleColor }}
+        >
           {event.title}
         </h3>
         <p className="text-sm">{event.description}</p>
@@ -94,8 +109,16 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
         {/* Левая сторона */}
         <div className="flex-1 pr-8 ">
           {isEven && (
-            <div className={cn("text-right max-w-64 ml-auto",isLast && "border-accent-higher border p-4 rounded-xl")}>
-              <h3 className="text-base font-semibold" style={{ color: styles.titleColor }}>
+            <div
+              className={cn(
+                "text-right max-w-64 ml-auto",
+                isLast && "border-accent-higher border p-4 rounded-xl"
+              )}
+            >
+              <h3
+                className="text-base font-semibold"
+                style={{ color: styles.titleColor }}
+              >
                 {event.title}
               </h3>
               <p className="text-sm">{event.description}</p>
@@ -107,7 +130,9 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
         {/* Центральная линия и точка */}
         <div className="relative flex flex-col items-center min-h-full">
           <div
-            className={`absolute ${isLast ? "hidden " : "block"} top-0 w-0.5 -z-10`}
+            className={`absolute ${
+              isLast ? "hidden " : "block"
+            } top-0 w-0.5 -z-10`}
             style={{
               backgroundColor: styles.lineColor,
               height: isLast ? "0" : "100%",
@@ -117,10 +142,13 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
               className="w-full origin-top"
               animate={{ scaleY: isActive ? 1 : 0 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              style={{ height: "100%", backgroundColor: styles.activeLineColor }}
+              style={{
+                height: "100%",
+                backgroundColor: styles.activeLineColor,
+              }}
             />
           </div>
-          
+
           <motion.div
             className="relative z-10 rounded-full border-4 bg-background"
             style={{ width: styles.dotSize, height: styles.dotSize }}
@@ -135,8 +163,16 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
         {/* Правая сторона */}
         <div className="flex-1 pl-8 ">
           {!isEven && (
-            <div className={cn("text-left max-w-64",isLast && "border-accent-higher border-3 p-4 rounded-xl")}>
-              <h3 className="text-base font-semibold" style={{ color: styles.titleColor }}>
+            <div
+              className={cn(
+                "text-left max-w-64",
+                isLast && "border-accent-higher border-3 p-4 rounded-xl"
+              )}
+            >
+              <h3
+                className="text-base font-semibold"
+                style={{ color: styles.titleColor }}
+              >
                 {event.title}
               </h3>
               <p className="text-sm">{event.description}</p>
@@ -146,16 +182,15 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
         </div>
       </div>
     </div>
-  )
-}
-
+  );
+};
 
 interface AnimatedTimelineProps {
-  events: TimelineEvent[]
-  className?: string
-  styles?: Partial<TimelineStyles>
-  customEventRender?: (event: TimelineEvent) => React.ReactNode
-  onEventClick?: (event: TimelineEvent) => void
+  events: TimelineEvent[];
+  className?: string;
+  styles?: Partial<TimelineStyles>;
+  customEventRender?: (event: TimelineEvent) => React.ReactNode;
+  onEventClick?: (event: TimelineEvent) => void;
 }
 
 const defaultStyles: TimelineStyles = {
@@ -167,7 +202,7 @@ const defaultStyles: TimelineStyles = {
   titleColor: "inherit",
   descriptionColor: "inherit",
   dateColor: "inherit",
-}
+};
 
 export function AnimatedTimeline({
   events,
@@ -176,60 +211,65 @@ export function AnimatedTimeline({
   customEventRender,
   onEventClick,
 }: AnimatedTimelineProps) {
-  const styles = { ...defaultStyles, ...customStyles }
-  const [activeIndex, setActiveIndex] = useState(-1)
-  const itemRefs = useRef<Map<number, React.RefObject<HTMLDivElement | null>>>(new Map())
+  const styles = { ...defaultStyles, ...customStyles };
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const itemRefs = useRef<Map<number, React.RefObject<HTMLDivElement | null>>>(
+    new Map()
+  );
 
-  const onRegisterRef = useCallback((index: number, ref: React.RefObject<HTMLDivElement | null>) => {
-    itemRefs.current.set(index, ref)
-  }, [])
+  const onRegisterRef = useCallback(
+    (index: number, ref: React.RefObject<HTMLDivElement | null>) => {
+      itemRefs.current.set(index, ref);
+    },
+    []
+  );
 
   const checkActiveItems = useCallback(() => {
-    const viewportMiddle = window.innerHeight / 2
-    let highestActiveIndex = -1
+    const viewportMiddle = window.innerHeight / 2;
+    let highestActiveIndex = -1;
 
     // Check each item to see if it's above the middle of the screen
     itemRefs.current.forEach((ref, index) => {
       if (ref.current) {
-        const rect = ref.current.getBoundingClientRect()
-        const itemCenter = rect.top + rect.height / 2
+        const rect = ref.current.getBoundingClientRect();
+        const itemCenter = rect.top + rect.height / 2;
 
         // If item center is above the viewport middle, it should be active
         if (itemCenter <= viewportMiddle) {
-          highestActiveIndex = Math.max(highestActiveIndex, index)
+          highestActiveIndex = Math.max(highestActiveIndex, index);
         }
       }
-    })
+    });
 
-    setActiveIndex(highestActiveIndex)
-  }, [])
+    setActiveIndex(highestActiveIndex);
+  }, []);
 
   useEffect(() => {
     // Check on mount
-    checkActiveItems()
+    checkActiveItems();
 
     // Check on scroll
     const handleScroll = () => {
-      checkActiveItems()
-    }
+      checkActiveItems();
+    };
 
     // Check on resize
     const handleResize = () => {
-      checkActiveItems()
-    }
+      checkActiveItems();
+    };
 
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    window.addEventListener("resize", handleResize)
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize);
 
     // Also check periodically to ensure state is maintained
-    const interval = setInterval(checkActiveItems, 100)
+    const interval = setInterval(checkActiveItems, 100);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll)
-      window.removeEventListener("resize", handleResize)
-      clearInterval(interval)
-    }
-  }, [checkActiveItems])
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+      clearInterval(interval);
+    };
+  }, [checkActiveItems]);
 
   return (
     <div className={`relative py-4 ${className}`}>
@@ -247,16 +287,16 @@ export function AnimatedTimeline({
         </div>
       ))}
     </div>
-  )
+  );
 }
 
 interface AnimatedTimelinePageProps {
-  events?: TimelineEvent[]
-  title?: string
-  containerClassName?: string
-  timelineStyles?: Partial<TimelineStyles>
-  customEventRender?: (events: TimelineEvent) => React.ReactNode
-  onEventClick?: (events: TimelineEvent) => void
+  events?: TimelineEvent[];
+  title?: string;
+  containerClassName?: string;
+  timelineStyles?: Partial<TimelineStyles>;
+  customEventRender?: (events: TimelineEvent) => React.ReactNode;
+  onEventClick?: (events: TimelineEvent) => void;
 }
 
 export default function AnimatedTimelinePage({
@@ -268,28 +308,63 @@ export default function AnimatedTimelinePage({
   onEventClick,
 }: AnimatedTimelinePageProps) {
   const DefaultEvents = [
-    { id: "1", title: "Project Started", description: "Initial planning and setup phase", date: "January 2024" },
-    { id: "2", title: "Development Phase", description: "Core features implementation", date: "March 2024" },
-    { id: "3", title: "Testing & QA", description: "Comprehensive testing and bug fixes", date: "May 2024" },
-    { id: "4", title: "Beta Release", description: "Limited release to beta testers", date: "July 2024" },
-    { id: "5", title: "Production Launch", description: "Full public release", date: "September 2024" },
-    { id: "6", title: "Feature Updates", description: "Ongoing improvements and new features", date: "November 2024" },
+    {
+      id: "1",
+      title: "Project Started",
+      description: "Initial planning and setup phase",
+      date: "January 2024",
+    },
+    {
+      id: "2",
+      title: "Development Phase",
+      description: "Core features implementation",
+      date: "March 2024",
+    },
+    {
+      id: "3",
+      title: "Testing & QA",
+      description: "Comprehensive testing and bug fixes",
+      date: "May 2024",
+    },
+    {
+      id: "4",
+      title: "Beta Release",
+      description: "Limited release to beta testers",
+      date: "July 2024",
+    },
+    {
+      id: "5",
+      title: "Production Launch",
+      description: "Full public release",
+      date: "September 2024",
+    },
+    {
+      id: "6",
+      title: "Feature Updates",
+      description: "Ongoing improvements and new features",
+      date: "November 2024",
+    },
     {
       id: "7",
       title: "Mobile App Launch",
       description: "Released companion mobile application",
       date: "December 2024",
     },
-    { id: "8", title: "International Expansion", description: "Expanded to European markets", date: "February 2025" },
-  ]
+    {
+      id: "8",
+      title: "International Expansion",
+      description: "Expanded to European markets",
+      date: "February 2025",
+    },
+  ];
 
-  const defaultTitle = "Project Timeline"
+  const defaultTitle = "Project Timeline";
 
   return (
     <div
       className={cn(
         "container mx-auto min-h-screen rounded-lg bg-background px-8 pt-6 text-foreground",
-        containerClassName,
+        containerClassName
       )}
     >
       <h1 className="text-3xl font-bold mb-8">{title || defaultTitle}</h1>
@@ -306,5 +381,5 @@ export default function AnimatedTimelinePage({
       </div>
       <div className="h-96"></div> {/* Add space at bottom to see the effect */}
     </div>
-  )
+  );
 }

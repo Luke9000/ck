@@ -1,3 +1,10 @@
+import web_1 from 'public/images/previews/web_1.png';
+import web_2 from 'public/images/previews/web_2.png';
+import visual_1 from 'public/images/previews/visual_1.png';
+import visual_2 from 'public/images/previews/visual_2.png';
+import visual_3 from 'public/images/previews/visual_3.png';
+import visual_4 from 'public/images/previews/visual_4.png';
+
 export const PROGRAMS = [
   {
     id: 1,
@@ -22,7 +29,7 @@ export const PROGRAMS = [
       "ИТМ",
       "ВШПМ ИПТиО",
     ],
-    previews:["/images/previews/web_1.png","/images/previews/web_2.png"],
+    previews:[web_1,web_2],
     link: "",
     fields: [
       { code: "18.03.01", name: "Химическая технология" },
@@ -107,7 +114,7 @@ export const PROGRAMS = [
     ],
     videos: ["/videos/promo.mp4","/videos/courses/mykkel.mp4"],
     institutes: ["ВШТЭ ИЭиА"],
-    previews:["/images/previews/web_1.png","/images/previews/web_2.png"],
+    previews:[web_1,web_2],
     link: "",
     fields: [
       { code: "13.03.01", name: "Теплоэнергетика и теплотехника" },
@@ -181,7 +188,7 @@ export const PROGRAMS = [
       "ИПИ",
       "ИТМ",
     ],
-    previews:["/images/previews/web_1.png","/images/previews/web_2.png"],
+    previews:[web_1,web_2],
     link: "",
     fields: [
       { code: "43.03.02", name: "Туризм" },
@@ -247,7 +254,7 @@ export const PROGRAMS = [
     ],
     videos: ["/videos/promo.mp4","/videos/courses/volkov.mp4"],
     institutes: ["ВШПМ ИПТиО", "ВШТЭ ИЗиВО", "ВШТЭ ИУиЭ", "ИБК", "ИЭСТ"],
-    previews:["/images/previews/web_1.png","/images/previews/web_2.png"],
+    previews:[web_1,web_2],
     link: "",
     fields: [
       { code: "38.03.02", name: "Менеджмент" },
@@ -298,7 +305,7 @@ export const PROGRAMS = [
     ],
     videos: ["/videos/promo.mp4","/videos/courses/kolmykova.mp4"],
     institutes: ["ВШТЭ ИУиЭ", "ИБК", "ВШПМ ИМ"],
-    previews:["/images/previews/web_1.png","/images/previews/web_2.png"],
+    previews:[visual_1,visual_2,visual_3,visual_4],
     link: "",
     fields: [{ code: "42.03.01", name: "Реклама и связи с общественностью" }],
     modules: [

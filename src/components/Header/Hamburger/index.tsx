@@ -6,6 +6,7 @@ import { Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import links from "../links";
+import { cn } from "@/lib/utils";
 
 type Props = {
   className:string;
@@ -23,13 +24,12 @@ const DropdownMenuDemo = ({className}:Props) => {
           </button>
         </DropdownMenu.Trigger>
         <DropdownMenu.Portal>
-          <DropdownMenu.Content className={styles.Content} sideOffset={5}>
+          <DropdownMenu.Content className={cn(styles.Content,'bg-contrast-high mr-5')} sideOffset={5}>
             {links.map((link) => {
               // const LinkIcon = link.icon;
               return (
                 <DropdownMenu.Item key={link.name} className={styles.Item}>
                   <Link
-      
                     href={link.href}
                     className={clsx(styles.navMenu, {
                       [styles.activeLink]: path === link.href,
