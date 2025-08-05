@@ -209,8 +209,7 @@ export default function Home() {
         </section>
       </SlideIn>
       <p className="text-contrast-low text-xs mt-4">
-        Для студентов других ВУЗов информацию о зачислении на Цифровую кафедру
-        ПРОМТЕХДИЗАЙН можно узнать по адресу dc-info@sutd.ru
+        Студенты других ВУЗов могут уточнить информацию о зачислении по электронной почте: dc-info@sutd.ru
       </p>
       <SlideIn direction="right">
         <section className=" mt-20 h-fit">
