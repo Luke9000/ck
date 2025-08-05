@@ -46,6 +46,7 @@ const involve = localFont({
 export const metadata: Metadata = {
   title: "Цифровая Кафедра ПРОМТЕХДИЗАЙН",
   metadataBase: new URL("https://cksutd.ru"),
+  alternates: { canonical: "/" },
   description: "Добро пожаловать на официальный сайт Цифровой кафедры ПРОМТЕХДИЗАЙН",
   openGraph: {
     
