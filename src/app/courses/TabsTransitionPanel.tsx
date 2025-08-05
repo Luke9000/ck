@@ -147,9 +147,10 @@ export default function TabsTransitionPanel() {
                 <Accordion data={item.modules ?? []}></Accordion>
               </SlideIn>
               <div className={cn(item.previews ? "block" : "hidden")}>
-                <h1 className="mt-10 mb-10 text-3xl  font-semibold lg:text-center ">
+                <h1 className="mt-10 pb-2  text-3xl  font-semibold lg:text-center ">
                   Итоговые работы студентов
                 </h1>
+                <p className="mb-10 text-xs lg:text-center text-contrast-lower">2024-2025 год</p>
                 <div className="w-full flex justify-center items-center align-middle">
                   <Carousel>
                     <CarouselContent className="">

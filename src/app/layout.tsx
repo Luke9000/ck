@@ -44,19 +44,21 @@ const involve = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Цифровая Кафедра СПБГУПТД",
-  description: "Добро пожаловать на сайт ЦК",
+  title: "Цифровая Кафедра ПРОМТЕХДИЗАЙН",
+  metadataBase: new URL("https://cksutd.ru"),
+  description: "Добро пожаловать на официальный сайт Цифровой кафедры ПРОМТЕХДИЗАЙН",
   openGraph: {
-    title: "Кафедра Цифровых и аддитивных технологий",
-    description: "Добро пожаловать на официальный сайт кафедры ЦАТ СПбГУПТД.",
-    url: "https://datsutd.ru",
-    siteName: "Кафедра ЦАТ СПбГУПТД",
+    
+    title: "Цифровая кафедра ПРОМТЕХДИЗАЙН",
+    description: "Добро пожаловать на официальный сайт Цифровой кафедры ПРОМТЕХДИЗАЙН",
+    url: "https://cksutd.ru",
+    siteName: "Цифровая кафедра ПРОМТЕХДИЗАЙН",
     images: [
       {
-        url: "https://tukzhejovsuybrreadju.supabase.co/storage/v1/object/public/misc//Logo.svg",
-        width: 807,
-        height: 100,
-        alt: "Логотип кафедры ЦАТ",
+        url: "/opengraph-image.png",
+        width: 631,
+        height: 274,
+        alt: "Логотип",
       },
     ],
     locale: "ru_RU",

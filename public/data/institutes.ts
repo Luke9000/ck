@@ -10,6 +10,10 @@ import python_1 from 'public/images/previews/python_1.png';
 import python_2 from 'public/images/previews/python_2.png';
 import python_3 from 'public/images/previews/python_3.png';
 import python_4 from 'public/images/previews/python_4.png';
+import python_5 from 'public/images/previews/python_5.png';
+import python_6 from 'public/images/previews/python_6.png';
+import python_7 from 'public/images/previews/python_7.png';
+import python_8 from 'public/images/previews/python_8.png';
 import visual_1 from 'public/images/previews/visual_1.png';
 import visual_2 from 'public/images/previews/visual_2.png';
 import visual_3 from 'public/images/previews/visual_3.png';
@@ -126,7 +130,7 @@ export const PROGRAMS = [
     ],
     videos: ["/videos/promo.mp4","/videos/courses/mykkel.mp4"],
     institutes: ["ВШТЭ ИЭиА"],
-    previews:[python_1,python_2,python_3,python_4],
+    previews:[python_1,python_2,python_3,python_4,python_5,python_6,python_7,python_8],
     link: "",
     fields: [
       { code: "13.03.01", name: "Теплоэнергетика и теплотехника" },

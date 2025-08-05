@@ -81,21 +81,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* COLORS */
-  /* --background-color-main: #ffffff;
-  --background-color-1: #ffffff;
-  --background-color-2: #f1f1f1;
-  --background-color-3: #a694ff;
-  --background-color-4: #ffedec;
-  --accent-color-main: #a694ff; */
-  /* --accent-color-main: #8291FF; */
-  /* --text-color-dull: #988db9;
-  --text-color-regular: #201541;
-  --text-color-bright: #680aff;
-  --text-color-opposite: #ffffff;
-  --logo-color-dark: #1f1440;
-  --text-color-dull-2: #d4d4d4;
-  --text-color-dull-3: #8f8f8f; */
+
 
   /* FONTS */
   --font-size-big: 32px;
@@ -200,15 +186,6 @@
   
 }
 
-
-
-
-/* svg {
-  @media (--xs) {
-  }
-  stroke-width: 1;
-  stroke: var(--background-color-1);
-} */
 
 html,
 body {

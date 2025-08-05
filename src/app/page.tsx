@@ -208,7 +208,7 @@ export default function Home() {
           </div>
         </section>
       </SlideIn>
-      <p className="text-contrast-lower2 text-xs mt-4">
+      <p className="text-contrast-lower text-xs mt-4">
         Студенты других ВУЗов могут уточнить информацию о зачислении по электронной почте: dc-info@sutd.ru
       </p>
       <SlideIn direction="right">
