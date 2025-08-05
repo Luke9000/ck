@@ -1,53 +1,41 @@
-import {
-  Carousel,
-  CarouselContent,
-  CarouselNavigation,
-  CarouselItem,
-} from 'components/motion-primitives/carousel';
+import React from 'react'
+import useEmblaCarousel from 'embla-carousel-react'
+import { StaticImageData } from 'next/image'
+import Image from 'next/image'
 
-export default function CarouselCustomSizes() {
-  return (
-    <div className='relative w-full '>
-      <Carousel>
-        <CarouselContent>
-          <CarouselItem className='basis-1/3'>
-            <div className='flex aspect-square items-center justify-center border-b border-l border-t border-zinc-200 dark:border-zinc-800'>
-              1
-            </div>
-          </CarouselItem>
-          <CarouselItem className='basis-1/3'>
-            <div className='flex aspect-square items-center justify-center border border-zinc-200 dark:border-zinc-800'>
-              2
-            </div>
-          </CarouselItem>
-          <CarouselItem className='basis-1/3'>
-            <div className='flex aspect-square items-center justify-center border-b border-r border-t border-zinc-200 dark:border-zinc-800'>
-              3
-            </div>
-          </CarouselItem>
-          <CarouselItem className='basis-1/3'>
-            <div className='flex aspect-square items-center justify-center border-b border-r border-t border-zinc-200 dark:border-zinc-800'>
-              4
-            </div>
-          </CarouselItem>
-          <CarouselItem className='basis-1/3'>
-            <div className='flex aspect-square items-center justify-center border-b border-r border-t border-zinc-200 dark:border-zinc-800'>
-              5
-            </div>
-          </CarouselItem>
-          <CarouselItem className='basis-1/3'>
-            <div className='flex aspect-square items-center justify-center border-b border-r border-t border-zinc-200 dark:border-zinc-800'>
-              6
-            </div>
-          </CarouselItem>
-          <CarouselItem className='basis-1/3'>
-            <div className='flex aspect-square items-center justify-center border-b border-r border-t border-zinc-200 dark:border-zinc-800'>
-              7
-            </div>
-          </CarouselItem>
-        </CarouselContent>
-        <CarouselNavigation />
-      </Carousel>
-    </div>
-  );
+interface FreeLoopCarouselProps {
+  previews?: StaticImageData[]
 }
+
+const FreeLoopCarousel: React.FC<FreeLoopCarouselProps> = ({ previews = [] }) => {
+  const [viewportRef] = useEmblaCarousel({
+    loop: true,
+    align: 'start',
+    containScroll: 'trimSnaps',
+    slidesToScroll: 'auto',
+  })
+
+  return (
+    <div
+      ref={viewportRef}
+      className="flex overflow-hidden w-full"
+    >
+      {previews.map((src, i) => (
+        <div
+          key={i}
+          className="shrink-0 basis-full sm:basis-1/2 lg:basis-1/3 p-4"
+        >
+          <div className="aspect-square flex items-center justify-center border-zinc-200 rounded-xl overflow-hidden">
+            <Image
+              src={src}
+              alt={`preview-${i}`}
+              className="w-full h-full object-contain"
+            ></Image>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+export default FreeLoopCarousel

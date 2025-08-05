@@ -5,7 +5,6 @@ import { NumberTicker } from "@/components/magicui/number-ticker";
 import { SlideIn } from "@/components/SlideIn";
 import Tabs from "@/components/Tabs";
 import { InfiniteSlider } from "components/motion-primitives/infinite-slider";
-import Link from "next/link";
 import Image from "next/image";
 import { ROADMAP } from "public/data/events";
 
@@ -209,10 +208,10 @@ export default function Home() {
           </div>
         </section>
       </SlideIn>
-      <Link className="text-contrast-low text-xs" href="mailto:dc-info@sutd.ru">
+      <p className="text-contrast-low text-xs mt-4">
         Для студентов других ВУЗов информацию о зачислении на Цифровую кафедру
-        ПРОМТЕХДИЗАЙН можно узнать здесь
-      </Link>
+        ПРОМТЕХДИЗАЙН можно узнать по адресу dc-info@sutd.ru
+      </p>
       <SlideIn direction="right">
         <section className=" mt-20 h-fit">
           <Tabs />

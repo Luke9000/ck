@@ -1,9 +1,21 @@
 import web_1 from 'public/images/previews/web_1.png';
 import web_2 from 'public/images/previews/web_2.png';
+import web_3 from 'public/images/previews/web_3.png';
+import web_4 from 'public/images/previews/web_4.png';
+import ai_1 from 'public/images/previews/ai_1.png';
+import ai_2 from 'public/images/previews/ai_2.png';
+import ai_3 from 'public/images/previews/ai_3.png';
+import ai_4 from 'public/images/previews/ai_4.png';
+import python_1 from 'public/images/previews/python_1.png';
+import python_2 from 'public/images/previews/python_2.png';
+import python_3 from 'public/images/previews/python_3.png';
+import python_4 from 'public/images/previews/python_4.png';
 import visual_1 from 'public/images/previews/visual_1.png';
 import visual_2 from 'public/images/previews/visual_2.png';
 import visual_3 from 'public/images/previews/visual_3.png';
 import visual_4 from 'public/images/previews/visual_4.png';
+import visual_5 from 'public/images/previews/visual_5.png';
+import visual_6 from 'public/images/previews/visual_6.png';
 
 export const PROGRAMS = [
   {
@@ -29,7 +41,7 @@ export const PROGRAMS = [
       "ИТМ",
       "ВШПМ ИПТиО",
     ],
-    previews:[web_1,web_2],
+    previews:[web_1,web_2,web_3,web_4],
     link: "",
     fields: [
       { code: "18.03.01", name: "Химическая технология" },
@@ -114,7 +126,7 @@ export const PROGRAMS = [
     ],
     videos: ["/videos/promo.mp4","/videos/courses/mykkel.mp4"],
     institutes: ["ВШТЭ ИЭиА"],
-    previews:[web_1,web_2],
+    previews:[python_1,python_2,python_3,python_4],
     link: "",
     fields: [
       { code: "13.03.01", name: "Теплоэнергетика и теплотехника" },
@@ -188,7 +200,6 @@ export const PROGRAMS = [
       "ИПИ",
       "ИТМ",
     ],
-    previews:[web_1,web_2],
     link: "",
     fields: [
       { code: "43.03.02", name: "Туризм" },
@@ -254,7 +265,7 @@ export const PROGRAMS = [
     ],
     videos: ["/videos/promo.mp4","/videos/courses/volkov.mp4"],
     institutes: ["ВШПМ ИПТиО", "ВШТЭ ИЗиВО", "ВШТЭ ИУиЭ", "ИБК", "ИЭСТ"],
-    previews:[web_1,web_2],
+    previews:[ai_1,ai_2,ai_3,ai_4],
     link: "",
     fields: [
       { code: "38.03.02", name: "Менеджмент" },
@@ -305,7 +316,7 @@ export const PROGRAMS = [
     ],
     videos: ["/videos/promo.mp4","/videos/courses/kolmykova.mp4"],
     institutes: ["ВШТЭ ИУиЭ", "ИБК", "ВШПМ ИМ"],
-    previews:[visual_1,visual_2,visual_3,visual_4],
+    previews:[visual_1,visual_2,visual_3,visual_4,visual_5,visual_6],
     link: "",
     fields: [{ code: "42.03.01", name: "Реклама и связи с общественностью" }],
     modules: [

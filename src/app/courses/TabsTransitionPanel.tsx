@@ -15,6 +15,8 @@ import {
   CarouselItem,
   CarouselIndicator,
 } from "components/motion-primitives/carousel";
+// import Carousel from "@/components/Carousel"
+import { cn } from "@/lib/utils";
 
 // import Video from "next-video";
 // import getStarted from "public/videos/promo.mp4";
@@ -144,36 +146,34 @@ export default function TabsTransitionPanel() {
               <SlideIn className="w-full" direction="left">
                 <Accordion data={item.modules ?? []}></Accordion>
               </SlideIn>
-              <h1 className="mt-10 mb-10 text-3xl  font-semibold lg:text-center ">
-                Итоговые работы студентов
-              </h1>
-              <div className="w-full flex justify-center items-center align-middle">
-                <Carousel >
-                  <CarouselContent className="">
-                    {item.previews?.map((item, i) => (
-                      <CarouselItem key={i} className="p-4 md:pl-2 md:basis-1/2 lg:basis-1/3 " >
-                        <div className=" flex aspect-square align-center items-center justify-center  border-zinc-200">
-                          <Image className="w-fit rounded-xl border-contrast-lower2 object-center" alt="preview" src={item}></Image>
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselNavigation alwaysShow className="z‑20"/>
-                  <CarouselIndicator />
-                </Carousel>
+              <div className={cn(item.previews ? "block" : "hidden")}>
+                <h1 className="mt-10 mb-10 text-3xl  font-semibold lg:text-center ">
+                  Итоговые работы студентов
+                </h1>
+                <div className="w-full flex justify-center items-center align-middle">
+                  <Carousel>
+                    <CarouselContent className="">
+                      {item.previews?.map((item, i) => (
+                        <CarouselItem
+                          key={i}
+                          className="p-4 md:pl-2 md:basis-1/2 lg:basis-1/3 "
+                        >
+                          <div className=" flex aspect-square align-center items-center justify-center  border-zinc-200">
+                            <Image
+                              className="w-fit rounded-xl border-contrast-lower2 object-center"
+                              alt="preview"
+                              src={item}
+                            ></Image>
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselNavigation alwaysShow className="z‑20" />
+                    <CarouselIndicator />
+                  </Carousel>
+                  {/* <Carousel previews={item.previews}></Carousel> */}
+                </div>
               </div>
-              {/* <div className="flex flex-row justify-center items-center w-full gap-12">
-                {item.previews?.map((item, i) => (
-                  <Image
-                    className="w-48"
-                    height={440}
-                    width={440}
-                    key={i}
-                    alt="preview"
-                    src={item}
-                  ></Image>
-                ))}
-              </div> */}
             </div>
           ))}
         </TransitionPanel>

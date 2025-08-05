@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import useWindowSize from '@/hooks/useWindowSize';
 import Modal from "@/components/Modal";
 import WeekParity from "./weekParity";
-import data from "../../../public/data.json";
+import data from "public/data/data.json";
 import groups from "./groups";
 import styles from "./styles.module.css";
 

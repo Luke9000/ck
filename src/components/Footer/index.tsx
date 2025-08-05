@@ -2,7 +2,7 @@ import Image from "next/image";
 import min_obr from "public/images/logos/min_obr.png";
 import socio_centr from "public/images/logos/socio_centr.png";
 import logo_prioretet from "public/images/partners/prioritet_2030.svg";
-import logo_sutd from "public/svg/sutd_logo.svg";
+import logo_sutd from "public/images/logos/sutd_logo.svg";
 import Logo from "../icons/Logo";
 
 const index = () => {
