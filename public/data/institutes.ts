@@ -1,25 +1,25 @@
-import web_1 from 'public/images/previews/web_1.png';
-import web_2 from 'public/images/previews/web_2.png';
-import web_3 from 'public/images/previews/web_3.png';
-import web_4 from 'public/images/previews/web_4.png';
-import ai_1 from 'public/images/previews/ai_1.png';
-import ai_2 from 'public/images/previews/ai_2.png';
-import ai_3 from 'public/images/previews/ai_3.png';
-import ai_4 from 'public/images/previews/ai_4.png';
-import python_1 from 'public/images/previews/python_1.png';
-import python_2 from 'public/images/previews/python_2.png';
-import python_3 from 'public/images/previews/python_3.png';
-import python_4 from 'public/images/previews/python_4.png';
-import python_5 from 'public/images/previews/python_5.png';
-import python_6 from 'public/images/previews/python_6.png';
-import python_7 from 'public/images/previews/python_7.png';
-import python_8 from 'public/images/previews/python_8.png';
-import visual_1 from 'public/images/previews/visual_1.png';
-import visual_2 from 'public/images/previews/visual_2.png';
-import visual_3 from 'public/images/previews/visual_3.png';
-import visual_4 from 'public/images/previews/visual_4.png';
-import visual_5 from 'public/images/previews/visual_5.png';
-import visual_6 from 'public/images/previews/visual_6.png';
+import web_1 from 'public/images/previews/web_1.avif';
+import web_2 from 'public/images/previews/web_2.avif';
+import web_3 from 'public/images/previews/web_3.avif';
+import web_4 from 'public/images/previews/web_4.avif';
+import web_5 from 'public/images/previews/web_5.avif';
+import ai_1 from 'public/images/previews/ai_1.avif';
+import ai_2 from 'public/images/previews/ai_2.avif';
+import ai_3 from 'public/images/previews/ai_3.avif';
+import python_1 from 'public/images/previews/python_1.avif';
+import python_2 from 'public/images/previews/python_2.avif';
+import python_3 from 'public/images/previews/python_3.avif';
+import python_4 from 'public/images/previews/python_4.avif';
+import python_5 from 'public/images/previews/python_5.avif';
+import visual_1 from 'public/images/previews/visual_1.avif';
+import visual_2 from 'public/images/previews/visual_2.avif';
+import visual_3 from 'public/images/previews/visual_3.avif';
+import visual_4 from 'public/images/previews/visual_4.avif';
+import visual_5 from 'public/images/previews/visual_5.avif';
+import visual_6 from 'public/images/previews/visual_6.avif';
+import brand_1 from 'public/images/previews/brand_1.avif';
+import brand_2 from 'public/images/previews/brand_2.avif';
+import brand_3 from 'public/images/previews/brand_3.avif';
 
 export const PROGRAMS = [
   {
@@ -45,7 +45,7 @@ export const PROGRAMS = [
       "ИТМ",
       "ВШПМ ИПТиО",
     ],
-    previews:[web_1,web_2,web_3,web_4],
+    previews:[web_1,web_2,web_3,web_4,web_5],
     link: "",
     fields: [
       { code: "18.03.01", name: "Химическая технология" },
@@ -130,7 +130,7 @@ export const PROGRAMS = [
     ],
     videos: ["/videos/promo.mp4","/videos/courses/mykkel.mp4"],
     institutes: ["ВШТЭ ИЭиА"],
-    previews:[python_1,python_2,python_3,python_4,python_5,python_6,python_7,python_8],
+    previews:[python_1,python_2,python_3,python_4,python_5],
     link: "",
     fields: [
       { code: "13.03.01", name: "Теплоэнергетика и теплотехника" },
@@ -204,6 +204,7 @@ export const PROGRAMS = [
       "ИПИ",
       "ИТМ",
     ],
+    previews:[brand_1,brand_2,brand_3],
     link: "",
     fields: [
       { code: "43.03.02", name: "Туризм" },
@@ -269,7 +270,7 @@ export const PROGRAMS = [
     ],
     videos: ["/videos/promo.mp4","/videos/courses/volkov.mp4"],
     institutes: ["ВШПМ ИПТиО", "ВШТЭ ИЗиВО", "ВШТЭ ИУиЭ", "ИБК", "ИЭСТ"],
-    previews:[ai_1,ai_2,ai_3,ai_4],
+    previews:[ai_1,ai_2,ai_3],
     link: "",
     fields: [
       { code: "38.03.02", name: "Менеджмент" },

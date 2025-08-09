@@ -157,11 +157,11 @@ export default function TabsTransitionPanel() {
                       {item.previews?.map((item, i) => (
                         <CarouselItem
                           key={i}
-                          className="p-4 md:pl-2 md:basis-1/2 lg:basis-1/3 "
+                          className=" p-4 md:pl-2 md:basis-1/2 lg:basis-1/3 "
                         >
                           <div className=" flex aspect-square align-center items-center justify-center  border-zinc-200">
-                            <Image
-                              className="w-fit rounded-xl border-contrast-lower2 object-center"
+                            <Image unoptimized
+                              className="w-72 rounded-xl border-contrast-lower2 object-center"
                               alt="preview"
                               src={item}
                             ></Image>
