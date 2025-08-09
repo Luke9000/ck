@@ -6,7 +6,7 @@ import { SlideIn } from "@/components/SlideIn";
 import Tabs from "@/components/Tabs";
 import { InfiniteSlider } from "components/motion-primitives/infinite-slider";
 import Image from "next/image";
-import { ROADMAP } from "public/data/events";
+import { ROADMAP } from "public/data/roadmap";
 
 import FAQ from "public/data/FAQ";
 import brandy from "public/images/partners/brandy.png";
