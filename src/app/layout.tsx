@@ -8,7 +8,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Suspense } from "react";
 
-
 // 100: Thin.
 // 200: Extra Light (or Ultra Light).
 // 300: Light.g
@@ -18,7 +17,6 @@ import { Suspense } from "react";
 // 700: Bold.
 // 800: Extra Bold (or Ultra Bold).
 // 900: Black (or Heavy)
-
 
 const involve = localFont({
   src: [
@@ -47,11 +45,12 @@ export const metadata: Metadata = {
   title: "Цифровая Кафедра ПРОМТЕХДИЗАЙН",
   metadataBase: new URL("https://cksutd.ru"),
   alternates: { canonical: "/" },
-  description: "Добро пожаловать на официальный сайт Цифровой кафедры ПРОМТЕХДИЗАЙН",
+  description:
+    "Добро пожаловать на официальный сайт Цифровой кафедры ПРОМТЕХДИЗАЙН",
   openGraph: {
-    
     title: "Цифровая кафедра ПРОМТЕХДИЗАЙН",
-    description: "Добро пожаловать на официальный сайт Цифровой кафедры ПРОМТЕХДИЗАЙН",
+    description:
+      "Добро пожаловать на официальный сайт Цифровой кафедры ПРОМТЕХДИЗАЙН",
     url: "https://cksutd.ru",
     siteName: "Цифровая кафедра ПРОМТЕХДИЗАЙН",
     images: [
@@ -79,20 +78,23 @@ export default function RootLayout({
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         ></meta>
+        <meta
+          name="google-site-verification"
+          content="5Sn_HINkb-Lujm24hNvwAqS3v2XNk_eG_01rVMuJP_w"
+        />
       </head>
       <body className={`${involve.className} `}>
-         <Suspense fallback={null}>
+        <Suspense fallback={null}>
           <LenisController />
         </Suspense>
-          
-          <Header></Header>
-          <main className="px-4 md:px-8 min-h-screen  w-full relative break-all xxs:break-normal">
-            {children}
-          </main>
-          {/* <hr className="mt-12"></hr> */}
-          <Footer></Footer>
-          <Toaster />
-       
+
+        <Header></Header>
+        <main className="px-4 md:px-8 min-h-screen  w-full relative break-all xxs:break-normal">
+          {children}
+        </main>
+        {/* <hr className="mt-12"></hr> */}
+        <Footer></Footer>
+        <Toaster />
       </body>
     </html>
   );
