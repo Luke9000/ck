@@ -17,6 +17,7 @@ import {
 } from "components/motion-primitives/carousel";
 // import Carousel from "@/components/Carousel"
 import { cn } from "@/lib/utils";
+import { VIDEO_PATH } from "@/utils/assetPaths";
 
 // import Video from "next-video";
 // import getStarted from "public/videos/promo.mp4";
@@ -134,7 +135,8 @@ export default function TabsTransitionPanel() {
                     controls
                     preload="metadata"
                   >
-                    <source src={item + "#t=1"} type="video/mp4" />
+                    <source src={VIDEO_PATH + item+ "#t=0.1" } type="video/mp4" />
+                    {/* + "#t=1" */}
                     Браузер не поддерживает видео
                   </video>
                 ))}
