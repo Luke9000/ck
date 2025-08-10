@@ -4,7 +4,7 @@ import LenisController from "@/components/LenisController";
 import { Toaster } from "@/components/ui/sonner";
 import "@/styles/global.css";
 import type { Metadata } from "next";
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import localFont from "next/font/local";
 import { Suspense } from "react";
 
@@ -95,6 +95,7 @@ export default function RootLayout({
         {/* <hr className="mt-12"></hr> */}
         <Footer></Footer>
         <Toaster />
+        <SpeedInsights />
       </body>
     </html>
   );
