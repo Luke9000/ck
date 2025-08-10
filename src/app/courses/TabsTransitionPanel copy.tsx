@@ -135,10 +135,7 @@ export default function TabsTransitionPanel() {
                     controls
                     preload="metadata"
                   >
-                    <source
-                      src={VIDEO_PATH + item + "#t=0.1"}
-                      type="video/mp4"
-                    />
+                    <source src={VIDEO_PATH + item+ "#t=0.1" } type="video/mp4" />
                     {/* + "#t=1" */}
                     Браузер не поддерживает видео
                   </video>
@@ -155,9 +152,7 @@ export default function TabsTransitionPanel() {
                 <h1 className="mt-10 pb-2  text-3xl  font-semibold lg:text-center ">
                   Итоговые работы студентов
                 </h1>
-                <p className="mb-10 text-xs lg:text-center text-contrast-lower">
-                  2024-2025 год
-                </p>
+                <p className="mb-10 text-xs lg:text-center text-contrast-lower">2024-2025 год</p>
                 <div className="w-full flex justify-center items-center align-middle">
                   <Carousel>
                     <CarouselContent className="">
@@ -167,9 +162,7 @@ export default function TabsTransitionPanel() {
                           className=" p-4 md:pl-2 md:basis-1/2 lg:basis-1/3 "
                         >
                           <div className=" flex aspect-square align-center items-center justify-center  border-zinc-200">
-                            <Image
-                              unoptimized
-                              draggable={false}
+                            <Image unoptimized
                               className="w-72 rounded-xl border-contrast-lower2 object-center"
                               alt="preview"
                               src={item}

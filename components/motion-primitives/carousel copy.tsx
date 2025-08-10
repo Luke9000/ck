@@ -243,91 +243,79 @@ function CarouselContent({
   const containerRef = useRef<HTMLDivElement>(null);
   const itemsLength = Children.count(children);
 
-  // вычисляем сколько элементов помещается по факту:
-  const computeVisible = () => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const firstChild = container.children[0] as HTMLElement | undefined;
-    if (!firstChild) return;
-
-    const containerW = container.clientWidth || container.getBoundingClientRect().width;
-    const childW = firstChild.getBoundingClientRect().width || firstChild.offsetWidth;
-
-    if (!childW || !containerW) {
-      setVisibleItemsCount(1);
+  useEffect(() => {
+    if (!containerRef.current) {
       return;
     }
 
-    // использую floor, чтобы не перепрыгнуть из-за дробных пикселей
-    const visible = Math.max(1, Math.floor(containerW / childW));
-    setVisibleItemsCount(visible);
-  };
-
-  // ResizeObserver + window resize fallback
-  useEffect(() => {
-    computeVisible();
-    const ro = new ResizeObserver(() => computeVisible());
-    if (containerRef.current) ro.observe(containerRef.current);
-
-    const onWin = () => computeVisible();
-    window.addEventListener('resize', onWin);
-
-    return () => {
-      ro.disconnect();
-      window.removeEventListener('resize', onWin);
+    const options = {
+      root: containerRef.current,
+      threshold: 0.5,
     };
-  }, [children]);
 
-  // itemsCount теперь — количество страниц
+    const observer = new IntersectionObserver((entries) => {
+      const visibleCount = entries.filter(
+        (entry) => entry.isIntersecting
+      ).length;
+      setVisibleItemsCount(visibleCount);
+    }, options);
+
+    const childNodes = containerRef.current.children;
+    Array.from(childNodes).forEach((child) => observer.observe(child));
+
+    return () => observer.disconnect();
+  }, [children, setItemsCount]);
+
   useEffect(() => {
     if (!itemsLength) {
-      setItemsCount(0);
       return;
     }
-    const pages = Math.max(1, Math.ceil(itemsLength / visibleItemsCount));
-    setItemsCount(pages);
 
-    // если внешний индекс вышел за пределы страниц — обрезаем
-    if (index > pages - 1) {
-      setIndex(pages - 1);
+    setItemsCount(itemsLength);
+  }, [itemsLength, setItemsCount]);
+
+  const onDragEnd = () => {
+    const x = dragX.get();
+
+    if (x <= -10 && index < itemsLength - 1) {
+      setIndex(index + 1);
+    } else if (x >= 10 && index > 0) {
+      setIndex(index - 1);
     }
-  }, [itemsLength, visibleItemsCount, setItemsCount, index, setIndex]);
-
-const pages = Math.max(1, Math.ceil(itemsLength / visibleItemsCount));
-
-const onDragEnd = () => {
-  const x = dragX.get();
-
-  if (x <= -10) {
-    // переход на следующую страницу (используем текущий index, а не функциональный апдейт)
-    const nextIndex = Math.min(index + 1, pages - 1);
-    setIndex(nextIndex);
-  } else if (x >= 10) {
-    // переход на предыдущую страницу
-    const prevIndex = Math.max(index - 1, 0);
-    setIndex(prevIndex);
-  }
-};
-
-  // рассчитываем смещение: индекс страницы -> индекс первого видимого элемента
-  const oneWidthPercent = 100 / visibleItemsCount;
-  const maxStartItemIndex = Math.max(0, itemsLength - visibleItemsCount);
-  const startItemIndex = Math.min(index * visibleItemsCount, maxStartItemIndex);
-  const translatePercent = startItemIndex * oneWidthPercent;
+  };
 
   return (
     <motion.div
       drag={disableDrag ? false : 'x'}
-      dragConstraints={disableDrag ? undefined : { left: 0, right: 0 }}
+      dragConstraints={
+        disableDrag
+          ? undefined
+          : {
+              left: 0,
+              right: 0,
+            }
+      }
       dragMomentum={disableDrag ? undefined : false}
-      style={{ x: disableDrag ? undefined : dragX }}
-      animate={{ translateX: `-${translatePercent}%` }}
+      style={{
+        x: disableDrag ? undefined : dragX,
+      }}
+      animate={{
+        translateX: `-${index * (100 / visibleItemsCount)}%`,
+      }}
       onDragEnd={disableDrag ? undefined : onDragEnd}
       transition={
-        transition || { damping: 18, stiffness: 90, type: 'spring', duration: 0.2 }
+        transition || {
+          damping: 18,
+          stiffness: 90,
+          type: 'spring',
+          duration: 0.2,
+        }
       }
-      className={cn('flex items-center', !disableDrag && 'cursor-grab active:cursor-grabbing', className)}
+      className={cn(
+        'flex items-center',
+        !disableDrag && 'cursor-grab active:cursor-grabbing',
+        className
+      )}
       ref={containerRef}
     >
       {children}
