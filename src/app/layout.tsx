@@ -82,7 +82,6 @@ export default function RootLayout({
           name="google-site-verification"
           content="5Sn_HINkb-Lujm24hNvwAqS3v2XNk_eG_01rVMuJP_w"
         />
-        <meta name="yandex-verification" content="a0641a2d7bb92280" />
       </head>
       <body className={`${involve.className} `}>
         <Suspense fallback={null}>
