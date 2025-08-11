@@ -17,7 +17,6 @@ import mts from "public/images/partners/mts.png";
 import planetarii_1 from "public/images/partners/planetarii_1.png";
 import rostelekom from "public/images/partners/rostelekom.png";
 import tgk_1 from "public/images/partners/tgk_1.png";
-import Head from "next/head";
 
 const partners = [
   {
@@ -60,9 +59,6 @@ const partners = [
 export default function Home() {
   return (
     <div>
-      <Head>
-        <meta name="yandex-verification" content="a0641a2d7bb92280" />
-      </Head>
       <section className="min-h-[85vh]  flex flex-col justify-between relative -mt-[13vh]">
         <RedCircle className="fill-contrast-lower2 stroke-contrast-lower2 translate-x-[calc(40%+2rem)] origin-center absolute -top-[calc(50vh-13vh)] md:-top-60 -z-30 flex justify-center h-[140vh] w-full overflow-visible"></RedCircle>
 
