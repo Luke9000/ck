@@ -1,5 +1,12 @@
-import { Suspense } from 'react';
-import TabsTransitionPanel from './TabsTransitionPanel';
+import { Suspense } from "react";
+import TabsTransitionPanel from "./TabsTransitionPanel";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Направления подготовки",
+  description:
+    "Ознакомьтесь с направлениями подготовки на Цифровой кафедре СПбГУПТД: веб-дизайн, ИИ, алгоритмизация и программирование, продвижение бренда, визуализация бренда",
+};
 
 export default function CoursesPage() {
   return (

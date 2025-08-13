@@ -42,17 +42,19 @@ const involve = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Цифровая Кафедра ПРОМТЕХДИЗАЙН",
-  metadataBase: new URL("https://cksutd.ru"),
-
-  alternates: { canonical: "/" },
+  metadataBase: new URL("https://www.cksutd.ru"),
+   title: {
+        template: '%s | Цифровая Кафедра ПРОМТЕХДИЗАЙН',
+        default: ` Цифровая Кафедра ПРОМТЕХДИЗАЙН`,
+    },
+  alternates: { canonical: "./" },
   description:
     "Добро пожаловать на официальный сайт Цифровой кафедры ПРОМТЕХДИЗАЙН",
   openGraph: {
     title: "Цифровая кафедра ПРОМТЕХДИЗАЙН",
     description:
       "Добро пожаловать на официальный сайт Цифровой кафедры ПРОМТЕХДИЗАЙН",
-    url: "https://cksutd.ru",
+    url: "https://www.cksutd.ru",
     siteName: "Цифровая кафедра ПРОМТЕХДИЗАЙН",
     images: [
       {

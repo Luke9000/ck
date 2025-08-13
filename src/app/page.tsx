@@ -17,6 +17,7 @@ import mts from "public/images/partners/mts.png";
 import planetarii_1 from "public/images/partners/planetarii_1.png";
 import rostelekom from "public/images/partners/rostelekom.png";
 import tgk_1 from "public/images/partners/tgk_1.png";
+import { Metadata } from "next";
 
 const partners = [
   {
@@ -55,6 +56,12 @@ const partners = [
     w: 32,
   },
 ];
+
+export const metadata: Metadata = {
+  description:
+    "ПРОМТЕХДИЗАЙН - Цифровая кафедра : современные образовательные программы в IT, веб-дизайне, ИИ, продвижении бренда. Получите IT-квалификацию вместе с основным дипломом",
+};
+
 
 export default function Home() {
   return (
