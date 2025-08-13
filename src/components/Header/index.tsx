@@ -4,7 +4,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "../icons/Logo";
-import Account from "./Account";
+// import Account from "./Account";
 import Hamburger from "./Hamburger";
 import links from "./links";
 
@@ -54,7 +54,7 @@ const Index = () => {
         <div className="flex flex-row gap-4 align-middle items-center">
           <Hamburger className="flex justify-center align-middle lg:hidden"></Hamburger>
 
-          <Account className="hidden flex justify-center align-middle rounded-full p-2 -mr-2 hover:bg-accent transition duration-300 ease-in-out"></Account>
+          {/* <Account className="hidden flex justify-center align-middle rounded-full p-2 -mr-2 hover:bg-accent transition duration-300 ease-in-out"></Account> */}
         </div>
       </header>
     </Headroom>

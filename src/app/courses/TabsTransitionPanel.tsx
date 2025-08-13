@@ -11,9 +11,9 @@ import { PROGRAMS } from "../../../public/data/institutes";
 import {
   Carousel,
   CarouselContent,
-  CarouselNavigation,
-  CarouselItem,
   CarouselIndicator,
+  CarouselItem,
+  CarouselNavigation,
 } from "components/motion-primitives/carousel";
 // import Carousel from "@/components/Carousel"
 import { cn } from "@/lib/utils";

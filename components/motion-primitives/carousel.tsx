@@ -210,15 +210,6 @@ function CarouselIndicator({
     return null;
   }
 
-  // useEffect(() => {
-  //   itemsCount <= visibleItemsCount ? setShow(false) : setShow(true);
-
-  //   console.log(itemsCount)
-  //   console.log(visibleItemsCount)
-  //   console.log(show)
-  //   return () => {};
-  // }, [itemsCount, visibleItemsCount]);
-
   return (
     <div
       className={cn(
@@ -272,27 +263,6 @@ function CarouselContent({
   const containerRef = useRef<HTMLDivElement>(null);
   const itemsLength = Children.count(children);
   const window = useWindowSize();
-  // useEffect(() => {
-  //   if (!itemsLength || !containerRef.current) return;
-
-  //   const firstChild = containerRef.current.children[0] as
-  //     | HTMLElement
-  //     | undefined;
-
-  //   if (firstChild) {
-  //     const basisClass = Array.from(firstChild.classList).find(
-  //       (cls) => cls.startsWith("basis-") || cls.includes("basis-1/")
-  //     );
-  //     console.log(basisClass);
-  //     let adjustment = 0;
-  //     if (basisClass?.includes("1/3")) adjustment = 2;
-  //     else if (basisClass?.includes("1/2")) adjustment = 1;
-
-  //     setItemsCount(itemsLength - adjustment);
-  //   } else {
-  //     setItemsCount(itemsLength);
-  //   }
-  // }, [itemsLength, setItemsCount]);
 
   useEffect(() => {
     if (!containerRef.current) {
