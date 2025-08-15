@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import localFont from "next/font/local";
 import { Suspense } from "react";
+import { Analytics } from '@vercel/analytics/next';
 
 // 100: Thin.
 // 200: Extra Light (or Ultra Light).
@@ -104,6 +105,7 @@ export default function RootLayout({
         <Footer></Footer>
         <Toaster />
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
