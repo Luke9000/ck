@@ -15,7 +15,7 @@ import {
 
 import { IMAGE_PATH } from "@/utils/assetPaths";
 
-export default function TabsTransitionPanel() {
+export default function UI() {
   const [activeIndex, setActiveIndex] = useState(0);
   const router = useRouter();
   const pathname = usePathname();
