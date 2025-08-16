@@ -7,6 +7,7 @@ import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { PROGRAMS } from "../../../public/data/institutes";
+import { IMAGE_PATH } from "@/utils/assetPaths";
 
 import {
   Carousel,
@@ -172,7 +173,9 @@ export default function TabsTransitionPanel() {
                               draggable={false}
                               className="w-72 rounded-xl border-contrast-lower2 object-center"
                               alt="preview"
-                              src={item}
+                              src={IMAGE_PATH + item}
+                              width={1200}
+                              height={1696}
                             ></Image>
                           </div>
                         </CarouselItem>

@@ -1,25 +1,25 @@
-import web_1 from 'public/images/previews/web_1.avif';
-import web_2 from 'public/images/previews/web_2.avif';
-import web_3 from 'public/images/previews/web_3.avif';
-import web_4 from 'public/images/previews/web_4.avif';
-import web_5 from 'public/images/previews/web_5.avif';
-import ai_1 from 'public/images/previews/ai_1.avif';
-import ai_2 from 'public/images/previews/ai_2.avif';
-import ai_3 from 'public/images/previews/ai_3.avif';
-import python_1 from 'public/images/previews/python_1.avif';
-import python_2 from 'public/images/previews/python_2.avif';
-import python_3 from 'public/images/previews/python_3.avif';
-import python_4 from 'public/images/previews/python_4.avif';
-import python_5 from 'public/images/previews/python_5.avif';
-import visual_1 from 'public/images/previews/visual_1.avif';
-import visual_2 from 'public/images/previews/visual_2.avif';
-import visual_3 from 'public/images/previews/visual_3.avif';
-import visual_4 from 'public/images/previews/visual_4.avif';
-import visual_5 from 'public/images/previews/visual_5.avif';
-import visual_6 from 'public/images/previews/visual_6.avif';
-import brand_1 from 'public/images/previews/brand_1.avif';
-import brand_2 from 'public/images/previews/brand_2.avif';
-import brand_3 from 'public/images/previews/brand_3.avif';
+import web_1 from "public/images/previews/web_1.avif";
+import web_2 from "public/images/previews/web_2.avif";
+import web_3 from "public/images/previews/web_3.avif";
+import web_4 from "public/images/previews/web_4.avif";
+import web_5 from "public/images/previews/web_5.avif";
+import ai_1 from "public/images/previews/ai_1.avif";
+import ai_2 from "public/images/previews/ai_2.avif";
+import ai_3 from "public/images/previews/ai_3.avif";
+import python_1 from "public/images/previews/python_1.avif";
+import python_2 from "public/images/previews/python_2.avif";
+import python_3 from "public/images/previews/python_3.avif";
+import python_4 from "public/images/previews/python_4.avif";
+import python_5 from "public/images/previews/python_5.avif";
+import visual_1 from "public/images/previews/visual_1.avif";
+import visual_2 from "public/images/previews/visual_2.avif";
+import visual_3 from "public/images/previews/visual_3.avif";
+import visual_4 from "public/images/previews/visual_4.avif";
+import visual_5 from "public/images/previews/visual_5.avif";
+import visual_6 from "public/images/previews/visual_6.avif";
+import brand_1 from "public/images/previews/brand_1.avif";
+import brand_2 from "public/images/previews/brand_2.avif";
+import brand_3 from "public/images/previews/brand_3.avif";
 
 export const PROGRAMS = [
   {
@@ -35,7 +35,7 @@ export const PROGRAMS = [
       "Вёрстка сайта — создание программного кода",
       "Изучение методов анализа целевой аудитории и построения пути пользователя",
     ],
-    videos: ["Promo.mp4","Slavnikova.mp4"],
+    videos: ["Promo.mp4", "Slavnikova.mp4"],
     institutes: [
       "ВШТЭ ИТ",
       "ВШТЭ ИЭиА",
@@ -45,7 +45,13 @@ export const PROGRAMS = [
       "ИТМ",
       "ВШПМ ИПТиО",
     ],
-    previews:[web_1,web_2,web_3,web_4,web_5],
+    previews: [
+      "works/Web-дизайн/1/preview.avif",
+      "works/Web-дизайн/2/preview.avif",
+      "works/Web-дизайн/3/preview.avif",
+      "works/Web-дизайн/4/preview.avif",
+      "works/Web-дизайн/5/preview.avif",
+    ],
     link: "",
     fields: [
       { code: "18.03.01", name: "Химическая технология" },
@@ -128,9 +134,15 @@ export const PROGRAMS = [
       "Риск процесса разработки программного обеспечения",
       "Тестирование программного обеспечения",
     ],
-    videos: ["Promo.mp4","Mykkel.mp4"],
+    videos: ["Promo.mp4", "Mykkel.mp4"],
     institutes: ["ВШТЭ ИЭиА"],
-    previews:[python_1,python_2,python_3,python_4,python_5],
+    previews: [
+      "works/Алгоритмизация и программирование на языке Python/1/preview.avif",
+      "works/Алгоритмизация и программирование на языке Python/2/preview.avif",
+      "works/Алгоритмизация и программирование на языке Python/3/preview.avif",
+      "works/Алгоритмизация и программирование на языке Python/4/preview.avif",
+      "works/Алгоритмизация и программирование на языке Python/5/preview.avif",
+    ],
     link: "",
     fields: [
       { code: "13.03.01", name: "Теплоэнергетика и теплотехника" },
@@ -192,7 +204,7 @@ export const PROGRAMS = [
       "Основы верстки сайта",
       "Разработка интерактивного веб-контента с помощью языка JavaScript",
     ],
-    videos: ["Promo.mp4","Savenkova.mp4"],
+    videos: ["Promo.mp4", "Savenkova.mp4"],
     institutes: [
       "ВШПМ ИМ",
       "ВШТЭ ИЭиА",
@@ -204,7 +216,11 @@ export const PROGRAMS = [
       "ИПИ",
       "ИТМ",
     ],
-    previews:[brand_1,brand_2,brand_3],
+    previews: [
+      "works/Продвижение бренда/preview_1.avif",
+      "works/Продвижение бренда/preview_2.avif",
+      "works/Продвижение бренда/preview_3.avif",
+    ],
     link: "",
     fields: [
       { code: "43.03.02", name: "Туризм" },
@@ -220,41 +236,41 @@ export const PROGRAMS = [
       { code: "54.05.03", name: "Графика" },
     ],
     modules: [
-    {
-      title: "Модуль 1. Контент-стратегия продвижения бренда",
-      content: [
-        "Определение бренда и брендинга, классификация брендов. Основные этапы брендинга. Регистрация бренда и авторское право.",
-        "Стратегический подход к развитию бренда",
-        "Основы цифровых коммуникаций. Коммуникационные особенности SMM.",
-      ],
-    },
-    {
-      title: "Модуль 2. Прототипирование в веб-пространстве",
-      content: [
-        "Основы прототипирования веб-ресурсов. Wireframe.",
-        "Основы прототипирования в Figma. Статичный макет.",
-        "Основы прототипирования в Figma. Интерактивный макет.",
-      ],
-    },
-    {
-      title: "Модуль 3. Основы верстки сайта",
-      content: [
-        "Программное обеспечение для верстки сайта",
-        "Использование специального модуля Flexible Box Layout для компоновки элементов веб-страницы.",
-        "Использование специального модуля Grid Layout для компоновки элементов веб-страницы.",
-      ],
-    },
-    {
-      title:
-        "Модуль 4. Разработка интерактивного веб-контента с помощью языка JavaScript",
-      content: [
-        "Введение в язык JavaScript. Взаимодействие с HTML. Подключение. Переменные. Типы данных. Операторы. Условные и циклические конструкции.",
-        "Основы работы с динамическими элементами. Изменение содержимого элементов. Свойства элементов.",
-        "Взаимодействие с веб-страницей и браузером. Формы, валидация данных.",
-        "Функции. Объекты-классы (ООП). Синхронные и асинхронные запросы.",
-      ],
-    },
-  ],
+      {
+        title: "Модуль 1. Контент-стратегия продвижения бренда",
+        content: [
+          "Определение бренда и брендинга, классификация брендов. Основные этапы брендинга. Регистрация бренда и авторское право.",
+          "Стратегический подход к развитию бренда",
+          "Основы цифровых коммуникаций. Коммуникационные особенности SMM.",
+        ],
+      },
+      {
+        title: "Модуль 2. Прототипирование в веб-пространстве",
+        content: [
+          "Основы прототипирования веб-ресурсов. Wireframe.",
+          "Основы прототипирования в Figma. Статичный макет.",
+          "Основы прототипирования в Figma. Интерактивный макет.",
+        ],
+      },
+      {
+        title: "Модуль 3. Основы верстки сайта",
+        content: [
+          "Программное обеспечение для верстки сайта",
+          "Использование специального модуля Flexible Box Layout для компоновки элементов веб-страницы.",
+          "Использование специального модуля Grid Layout для компоновки элементов веб-страницы.",
+        ],
+      },
+      {
+        title:
+          "Модуль 4. Разработка интерактивного веб-контента с помощью языка JavaScript",
+        content: [
+          "Введение в язык JavaScript. Взаимодействие с HTML. Подключение. Переменные. Типы данных. Операторы. Условные и циклические конструкции.",
+          "Основы работы с динамическими элементами. Изменение содержимого элементов. Свойства элементов.",
+          "Взаимодействие с веб-страницей и браузером. Формы, валидация данных.",
+          "Функции. Объекты-классы (ООП). Синхронные и асинхронные запросы.",
+        ],
+      },
+    ],
   },
   {
     id: 4,
@@ -268,9 +284,13 @@ export const PROGRAMS = [
       "Практическое применение языков программирования, искусственного интеллекта и машинного обучения",
       "Работа в интегрированных средах разработки с инструментами отладки и проверки синтаксиса",
     ],
-    videos: ["Promo.mp4","Volkov.mp4"],
+    videos: ["Promo.mp4", "Volkov.mp4"],
     institutes: ["ВШПМ ИПТиО", "ВШТЭ ИЗиВО", "ВШТЭ ИУиЭ", "ИБК", "ИЭСТ"],
-    previews:[ai_1,ai_2,ai_3],
+    previews: [
+      "works/Основы построения интеллектуальных агентов/1/preview.avif",
+      "works/Основы построения интеллектуальных агентов/2/preview.avif",
+      "works/Основы построения интеллектуальных агентов/3/preview.avif",
+    ],
     link: "",
     fields: [
       { code: "38.03.02", name: "Менеджмент" },
@@ -293,8 +313,7 @@ export const PROGRAMS = [
         ],
       },
       {
-        title:
-          "Модуль 3. От генерации текста к интеллектуальным агентам",
+        title: "Модуль 3. От генерации текста к интеллектуальным агентам",
         content: [
           "История развития и текущее состояние отрасли искусственного интеллекта",
           "Линейная регрессия, функция потерь, градиентный спуск",
@@ -319,9 +338,16 @@ export const PROGRAMS = [
       "Оформление веб-ресурса в фирменном стиле",
       "Разработка динамических элементов веб-ресурсов с использованием языка JavaScript",
     ],
-    videos: ["Promo.mp4","Kolmykova.mp4"],
+    videos: ["Promo.mp4", "Kolmykova.mp4"],
     institutes: ["ВШТЭ ИУиЭ", "ИБК", "ВШПМ ИМ"],
-    previews:[visual_1,visual_2,visual_3,visual_4,visual_5,visual_6],
+    previews: [
+      "works/Визуализация представления бренда/1/preview.avif",
+      "works/Визуализация представления бренда/2/preview.avif",
+      "works/Визуализация представления бренда/3/preview.avif",
+      "works/Визуализация представления бренда/4/preview.avif",
+      "works/Визуализация представления бренда/5/preview.avif",
+      "works/Визуализация представления бренда/6/preview.avif",
+    ],
     link: "",
     fields: [{ code: "42.03.01", name: "Реклама и связи с общественностью" }],
     modules: [

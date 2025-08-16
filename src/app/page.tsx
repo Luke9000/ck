@@ -8,51 +8,44 @@ import { InfiniteSlider } from "components/motion-primitives/infinite-slider";
 import Image from "next/image";
 import { ROADMAP } from "public/data/roadmap";
 
-import FAQ from "public/data/FAQ";
-import brandy from "public/images/partners/brandy.png";
-import btk from "public/images/partners/btk.png";
-import galaktika from "public/images/partners/galaktika.svg";
-import ilim from "public/images/partners/ilim.svg";
-import mts from "public/images/partners/mts.png";
-import planetarii_1 from "public/images/partners/planetarii_1.png";
-import rostelekom from "public/images/partners/rostelekom.png";
-import tgk_1 from "public/images/partners/tgk_1.png";
+import { IMAGE_PATH } from "@/utils/assetPaths";
 import { Metadata } from "next";
+import FAQ from "public/data/FAQ";
 
 const partners = [
   {
     alt: "brandy",
-    src: brandy,
+    src: IMAGE_PATH + "partners/brandy.avif",
   },
   {
     alt: "btk",
-    src: btk,
+    src: IMAGE_PATH + "partners/btk.avif",
     w: 32,
   },
   {
     alt: "ilim",
-    src: ilim,
+    src: IMAGE_PATH + "partners/ilim.svg",
   },
   {
     alt: "mts",
-    src: mts,
+    src: IMAGE_PATH + "partners/mts.avif",
     w: 32,
   },
   {
     alt: "galaktika",
-    src: galaktika,
+    src: IMAGE_PATH + "partners/galaktika.svg",
   },
   {
     alt: "planetarii_1",
-    src: planetarii_1,
+    src: IMAGE_PATH + "partners/planetarii_1.avif",
   },
   {
     alt: "rostelekom",
-    src: rostelekom,
+    src: IMAGE_PATH + "partners/rostelekom.avif",
   },
   {
     alt: "tgk_1",
-    src: tgk_1,
+    src: IMAGE_PATH + "partners/tgk_1.avif",
     w: 32,
   },
 ];
@@ -318,12 +311,13 @@ export default function Home() {
         <SlideIn>
           <div className="flex flex-col gap-8 w-[1/3]">
             <Image
+              unoptimized
               className="border-accent-higher rounded-full border-4 w-45 p-3"
               quality={100}
               width={331}
               height={331}
               alt="Soshnikov A.V."
-              src="/images/misc/soshnikov.png"
+              src={IMAGE_PATH + "misc/soshnikov.avif"}
             ></Image>
             <div className="border-l-3 border-accent-higher pl-4">
               <h2 className="text-xl font-semibold">
@@ -494,6 +488,9 @@ export default function Home() {
         <InfiniteSlider gap={24}>
           {partners.map((partner, index) => (
             <Image
+              unoptimized
+              width={300}
+              height={300}
               key={index}
               className={`p-8 object-contain ${
                 partner.w ? `w-${partner.w}` : "w-48"

@@ -1,8 +1,5 @@
+import { IMAGE_PATH } from "@/utils/assetPaths";
 import Image from "next/image";
-import min_obr from "public/images/logos/min_obr.png";
-import socio_centr from "public/images/logos/socio_centr.png";
-import logo_prioretet from "public/images/partners/prioritet_2030.svg";
-import logo_sutd from "public/images/logos/sutd_logo.svg";
 import Logo from "../icons/Logo";
 
 const index = () => {
@@ -18,28 +15,43 @@ const index = () => {
         </div>
         <div className=" px-8 flex items-center  flex-col xl:flex-row gap-8 xl:gap-2 w-full justify-between">
           <Image
+            unoptimized
             className="object-contain w-20 xl:w-12"
             alt="logo_sutd"
-            src={logo_sutd}
+            src={IMAGE_PATH + "logos/sutd_logo.svg"}
+            width={200}
+            height={200}
           ></Image>
           <Image
+            unoptimized
             className="object-contain w-36"
             alt="logo_prioretet"
-            src={logo_prioretet}
+            src={IMAGE_PATH + "partners/prioritet_2030.svg"}
+            width={200}
+            height={200}
           ></Image>
           <Image
+            unoptimized
             className="object-contain w-32 xl:w-24"
             alt="socio_center"
-            src={socio_centr}
+            src={IMAGE_PATH + "logos/socio_centr.avif"}
+            width={200}
+            height={200}
           ></Image>
           <Image
+            unoptimized
             className="object-contain w-36"
             alt="min_obr"
-            src={min_obr}
+            src={IMAGE_PATH + "logos/min_obr.avif"}
+            width={200}
+            height={200}
           ></Image>
         </div>
       </div>
-      <p className="text-xs text-contrast-lower pb-8 px-8 pt-8 xl:pt-4 text-center">ФГБОУ ВО Санкт-Петербургский государственный университет промышленных технологий и дизайна</p>
+      <p className="text-xs text-contrast-lower pb-8 px-8 pt-8 xl:pt-4 text-center">
+        ФГБОУ ВО Санкт-Петербургский государственный университет промышленных
+        технологий и дизайна
+      </p>
     </footer>
   );
 };
