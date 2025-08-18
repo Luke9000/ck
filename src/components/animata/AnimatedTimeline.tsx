@@ -91,7 +91,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
       <div
         className={cn(
           "md:hidden w-fit leading-5 ",
-          isLast && "border-accent-higher border p-4 rounded-xl"
+          isLast && "border-accent-higher border-2 p-4 rounded-xl"
         )}
       >
         <h3
@@ -112,7 +112,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
             <div
               className={cn(
                 "text-right max-w-64 ml-auto",
-                isLast && "border-accent-higher border p-4 rounded-xl"
+                isLast && "border-accent-higher border-3 p-4 rounded-xl w-fit"
               )}
             >
               <h3
@@ -166,7 +166,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
             <div
               className={cn(
                 "text-left max-w-64",
-                isLast && "border-accent-higher border-3 p-4 rounded-xl"
+                isLast && "border-accent-higher border-3 p-4 rounded-xl w-fit"
               )}
             >
               <h3

@@ -30,6 +30,9 @@ export default function TabsTransitionPanel() {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
 
+  const FILTERED_PROGRAMS = PROGRAMS.filter(item => item.id !== 6);
+
+
   const onClickTab = (index: number, id: number) => {
     setActiveIndex(index);
     router.replace(`${pathname}?id=${id}`, { scroll: false });
@@ -39,7 +42,7 @@ export default function TabsTransitionPanel() {
     if (!id) return;
     const idNum = Number(id);
     if (isNaN(idNum)) return;
-    const idx = PROGRAMS.findIndex((item) => item.id === idNum);
+    const idx = FILTERED_PROGRAMS.findIndex((item) => item.id === idNum);
     if (idx >= 0) setActiveIndex(idx);
   }, [id]);
 
@@ -49,7 +52,7 @@ export default function TabsTransitionPanel() {
         Направления подготовки
       </h1> */}
       <div className="mb-4 flex space-x-2 flex-wrap gap-1 gap-y-3  pt-6 pb-2 justify-center border-t border-zinc-200">
-        {PROGRAMS.map((item, index) => (
+        {FILTERED_PROGRAMS.map((item, index) => (
           <button
             key={index}
             onClick={() => onClickTab(index, item.id)}
@@ -74,7 +77,7 @@ export default function TabsTransitionPanel() {
             exit: { opacity: 0, y: 50, filter: "blur(4px)" },
           }}
         >
-          {PROGRAMS.map((item, index) => (
+          {FILTERED_PROGRAMS.map((item, index) => (
             <div
               key={index}
               className="flex flex-col  lg:items-center justify-between mt-8 flex-wrap w-full gap-2 xl:gap-0"
@@ -123,6 +126,11 @@ export default function TabsTransitionPanel() {
                     </span>
                   ))}
                 </div>
+                {item.fields_extra && (
+                  <p className="text-xs font-regular text-contrast-lower">
+                    {item.fields_extra}
+                  </p>
+                )}
               </SlideIn>
               <h1 className="mt-10 mb-10 text-3xl  font-semibold lg:text-center ">
                 Видео курса

@@ -58,7 +58,7 @@ export default function TabsTransitionPanel() {
               </div>
               <div className="w-full lg:w-45/100 mt-4 lg:mt-0 ">
                 <h4 className="font-semibold text-sm">
-                  Институты, учавствующие в данном направлении
+                  Институты, участвующие в данном направлении
                 </h4>
                 <div className="flex mt-4 gap-2 flex-wrap">
                   {item.institutes.map((line, i) => (
@@ -76,7 +76,7 @@ export default function TabsTransitionPanel() {
                   href={{
                     pathname: "/courses",
                     query: {
-                      id: item.id,
+                      ...(item.id && { id: item.id === 6 ? 5 : item.id }),
                     },
                   }}
                 >
