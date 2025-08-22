@@ -1,25 +1,3 @@
-import web_1 from "public/images/previews/web_1.avif";
-import web_2 from "public/images/previews/web_2.avif";
-import web_3 from "public/images/previews/web_3.avif";
-import web_4 from "public/images/previews/web_4.avif";
-import web_5 from "public/images/previews/web_5.avif";
-import ai_1 from "public/images/previews/ai_1.avif";
-import ai_2 from "public/images/previews/ai_2.avif";
-import ai_3 from "public/images/previews/ai_3.avif";
-import python_1 from "public/images/previews/python_1.avif";
-import python_2 from "public/images/previews/python_2.avif";
-import python_3 from "public/images/previews/python_3.avif";
-import python_4 from "public/images/previews/python_4.avif";
-import python_5 from "public/images/previews/python_5.avif";
-import visual_1 from "public/images/previews/visual_1.avif";
-import visual_2 from "public/images/previews/visual_2.avif";
-import visual_3 from "public/images/previews/visual_3.avif";
-import visual_4 from "public/images/previews/visual_4.avif";
-import visual_5 from "public/images/previews/visual_5.avif";
-import visual_6 from "public/images/previews/visual_6.avif";
-import brand_1 from "public/images/previews/brand_1.avif";
-import brand_2 from "public/images/previews/brand_2.avif";
-import brand_3 from "public/images/previews/brand_3.avif";
 
 export const PROGRAMS = [
   {
@@ -142,6 +120,11 @@ export const PROGRAMS = [
       "works/Алгоритмизация и программирование на языке Python/3/preview.avif",
       "works/Алгоритмизация и программирование на языке Python/4/preview.avif",
       "works/Алгоритмизация и программирование на языке Python/5/preview.avif",
+      "works/Алгоритмизация и программирование на языке Python/preview_1.avif",
+      "works/Алгоритмизация и программирование на языке Python/preview_2.avif",
+      "works/Алгоритмизация и программирование на языке Python/preview_3.avif",
+      "works/Алгоритмизация и программирование на языке Python/preview_4.avif",
+      "works/Алгоритмизация и программирование на языке Python/preview_5.avif",
     ],
     link: "",
     fields: [
@@ -355,7 +338,7 @@ export const PROGRAMS = [
       { code: "42.03.03", name: "Издательское дело*" },
     ],
     fields_extra:
-      "*Наименование программы «Цифровой брендинг: визуальная стратегия",
+      "*Наименование программы «Цифровой брендинг: визуальная стратегия»",
     modules: [
       {
         title: "Модуль 1. Фундаментальные основы бренда",

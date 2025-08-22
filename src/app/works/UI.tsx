@@ -10,7 +10,7 @@ import {
   Carousel,
   CarouselContent,
   CarouselIndicator,
-  CarouselItem
+  CarouselItem,
 } from "components/motion-primitives/carousel";
 
 import { IMAGE_PATH } from "@/utils/assetPaths";
@@ -67,6 +67,7 @@ export default function UI() {
             <div key={index} className="flex flex-col gap-14">
               {item.works.map((item2, index) => (
                 <div
+                  id={item2.id?.toString()}
                   key={index}
                   className="h-80 flex flex-col lg:flex-row   lg:items-center justify-between mt-8  w-full gap-2 xl:gap-8"
                 >
@@ -90,24 +91,22 @@ export default function UI() {
                   <div className="w-full flex justify-center  h-full">
                     <Carousel className="h-full w-full">
                       <CarouselContent className="h-full w-full 123">
-                        {item2.images.map(
-                          (item: string, i: Key) => (
-                            <CarouselItem
-                             key={`${item2.title}-${i}`}
-                              className="  md:pl-2 md:basis-1/2 h-full"
-                            >
-                              <Image
-                                unoptimized
-                                draggable={false}
-                                className="object-contain  rounded-xl border-contrast-lower2 object-center"
-                                alt={item2.authors + item2.title}
-                                src={IMAGE_PATH + item}
-                                width={1200}
-                                height={950}
-                              ></Image>
-                            </CarouselItem>
-                          )
-                        )}
+                        {item2.images.map((item: string, i: Key) => (
+                          <CarouselItem
+                            key={`${item2.title}-${i}`}
+                            className="  md:pl-2 md:basis-1/2 h-full"
+                          >
+                            <Image
+                              unoptimized
+                              draggable={false}
+                              className="object-contain  rounded-xl border-contrast-lower2 object-center"
+                              alt={item2.authors + item2.title}
+                              src={IMAGE_PATH + item}
+                              width={1200}
+                              height={950}
+                            ></Image>
+                          </CarouselItem>
+                        ))}
                       </CarouselContent>
                       {/* <CarouselNavigation className="z‑20" /> */}
                       <CarouselIndicator />

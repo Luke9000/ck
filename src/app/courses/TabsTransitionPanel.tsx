@@ -19,6 +19,8 @@ import {
 // import Carousel from "@/components/Carousel"
 import { cn } from "@/lib/utils";
 import { VIDEO_PATH } from "@/utils/assetPaths";
+import Link from "next/link";
+import { MoveRight } from "lucide-react";
 
 // import Video from "next-video";
 // import getStarted from "public/videos/promo.mp4";
@@ -30,8 +32,7 @@ export default function TabsTransitionPanel() {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
 
-  const FILTERED_PROGRAMS = PROGRAMS.filter(item => item.id !== 6);
-
+  const FILTERED_PROGRAMS = PROGRAMS.filter((item) => item.id !== 6);
 
   const onClickTab = (index: number, id: number) => {
     setActiveIndex(index);
@@ -170,21 +171,32 @@ export default function TabsTransitionPanel() {
                 <div className="w-full flex justify-center items-center align-middle">
                   <Carousel>
                     <CarouselContent className="">
-                      {item.previews?.map((item, i) => (
+                      {item.previews?.map((item2, i) => (
                         <CarouselItem
                           key={i}
                           className=" p-4 md:pl-2 md:basis-1/2 lg:basis-1/3 "
                         >
-                          <div className=" flex aspect-square align-center items-center justify-center  border-zinc-200">
+                          <div className="relative flex aspect-square align-center items-center justify-center  border-zinc-200">
                             <Image
                               unoptimized
                               draggable={false}
                               className="w-72 rounded-xl border-contrast-lower2 object-center"
                               alt="preview"
-                              src={IMAGE_PATH + item}
+                              src={IMAGE_PATH + item2}
                               width={1200}
                               height={1696}
                             ></Image>
+                            <Link
+                              className="absolute right-0 bottom-0 pr-8 pb-8"
+                              href={"/works?id=" + item.id + "#" + (i + 1)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <MoveRight
+                                className="bg-contrast-lowest rounded-full w-9 h-9 p-2"
+                                scale={2}
+                              />
+                            </Link>
                           </div>
                         </CarouselItem>
                       ))}

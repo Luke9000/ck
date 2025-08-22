@@ -1,9 +1,7 @@
-import { v4 as uuidv4 } from "uuid";
-
 export const WORKS = [
   {
     id: 1,
-    title: "Веб-дизайн",
+    title: "Web-дизайн",
     works: [
       {
         id: 1,

@@ -1,37 +1,31 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-
-
 @theme {
-
-
   --breakpoint-xxs: 300px;
 
   --color-primary: blue;
   --color-bg: white;
-  --color-contrast-lowest: #FFFFFF;
-  --color-contrast-lower2: #EBEBEB;
-  --color-contrast-lower: #CCCCCC;
+  --color-contrast-lowest: #ffffff;
+  --color-contrast-lower2: #ebebeb;
+  --color-contrast-lower: #cccccc;
   --color-contrast-low: #868686;
-  --color-contrast-medium: #4F4F4F;
+  --color-contrast-medium: #4f4f4f;
   --color-contrast-high: #353535;
   --color-contrast-high-2: #161616;
   --color-contrast-higher: black;
 
-  
-  --color-accent-low: #E93434;
-  --color-accent-higher: #FF1010;
+  --color-accent-low: #e93434;
+  --color-accent-higher: #ff1010;
 
   --animate-fade-in-scale: fade-in-scale infinite 6s ease-in-out;
   --animate-fade-in-scale-2: fade-in-scale-2 infinite 6s ease-in-out;
   --animate-fade-in-scale-3: fade-in-scale-3 infinite 9s ease-in-out;
 
-
   @keyframes fade-in-scale {
     0% {
       opacity: 1;
-       transform: scale(1);
+      transform: scale(1);
     }
 
     100% {
@@ -45,7 +39,7 @@
       opacity: 1;
       transform: scale(1);
     }
-  
+
     100% {
       opacity: 0;
       transform: scale(4);
@@ -63,13 +57,10 @@
       transform: scale(4);
     }
   }
-
 }
 
-
 @layer utilities {
-  .font-def {
-  }
+
   .hover-hl:hover {
     background-color: var(--background-color-3);
   }
@@ -81,8 +72,6 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-
-
   /* FONTS */
   --font-size-big: 32px;
   --font-size-medium: 26px;
@@ -179,25 +168,18 @@
   --sidebar-border: oklch(0.922 0 0);
 
   --sidebar-ring: oklch(0.708 0 0);
-
-
-
-
-  
 }
-
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  width:100%;
+  width: 100%;
 }
 
 button:hover {
   cursor: pointer;
 }
-
 
 html {
   scroll-behavior: smooth;
@@ -221,19 +203,13 @@ html {
     border-radius: 0;
   }
 
-
- 
   font-size: var(--font-size-small);
 
-
- 
   @media (min-width: 540px) {
-    
     font-size: var(--font-size-regular);
   }
- 
+
   @media (min-width: 1024px) {
-  
     font-size: var(--font-size-medium);
   }
 
@@ -252,7 +228,6 @@ html {
     overflow-x: scroll;
   }
 }
-
 
 li {
   list-style: none;
@@ -338,11 +313,3 @@ li {
     @apply bg-background text-foreground;
   }
 }
-
-
-
-
-
-
-
-

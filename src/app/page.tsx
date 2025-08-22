@@ -7,10 +7,20 @@ import Tabs from "@/components/Tabs";
 import { InfiniteSlider } from "components/motion-primitives/infinite-slider";
 import Image from "next/image";
 import { ROADMAP } from "public/data/roadmap";
+import { MoveRight } from "lucide-react";
 
 import { IMAGE_PATH } from "@/utils/assetPaths";
 import { Metadata } from "next";
 import FAQ from "public/data/FAQ";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselIndicator,
+  CarouselItem,
+} from "components/motion-primitives/carousel";
+import { NEWS } from "public/data/news";
+import Link from "next/link";
 
 const partners = [
   {
@@ -62,7 +72,7 @@ export default function Home() {
         <RedCircle className="fill-contrast-lower2 stroke-contrast-lower2 translate-x-[calc(40%+2rem)] origin-center absolute -top-[calc(50vh-13vh)] md:-top-60 -z-30 flex justify-center h-[140vh] w-full overflow-visible"></RedCircle>
 
         <div className="h-[15vh]"></div>
-        {/* <SlideIn direction="left"> */}
+
         <div className="flex flex-col justify-between ">
           <div className="flex flex-col gap-4  lg:gap-5 w-full lg:w-4/5">
             <div className="flex gap-2 sm:gap-4 flex-wrap">
@@ -92,24 +102,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        {/* </SlideIn> */}
       </section>
-
-      {/* <SlideIn direction="left">
-        <section className="rounded-2xl mt-20 h-fit bg-contrast-lower2 min-h-[60vh] p-0 lg:p-8 flex flex-row items-center relative overflow-hidden">
-          <div className="border-accent-higher lg:border-l-2 lg:w-2/3 h-fit p-4 lg:p-4">
-            <h2 className="text-2xl font-semibold">
-              Цифровая кафедра ПРОМТЕХДИЗАЙН
-            </h2>
-            <p className="text-sm lg:text-base">
-              всероссийский проект, который предоставляет уникальную возможность
-              студентам вместе с дипломом о высшем образовании получить
-              дополнительную квалификацию и освоить компетенции в IT-сфере
-              бесплатно и без отрыва от основной образовательной&nbsp;программы
-            </p>
-          </div>
-        </section>
-      </SlideIn> */}
 
       <SlideIn direction="right">
         <section className="mt-20 min-h-[40vh] flex flex-col lg:flex-row align-middle items-center justify-center lg:justify-between lg:gap-2 gap-5">
@@ -150,7 +143,7 @@ export default function Home() {
                 value={2}
               />
             </div>
-            <p className="font-medium text-center text-sm">
+            <p className="font-medium text-center text-sm ">
               диплома по окончании ВУЗа
             </p>
           </div>
@@ -492,6 +485,48 @@ export default function Home() {
             </div>
           </div>
         </SlideIn>
+      </div>
+
+      <div>
+        <h1 className="mb-6 text-3xl  font-semibold lg:text-center ">
+          Новости
+        </h1>
+        <div className="w-full flex justify-center  h-full">
+          <Carousel className=" w-full">
+            <CarouselContent className=" w-full h-fit mb-6">
+              {NEWS.map((item) => (
+                <CarouselItem
+                  key={`${item.title}`}
+                  className="  md:pl-2 lg:basis-1/2 h-fit"
+                >
+                  <div className=" bg-contrast-lower2 h-86 md:h-56 text-contrast-higher p-4  rounded-2xl px-6 py-6 flex flex-row items-end gap-4 sm:flex-nowrap flex-wrap">
+                    <div className="w-7/8 flex flex-col gap-2 h-full">
+                      <h3 className="font-medium text-sm">{item.title}</h3>
+                      <p className="text-contrast-lower text-xs font-normal">
+                        {item.date}
+                      </p>
+                      <p className="text-contrast-high text-xs font-normal mt-auto">
+                        {item.description}
+                      </p>
+                    </div>
+                    <Link
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <MoveRight
+                        className="bg-contrast-lowest rounded-full w-9 h-9 p-2"
+                        scale={2}
+                      />
+                    </Link>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+
+            <CarouselIndicator />
+          </Carousel>
+        </div>
       </div>
 
       <div>
