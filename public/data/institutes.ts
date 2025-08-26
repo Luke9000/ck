@@ -1,4 +1,3 @@
-
 export const PROGRAMS = [
   {
     id: 1,
@@ -24,11 +23,26 @@ export const PROGRAMS = [
       "ВШПМ ИПТиО",
     ],
     previews: [
-      "works/Web-дизайн/1/preview.avif",
-      "works/Web-дизайн/2/preview.avif",
-      "works/Web-дизайн/3/preview.avif",
-      "works/Web-дизайн/4/preview.avif",
-      "works/Web-дизайн/5/preview.avif",
+      {
+        src: "works/Web-дизайн/1/preview.avif",
+        link: "works?id=1#1",
+      },
+      {
+        src: "works/Web-дизайн/2/preview.avif",
+        link: "works?id=1#2",
+      },
+      {
+        src: "works/Web-дизайн/3/preview.avif",
+        link: "works?id=1#3",
+      },
+      {
+        src: "works/Web-дизайн/4/preview.avif",
+        link: "works?id=1#4",
+      },
+      {
+        src: "works/Web-дизайн/5/preview.avif",
+        link: "works?id=1#5",
+      },
     ],
     link: "",
     fields: [
@@ -115,16 +129,41 @@ export const PROGRAMS = [
     videos: ["Promo.mp4", "Mykkel.mp4"],
     institutes: ["ВШТЭ ИЭиА"],
     previews: [
-      "works/Алгоритмизация и программирование на языке Python/1/preview.avif",
-      "works/Алгоритмизация и программирование на языке Python/2/preview.avif",
-      "works/Алгоритмизация и программирование на языке Python/3/preview.avif",
-      "works/Алгоритмизация и программирование на языке Python/4/preview.avif",
-      "works/Алгоритмизация и программирование на языке Python/5/preview.avif",
-      "works/Алгоритмизация и программирование на языке Python/preview_1.avif",
-      "works/Алгоритмизация и программирование на языке Python/preview_2.avif",
-      "works/Алгоритмизация и программирование на языке Python/preview_3.avif",
-      "works/Алгоритмизация и программирование на языке Python/preview_4.avif",
-      "works/Алгоритмизация и программирование на языке Python/preview_5.avif",
+      {
+        src: "works/Алгоритмизация и программирование на языке Python/1/preview.avif",
+        link: "works?id=2#1",
+      },
+      {
+        src: "works/Алгоритмизация и программирование на языке Python/2/preview.avif",
+        link: "works?id=2#2",
+      },
+      {
+        src: "works/Алгоритмизация и программирование на языке Python/3/preview.avif",
+        link: "works?id=2#3",
+      },
+      {
+        src: "works/Алгоритмизация и программирование на языке Python/4/preview.avif",
+        link: "works?id=2#4",
+      },
+      {
+        src: "works/Алгоритмизация и программирование на языке Python/5/preview.avif",
+        link: "works?id=2#5",
+      },
+      {
+        src: "works/Алгоритмизация и программирование на языке Python/preview_1.avif",
+      },
+      {
+        src: "works/Алгоритмизация и программирование на языке Python/preview_2.avif",
+      },
+      {
+        src: "works/Алгоритмизация и программирование на языке Python/preview_3.avif",
+      },
+      {
+        src: "works/Алгоритмизация и программирование на языке Python/preview_4.avif",
+      },
+      {
+        src: "works/Алгоритмизация и программирование на языке Python/preview_5.avif",
+      },
     ],
     link: "",
     fields: [
@@ -200,9 +239,15 @@ export const PROGRAMS = [
       "ИТМ",
     ],
     previews: [
-      "works/Продвижение бренда/preview_1.avif",
-      "works/Продвижение бренда/preview_2.avif",
-      "works/Продвижение бренда/preview_3.avif",
+      {
+        src: "works/Продвижение бренда/preview_1.avif",
+      },
+      {
+        src: "works/Продвижение бренда/preview_2.avif",
+      },
+      {
+        src: "works/Продвижение бренда/preview_3.avif",
+      },
     ],
     link: "",
     fields: [
@@ -270,9 +315,18 @@ export const PROGRAMS = [
     videos: ["Promo.mp4", "Volkov.mp4"],
     institutes: ["ВШПМ ИПТиО", "ВШТЭ ИЗиВО", "ВШТЭ ИУиЭ", "ИБК", "ИЭСТ"],
     previews: [
-      "works/Основы построения интеллектуальных агентов/1/preview.avif",
-      "works/Основы построения интеллектуальных агентов/2/preview.avif",
-      "works/Основы построения интеллектуальных агентов/3/preview.avif",
+      {
+        src: "works/Основы построения интеллектуальных агентов/1/preview.avif",
+        link: "works?id=3#1",
+      },
+      {
+        src: "works/Основы построения интеллектуальных агентов/2/preview.avif",
+        link: "works?id=3#2",
+      },
+      {
+        src: "works/Основы построения интеллектуальных агентов/3/preview.avif",
+        link: "works?id=3#3",
+      },
     ],
     link: "",
     fields: [
@@ -324,12 +378,30 @@ export const PROGRAMS = [
     videos: ["Promo.mp4", "Kolmykova.mp4"],
     institutes: ["ВШТЭ ИУиЭ", "ИБК", "ВШПМ ИМ"],
     previews: [
-      "works/Визуализация представления бренда/1/preview.avif",
-      "works/Визуализация представления бренда/2/preview.avif",
-      "works/Визуализация представления бренда/3/preview.avif",
-      "works/Визуализация представления бренда/4/preview.avif",
-      "works/Визуализация представления бренда/5/preview.avif",
-      "works/Визуализация представления бренда/6/preview.avif",
+      {
+        src: "works/Визуализация представления бренда/1/preview.avif",
+        link: "works?id=4#1",
+      },
+      {
+        src: "works/Визуализация представления бренда/2/preview.avif",
+        link: "works?id=4#2",
+      },
+      {
+        src: "works/Визуализация представления бренда/3/preview.avif",
+        link: "works?id=4#3",
+      },
+      {
+        src: "works/Визуализация представления бренда/4/preview.avif",
+        link: "works?id=4#4",
+      },
+      {
+        src: "works/Визуализация представления бренда/5/preview.avif",
+        link: "works?id=4#5",
+      },
+      {
+        src: "works/Визуализация представления бренда/6/preview.avif",
+        link: "works?id=4#6",
+      },
     ],
     link: "",
     fields: [
@@ -394,12 +466,30 @@ export const PROGRAMS = [
     videos: ["Promo.mp4", "Kolmykova.mp4"],
     institutes: ["ВШПМ ИМ"],
     previews: [
-      "works/Визуализация представления бренда/1/preview.avif",
-      "works/Визуализация представления бренда/2/preview.avif",
-      "works/Визуализация представления бренда/3/preview.avif",
-      "works/Визуализация представления бренда/4/preview.avif",
-      "works/Визуализация представления бренда/5/preview.avif",
-      "works/Визуализация представления бренда/6/preview.avif",
+      {
+        src: "works/Визуализация представления бренда/1/preview.avif",
+        link: "works?id=4#1",
+      },
+      {
+        src: "works/Визуализация представления бренда/2/preview.avif",
+        link: "works?id=4#2",
+      },
+      {
+        src: "works/Визуализация представления бренда/3/preview.avif",
+        link: "works?id=4#3",
+      },
+      {
+        src: "works/Визуализация представления бренда/4/preview.avif",
+        link: "works?id=4#4",
+      },
+      {
+        src: "works/Визуализация представления бренда/5/preview.avif",
+        link: "works?id=4#5",
+      },
+      {
+        src: "works/Визуализация представления бренда/6/preview.avif",
+        link: "works?id=4#6",
+      },
     ],
     link: "",
     fields: [

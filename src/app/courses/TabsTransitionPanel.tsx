@@ -165,7 +165,7 @@ export default function TabsTransitionPanel() {
                 <h1 className="mt-10 pb-2  text-3xl  font-semibold lg:text-center ">
                   Итоговые работы студентов
                 </h1>
-                <p className="mb-10 text-xs lg:text-center text-contrast-lower">
+                <p className="mb-2 text-xs lg:text-center text-contrast-lower">
                   2024-2025 год
                 </p>
                 <div className="w-full flex justify-center items-center align-middle">
@@ -182,21 +182,23 @@ export default function TabsTransitionPanel() {
                               draggable={false}
                               className="w-72 rounded-xl border-contrast-lower2 object-center"
                               alt="preview"
-                              src={IMAGE_PATH + item2}
+                              src={IMAGE_PATH + item2.src}
                               width={1200}
                               height={1696}
                             ></Image>
-                            <Link
-                              className="absolute right-0 bottom-0 pr-8 pb-8"
-                              href={"/works?id=" + item.id + "#" + (i + 1)}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <MoveRight
-                                className="bg-contrast-lowest rounded-full w-9 h-9 p-2"
-                                scale={2}
-                              />
-                            </Link>
+                            {item2.link && (
+                              <Link
+                                className="absolute right-0 bottom-0 pr-8 pb-8"
+                                href={item2.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <MoveRight
+                                  className="bg-contrast-lowest rounded-full w-9 h-9 p-2"
+                                  scale={2}
+                                />
+                              </Link>
+                            )}
                           </div>
                         </CarouselItem>
                       ))}
