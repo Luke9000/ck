@@ -14,11 +14,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily',
       priority: 0.8,
     },
-    // {
-    //   url: 'https://cksutd.ru/',
-    //   lastModified: new Date(),
-    //   changeFrequency: 'daily',
-    //   priority: 0.5,
-    // },
+    {
+      url: 'https://www.cksutd.ru/works',
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.8,
+    },
   ]
 }
