@@ -8,6 +8,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import localFont from "next/font/local";
 import { Suspense } from "react";
 import { Analytics } from '@vercel/analytics/next';
+import { ViewTransitions } from 'next-view-transitions'
 
 // 100: Thin.
 // 200: Extra Light (or Ultra Light).
@@ -76,6 +77,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+    <ViewTransitions>
     <html lang={"ru"}>
       <head>
         <meta
@@ -108,5 +110,6 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
+    </ViewTransitions>
   );
 }

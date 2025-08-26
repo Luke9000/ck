@@ -20,7 +20,7 @@ import {
   CarouselItem,
 } from "components/motion-primitives/carousel";
 import { NEWS } from "public/data/news";
-import Link from "next/link";
+import {Link} from "next-view-transitions";
 
 const partners = [
   {
@@ -491,15 +491,15 @@ export default function Home() {
         <h1 className="mb-6 text-3xl  font-semibold lg:text-center ">
           Новости
         </h1>
-        <div className="w-full flex justify-center  h-full">
+        <div className="w-full flex justify-center ">
           <Carousel className=" w-full">
             <CarouselContent className=" w-full h-fit mb-6">
               {NEWS.map((item) => (
                 <CarouselItem
                   key={`${item.title}`}
-                  className="  md:pl-2 lg:basis-1/2 h-fit"
+                  className="  md:pl-2 lg:basis-1/2 h-fit pr-2 last:pr-0"
                 >
-                  <div className=" bg-contrast-lower2 h-86 md:h-56 text-contrast-higher p-4  rounded-2xl px-6 py-6 flex flex-row items-end gap-4 sm:flex-nowrap flex-wrap">
+                  <div className=" bg-contrast-lower2 h-full md:h-56 text-contrast-higher p-4   rounded-2xl px-6 py-6 flex flex-row items-end gap-4 sm:flex-nowrap flex-wrap">
                     <div className="w-7/8 flex flex-col gap-2 h-full">
                       <h3 className="font-medium text-sm">{item.title}</h3>
                       <p className="text-contrast-lower text-xs font-normal">

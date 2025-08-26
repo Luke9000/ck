@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { TransitionPanel } from "@/components/motion-primitives/transition-panel";
 import { PROGRAMS } from "../../../public/data/institutes";
 import RedCircle from "../icons/RedCircle";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 export default function TabsTransitionPanel() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -70,8 +70,8 @@ export default function TabsTransitionPanel() {
                     </span>
                   ))}
                 </div>
-                <Link
-                  scroll={true}
+                {/* <Link
+                  
                   className="mt-4 block underline text-xs text-contrast-low"
                   href={{
                     pathname: "/courses",
@@ -79,6 +79,12 @@ export default function TabsTransitionPanel() {
                       ...(item.id && { id: item.id === 6 ? 5 : item.id }),
                     },
                   }}
+                >
+                  Подробнее про направление {item.title}
+                </Link> */}
+                <Link
+                  href={`/courses?id=${item.id === 6 ? 5 : item.id}`}
+                  className="mt-4 block underline text-xs text-contrast-low"
                 >
                   Подробнее про направление {item.title}
                 </Link>

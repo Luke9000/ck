@@ -19,7 +19,7 @@ import {
 // import Carousel from "@/components/Carousel"
 import { cn } from "@/lib/utils";
 import { VIDEO_PATH } from "@/utils/assetPaths";
-import Link from "next/link";
+import {Link} from "next-view-transitions";
 import { MoveRight } from "lucide-react";
 
 // import Video from "next-video";
@@ -190,7 +190,7 @@ export default function TabsTransitionPanel() {
                               <Link
                                 className="absolute right-0 bottom-0 pr-8 pb-8"
                                 href={item2.link}
-                                target="_blank"
+                                
                                 rel="noopener noreferrer"
                               >
                                 <MoveRight
