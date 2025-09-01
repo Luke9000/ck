@@ -78,7 +78,7 @@ export default function UI() {
           {WORKS[activeIndex].institutes.map((item, index) => (
             <p
               key={index}
-              className="text-contrast-high-2 font-semibold lg:px-4 p-3 w-fit m-2 lg:m-2 rounded-xl bg-contrast-lower2"
+              className="text-contrast-high-2 font-semibold text-sm lg:px-4 p-3 w-fit m-2 lg:m-2 rounded-xl "
             >
               {item}
             </p>
