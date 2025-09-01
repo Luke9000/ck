@@ -27,7 +27,7 @@ const DropdownMenuDemo = ({ className }: Props) => {
         </DropdownMenu.Trigger>
         <DropdownMenu.Portal>
           <DropdownMenu.Content
-            className={cn(styles.Content, "bg-contrast-high mr-5")}
+            className={cn(styles.Content, "bg-contrast-lower2 mr-5")}
             sideOffset={5}
           >
             {links.map((link) => {

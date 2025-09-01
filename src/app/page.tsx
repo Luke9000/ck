@@ -20,7 +20,7 @@ import {
   CarouselItem,
 } from "components/motion-primitives/carousel";
 import { NEWS } from "public/data/news";
-import {Link} from "next-view-transitions";
+import { Link } from "next-view-transitions";
 
 const partners = [
   {
@@ -332,11 +332,10 @@ export default function Home() {
                 <h2 className="text-xl font-semibold">
                   Антон Владимирович Сошников
                 </h2>
-                <p className="text-sm text-[color:var(--color-contrast-high)]">
-                  Руководитель Цифровой кафедры,{" "}
-                  <br className="hidden md:block" /> заведующий кафедрой
-                  «Цифровых и&nbsp;аддитивных <br className="hidden md:block" />{" "}
-                  технологий», кандидат технических наук, доцент
+                <p className="text-sm text-[color:var(--color-contrast-high)] xl:w-64">
+                  Руководитель Цифровой кафедры, заведующий кафедрой «Цифровых
+                  и&nbsp;аддитивных технологий», кандидат технических наук,
+                  доцент
                 </p>
               </div>
             </div>
@@ -499,14 +498,19 @@ export default function Home() {
                   key={`${item.title}`}
                   className="  md:pl-2 lg:basis-1/2 h-fit pr-2 last:pr-0"
                 >
-                  <div className=" bg-contrast-lower2 h-full md:h-56 text-contrast-higher p-4   rounded-2xl px-6 py-6 flex flex-row items-end gap-4 sm:flex-nowrap flex-wrap">
+                  <div className=" bg-contrast-lower2 h-full md:h-64 text-contrast-higher p-4   rounded-2xl px-6 py-6 flex flex-row items-end gap-4 sm:flex-nowrap flex-wrap">
                     <div className="w-7/8 flex flex-col gap-2 h-full">
-                      <h3 className="font-medium text-sm">{item.title}</h3>
-                      <p className="text-contrast-lower text-xs font-normal">
-                        {item.date}
-                      </p>
+                      
+                      <h3 className="font-semibold text-base">{item.title}</h3>
+
                       <p className="text-contrast-high text-xs font-normal mt-auto">
                         {item.description}
+                      </p>
+                      {/* <p className="text-contrast-lowest bg-accent-higher w-fit rounded-xl p-2 text-xs font-normal mt-auto">
+                        Цифровая кафедра
+                      </p> */}
+                      <p className="text-contrast-lower text-xs font-normal">
+                        {item.date}
                       </p>
                     </div>
                     <Link
