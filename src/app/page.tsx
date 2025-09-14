@@ -105,7 +105,7 @@ export default function Home() {
       </section>
 
       <SlideIn direction="right">
-        <section className="mt-20 min-h-[40vh] flex flex-col lg:flex-row align-middle items-center justify-center lg:justify-between lg:gap-2 gap-5">
+        <section className="mt-20 flex flex-col lg:flex-row align-middle items-center justify-center lg:justify-between lg:gap-2 gap-5">
           <div className="flex flex-col gap-2 items-center w-2/3 lg:w-full ">
             <div className="w-full  h-34 bg-contrast-medium text-contrast-lowest font-semibold p-4 rounded-xl px-6 flex items-center justify-center ">
               <NumberTicker
@@ -151,7 +151,7 @@ export default function Home() {
       </SlideIn>
 
       <SlideIn direction="left">
-        <section className="min-h-[40vh] flex flex-col items-center justify-center">
+        <section className=" flex flex-col items-center justify-center">
           <h1 className="font-semibold text-4xl">
             Кто может стать участником?
           </h1>
@@ -316,7 +316,7 @@ export default function Home() {
         <h1 className="mb-6 text-3xl  font-semibold lg:text-center ">
           О Цифровой кафедре ПРОМТЕХДИЗАЙН
         </h1>
-        <section className="min-h-[60vh] flex flex-col lg:flex-row gap-6 md:gap-6 lg:items-center">
+        <section className=" flex flex-col lg:flex-row gap-6 md:gap-6 lg:items-center">
           <SlideIn>
             <div className="flex flex-col gap-8 w-[1/3]">
               <Image
