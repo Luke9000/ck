@@ -97,34 +97,36 @@ export default function UI() {
           }}
         >
           {WORKS.map((item, index) => (
-            <div key={index} className="flex flex-col gap-14 ">
+            <div key={index} className="flex flex-col gap-14 h-full">
               {item.works.map((item2, index) => (
                 <div
                   id={item2.id?.toString()}
                   key={index}
-                  className="flex flex-col  lg:flex-row justify-between mt-8  w-full gap-2 xl:gap-8"
+                  className="flex h-full flex-col  lg:flex-row justify-between mt-8  w-full gap-2 xl:gap-8"
                 >
-                  <div className="h-full flex flex-col gap-6 justify-between  lg:w-4/10 xl:3/10 mt-3">
-                    <div className="">
-                      <span className="text-contrast-high-2 font-semibold lg:px-4 p-3 w-fit rounded-xl bg-contrast-lower2 ">
+                  <div className="self-stretch flex flex-col justify-between gap-4 lg:w-4/10 xl:w-3/10">
+                    <div className="flex flex-col gap-6">
+                      <h3 className="text-contrast-higher font-semibold text-lg/tight">
+                        {item2.title}
+                      </h3>
+                      <div className="flex flex-col ">
+                        {item2.authors.map((author, idx) => (
+                          <p key={idx} className="text-sm">
+                            {author.trim()}
+                          </p>
+                        ))}
+                      </div>
+                      <p className=" text-sm font-semibold">2024-2025</p>
+                    </div>
+
+                    <div className="flex flex-row gap-4 align-middle items-center xl:mb-6">
+                      <span className="text-contrast-high-2 font-semibold lg:px-4 p-3 w-fit rounded-xl bg-contrast-lower2 flex items-center">
                         {item2.institute}
                       </span>
-                      <p className="mt-4 text-contrast-medium text-sm">
+                      <p className=" text-contrast-medium text-sm">
                         {item2.field}
                       </p>
                     </div>
-
-                    <div>
-                      <h3 className="text-contrast-higher font-semibold text-lg/tight  mb-5">
-                        {item2.title}
-                      </h3>
-                      {item2.authors.map((author, idx) => (
-                        <p key={idx} className="text-sm">
-                          {author.trim()}
-                        </p>
-                      ))}
-                    </div>
-                    <p className=" text-sm font-semibold">2024-2025</p>
                   </div>
 
                   <div className="w-full flex justify-center  h-full">
@@ -133,7 +135,7 @@ export default function UI() {
                         {item2.images.map((item: string, i: Key) => (
                           <CarouselItem
                             key={`${item2.title}-${i}`}
-                            className="lg:basis-1/2 pr-2 last:pr-0 "
+                            className="lg:basis-1/2 pr-2 last:pr-0"
                           >
                             <Image
                               unoptimized
