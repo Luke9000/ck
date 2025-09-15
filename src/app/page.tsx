@@ -82,7 +82,7 @@ export default function Home() {
 
               <span className="text-3xl md:text-6xl font-semibold relative inline-block">
                 кафедра
-                <RedCircle className="fill-accent-higher hidden  w-4 absolute -top-5 -right-5 xxs:block -z-30  overflow-visible"></RedCircle>
+                <RedCircle className="fill-accent-higher hidden  w-8 absolute -top-7 -right-7 2xl:block -z-30  overflow-visible"></RedCircle>
               </span>
             </div>
 
@@ -492,37 +492,48 @@ export default function Home() {
         </h1>
         <div className="w-full flex justify-center ">
           <Carousel className=" w-full">
-            <CarouselContent className=" w-full h-fit mb-6">
+            <CarouselContent className=" w-full  mb-9">
               {NEWS.map((item) => (
                 <CarouselItem
                   key={`${item.title}`}
-                  className="  md:pl-2 lg:basis-1/2 h-fit pr-2 last:pr-0"
+                  className="  md:pl-2 md:basis-1/2 xl:basis-1/3  pr-2 last:pr-0"
                 >
-                  <div className=" bg-contrast-lower2 h-full md:h-64 text-contrast-higher p-4   rounded-2xl px-6 py-6 flex flex-row items-end gap-4 sm:flex-nowrap flex-wrap">
-                    <div className="w-7/8 flex flex-col gap-2 h-full">
-                      
-                      <h3 className="font-semibold text-base">{item.title}</h3>
-
-                      <p className="text-contrast-high text-xs font-normal mt-auto">
-                        {item.description}
-                      </p>
-                      {/* <p className="text-contrast-lowest bg-accent-higher w-fit rounded-xl p-2 text-xs font-normal mt-auto">
-                        Цифровая кафедра
-                      </p> */}
-                      <p className="text-contrast-lower text-xs font-normal">
-                        {item.date}
-                      </p>
+                  <div className="h-64 md:h-65 xl:h-76 text-contrast-higher   rounded-2xl  flex flex-col items-center gap-4 sm:flex-nowrap flex-wrap">
+                    <div className=" flex flex-col gap-4 h-full ">
+                      <div className="h-32 2xl:h-40 overflow-hidden">
+                        <Image
+                          draggable={false}
+                          unoptimized
+                          className="rounded-xl w-full  object-cover object-top"
+                          quality={100}
+                          width={1200}
+                          height={800}
+                          alt={item.title}
+                          src={IMAGE_PATH + "news/" + item.id + ".avif"}
+                        ></Image>
+                      </div>
+                      <div className="px-6 flex flex-col gap-2 flex-1">
+                        <p className="text-contrast-high text-xs font-normal">
+                          {item.date}
+                        </p>
+                        <h3 className="font-semibold text-xs">{item.title}</h3>
+                        {/* <p className="text-contrast-lowest bg-accent-higher w-fit rounded-xl p-2 text-xs font-normal mt-auto">
+                          Цифровая кафедра
+                        </p> */}
+                        <Link
+                          className="mt-auto "
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {/* <MoveRight
+                            className="bg-contrast-lower rounded-full w-9 h-9 p-2 stroke-contrast-lowest"
+                            scale={2}
+                          /> */}
+                          <p className="text-xs text-contrast-low underline ">Читать далее</p>
+                        </Link>
+                      </div>
                     </div>
-                    <Link
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <MoveRight
-                        className="bg-contrast-lowest rounded-full w-9 h-9 p-2"
-                        scale={2}
-                      />
-                    </Link>
                   </div>
                 </CarouselItem>
               ))}

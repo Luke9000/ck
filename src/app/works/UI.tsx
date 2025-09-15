@@ -120,7 +120,7 @@ export default function UI() {
                     </div>
 
                     <div className="flex flex-row gap-4 align-middle items-center xl:mb-6">
-                      <span className="text-contrast-high-2 font-semibold lg:px-4 p-3 w-fit rounded-xl bg-contrast-lower2 flex items-center">
+                      <span className="text-contrast-high-2 font-semibold lg:px-4 p-2 w-fit rounded-xl bg-contrast-lower2 flex items-center ">
                         {item2.institute}
                       </span>
                       <p className=" text-contrast-medium text-sm">
