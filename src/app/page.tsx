@@ -7,7 +7,6 @@ import Tabs from "@/components/Tabs";
 import { InfiniteSlider } from "components/motion-primitives/infinite-slider";
 import Image from "next/image";
 import { ROADMAP } from "public/data/roadmap";
-import { MoveRight } from "lucide-react";
 
 import { IMAGE_PATH } from "@/utils/assetPaths";
 import { Metadata } from "next";
@@ -19,8 +18,8 @@ import {
   CarouselIndicator,
   CarouselItem,
 } from "components/motion-primitives/carousel";
-import { NEWS } from "public/data/news";
 import { Link } from "next-view-transitions";
+import { NEWS } from "public/data/news";
 
 const partners = [
   {
